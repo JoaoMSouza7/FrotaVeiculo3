@@ -1,3 +1,5 @@
+using System;
+
 namespace FrotaPim.Domain.Entidades
 {
     public class Seguro

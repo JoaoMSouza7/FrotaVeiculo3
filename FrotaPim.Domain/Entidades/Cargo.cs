@@ -2,16 +2,16 @@ namespace FrotaPim.Domain.Entidades
 {
     public class Cargo
     {
-        public Motorista _Motorista { get; set; }
-        public Funcionario _Funcionario { get; set; }
-        public Administrador _Administrador { get; set; }
+        public Pessoa _Motorista { get; set; }
+        public Pessoa _Funcionario { get; set; }
+        public Pessoa _Administrador { get; set; }
 
-        public Cargo(Motorista motorista, Funcionario funcionario, Administrador administrador)
+        public Cargo(Pessoa motorista, Pessoa funcionario, Pessoa administrador)
         {
-            SetarPropriedades(id, nome, cpf, endereco, admissao, fone);
+            SetarPropriedades(motorista, funcionario, administrador);
         }
 
-        private void SetarPropriedades(Motorista motorista, Funcionario funcionario, Administrador administrador)
+        private void SetarPropriedades(Pessoa motorista, Pessoa funcionario, Pessoa administrador)
         {
             _Motorista = motorista;
             _Funcionario = funcionario;

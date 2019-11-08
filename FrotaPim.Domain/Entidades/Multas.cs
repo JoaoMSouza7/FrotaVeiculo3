@@ -1,21 +1,23 @@
+using System;
+
 namespace FrotaPim.Domain.Entidades
 {
     public class Multas
     {
-        public Motorista _Motorista { get; set; }
+        public Pessoa _Motorista { get; set; }
         public string Gravidade { get; set; }
         public DateTime DataMulta { get; set; }
         public decimal ValorMulta { get; set; }
         public Carro _Carro { get; set; }
         public StatusMulta Status { get; set; }
 
-        public Multas(Motorista motorista, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro, StatusMulta status)
+        public Multas(Pessoa motorista, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro, StatusMulta status)
         {
             SetarPropriedades(motorista, dataMulta, valorMulta, carro, status);
             ValidarProps(motorista, dataMulta, valorMulta, carro, status);
         }
 
-        private void SetarPropriedades(Motorista motorista, DateTime dataMulta, decimal valorMulta, Carro carro, StatusMulta status)
+        private void SetarPropriedades(Pessoa motorista, DateTime dataMulta, decimal valorMulta, Carro carro, StatusMulta status)
         {
             _Motorista = motorista;
             Gravidade = Gravidade;
@@ -25,7 +27,7 @@ namespace FrotaPim.Domain.Entidades
             Status = status;
         }
 
-        private static void ValidarProps(Motorista motorista, DateTime dataMulta, decimal valorMulta, Carro carro, StatusMulta status)
+        private static void ValidarProps(Pessoa motorista, DateTime dataMulta, decimal valorMulta, Carro carro, StatusMulta status)
         {
             DomainException.when(motorista == null, "Informe o motorista");
             DomainException.when(dataMulta == null, "Informe a data em que a multa foi realizada");

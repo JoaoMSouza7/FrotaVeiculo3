@@ -7,7 +7,7 @@ namespace FrotaPim.Domain.Entidades
         public decimal Valor { get; private set; }
         public string Descricao { get; private set; }
 
-        public Endereco(Carro carro, string local, decimal valor, string descricao)
+        public Estacionamento(Carro carro, string local, decimal valor, string descricao)
         {
             SetarPropriedades(carro, local, valor, descricao);
             ValidarProps(carro, local, valor, descricao);

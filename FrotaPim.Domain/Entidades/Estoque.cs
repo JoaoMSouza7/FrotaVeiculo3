@@ -1,3 +1,5 @@
+using System;
+
 namespace FrotaPim.Domain.Entidades
 {
     public class Estoque
@@ -9,7 +11,7 @@ namespace FrotaPim.Domain.Entidades
         public int ValorPeca { get; set; }
         public int Quantidade { get; set; }
 
-        public Endereco(DateTime dataEntrada, string nomePeca, string descricao, string Fornecedor, int valorPeca, int quantidade)
+        public Estoque(DateTime dataEntrada, string nomePeca, string descricao, string Fornecedor, int valorPeca, int quantidade)
         {
             SetarPropriedades(dataEntrada, nomePeca, descricao, Fornecedor, valorPeca, quantidade);
             ValidarProps(dataEntrada, nomePeca, descricao, Fornecedor, valorPeca, quantidade);

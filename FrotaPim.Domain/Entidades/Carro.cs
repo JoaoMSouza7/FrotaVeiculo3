@@ -1,7 +1,10 @@
+using System;
+
 namespace FrotaPim.Domain.Entidades
 {
     public class Carro
     {
+        public int IDCarro { get; set; }
         public int Placa { get; set; }
         public string Tipo { get; set; }
         public string Marca { get; set; }
@@ -9,27 +12,27 @@ namespace FrotaPim.Domain.Entidades
         public TipoCombustivel Combustivel { get; set; }
         public string Cor { get; set; }
         public DateTime Ano { get; set; }
-        public Motorista _Motorista { get; set; }
+        public Pessoa _Motorista { get; set; }
 
-        public Carro(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Motorista motorista)
+        public Carro(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Pessoa motorista)
         {
             SetarPropriedades(placa, tipo, marca, Modelo, combustivel, cor, ano, motorista);
             ValidarProps(placa, tipo, marca, Modelo, combustivel, cor, ano, motorista);
         }
 
-        private void SetarPropriedades(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Motorista motorista)
+        private void SetarPropriedades(int placa, string tipo, string marca, string modelo, TipoCombustivel combustivel, string cor, DateTime ano, Pessoa motorista)
         {
             Placa = placa;
             Tipo = tipo;
             Marca = marca;
-            Modelo = Modelo;
+            Modelo = modelo;
             Combustivel = combustivel;
             Cor = cor;
             Ano = ano;
             _Motorista = motorista;
         }
 
-        private static void ValidarProps(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Motorista motorista)
+        private static void ValidarProps(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Pessoa motorista)
         {
             DomainException.when(placa < 1, "Informe a placa do veículo");
             DomainException.when(string.IsNullOrEmpty(tipo), "Informe o tipo de veículo");

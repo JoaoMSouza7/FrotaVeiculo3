@@ -1,3 +1,5 @@
+using System;
+
 namespace FrotaPim.Domain.Entidades
 {
     public class Manutencao
@@ -13,7 +15,7 @@ namespace FrotaPim.Domain.Entidades
             ValidarProps(descricaoManutencao, valor, carro, data);
         }
 
-        private void SetarPropriedades(string descricaoManutencao, int valor, Carro carro, DateTime data)
+        private void SetarPropriedades(string descricaoManutencao, decimal valor, Carro carro, DateTime data)
         {
             DescricaoManutencao = descricaoManutencao;
             Valor = valor;
