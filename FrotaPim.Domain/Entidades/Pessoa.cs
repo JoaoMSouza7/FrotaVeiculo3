@@ -7,8 +7,8 @@ namespace FrotaPim.Domain.Entidades
         public int Id { get; private set; }
         public string Nome { get; private set; }
         public int CPF { get; private set; }
-        public Cargo _Cargo { get; private set; }
-        public Endereco _Endereco { get; private set; }
+        public Cargo Cargo { get; private set; }
+        public Endereco Endereco { get; private set; }
         public DateTime Admissao { get; set; }
         public string Telefone { get; private set; }
 
@@ -23,8 +23,8 @@ namespace FrotaPim.Domain.Entidades
             Id = id;
             Nome = nome;            
             CPF = cpf;
-            _Cargo = cargo;
-            _Endereco = endereco;
+            Cargo = cargo;
+            Endereco = endereco;
             Admissao = admissao;
             Telefone = fone;
         }

@@ -4,20 +4,21 @@ namespace FrotaPim.Domain.Entidades
 {
     public class Estoque
     {
+        public int IdPeca { get; set; }
         public DateTime DataEntrada { get; set; }
         public string NomePeca { get; set; }
         public string Descricao { get; set; }
         public string Fornecedor { get; set; }
-        public int ValorPeca { get; set; }
+        public decimal ValorPeca { get; set; }
         public int Quantidade { get; set; }
 
-        public Estoque(DateTime dataEntrada, string nomePeca, string descricao, string Fornecedor, int valorPeca, int quantidade)
+        public Estoque(DateTime dataEntrada, string nomePeca, string descricao, string Fornecedor, decimal valorPeca, int quantidade)
         {
             SetarPropriedades(dataEntrada, nomePeca, descricao, Fornecedor, valorPeca, quantidade);
             ValidarProps(dataEntrada, nomePeca, descricao, Fornecedor, valorPeca, quantidade);
         }
 
-        private void SetarPropriedades(DateTime dataEntrada, string nomePeca, string descricao, string fornecedor, int valorPeca, int quantidade)
+        private void SetarPropriedades(DateTime dataEntrada, string nomePeca, string descricao, string fornecedor, decimal valorPeca, int quantidade)
         {
             DataEntrada = dataEntrada;
             NomePeca = nomePeca;
@@ -27,7 +28,7 @@ namespace FrotaPim.Domain.Entidades
             Quantidade = quantidade;
         }
 
-        private static void ValidarProps(DateTime dataEntrada, string nomePeca, string descricao, string Fornecedor, int valorPeca, int quantidade)
+        private static void ValidarProps(DateTime dataEntrada, string nomePeca, string descricao, string Fornecedor, decimal valorPeca, int quantidade)
         {
             DomainException.when(dataEntrada == null, "Informe a data de entrada do produto");
             DomainException.when(string.IsNullOrEmpty(nomePeca), "Informe o nome da peça");

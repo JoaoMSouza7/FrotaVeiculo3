@@ -4,7 +4,7 @@ namespace FrotaPim.Domain.Entidades
 {
     public class Carro
     {
-        public int IDCarro { get; set; }
+        public int ID { get; set; }
         public int Placa { get; set; }
         public string Tipo { get; set; }
         public string Marca { get; set; }
@@ -12,7 +12,7 @@ namespace FrotaPim.Domain.Entidades
         public TipoCombustivel Combustivel { get; set; }
         public string Cor { get; set; }
         public DateTime Ano { get; set; }
-        public Pessoa _Motorista { get; set; }
+        public Pessoa Motorista { get; set; }
 
         public Carro(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Pessoa motorista)
         {
@@ -29,7 +29,7 @@ namespace FrotaPim.Domain.Entidades
             Combustivel = combustivel;
             Cor = cor;
             Ano = ano;
-            _Motorista = motorista;
+            Motorista = motorista;
         }
 
         private static void ValidarProps(int placa, string tipo, string marca, string Modelo, TipoCombustivel combustivel, string cor, DateTime ano, Pessoa motorista)

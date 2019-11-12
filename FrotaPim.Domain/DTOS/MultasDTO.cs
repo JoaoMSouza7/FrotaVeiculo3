@@ -10,6 +10,6 @@ namespace FrotaPim.Domain.DTOS
         public DateTime DataMulta { get; set; }
         public decimal ValorMulta { get; set; }
         public Carro _Carro { get; set; }
-        public StatusMulta Status { get; set; }
+        public bool Status { get; set; }
     }
 }

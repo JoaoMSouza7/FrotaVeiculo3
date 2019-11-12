@@ -1,0 +1,12 @@
+C:\pim\FrotaPim.Data\bin\Debug\netstandard2.0\FrotaPim.Data.deps.json
+C:\pim\FrotaPim.Data\bin\Debug\netstandard2.0\FrotaPim.Data.dll
+C:\pim\FrotaPim.Data\bin\Debug\netstandard2.0\FrotaPim.Data.pdb
+C:\pim\FrotaPim.Data\bin\Debug\netstandard2.0\FrotaPim.dll
+C:\pim\FrotaPim.Data\bin\Debug\netstandard2.0\FrotaPim.pdb
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.csprojAssemblyReference.cache
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.csproj.CoreCompileInputs.cache
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.AssemblyInfoInputs.cache
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.AssemblyInfo.cs
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.csproj.CopyComplete
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.dll
+C:\pim\FrotaPim.Data\obj\Debug\netstandard2.0\FrotaPim.Data.pdb

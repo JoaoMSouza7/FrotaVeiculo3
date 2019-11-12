@@ -1,21 +1,27 @@
+using FrotaPim.Domain;
 namespace FrotaPim.Domain.Entidades
 {
-    public class Cargo
+    public class Cargo : Entidade
     {
-        public Pessoa _Motorista { get; set; }
-        public Pessoa _Funcionario { get; set; }
-        public Pessoa _Administrador { get; set; }
+        public string NomeCargo { get; set; }
+        public string Descricao { get; set; }
 
-        public Cargo(Pessoa motorista, Pessoa funcionario, Pessoa administrador)
+        public Cargo(int Id, string NomeCargo, string Descricao)
         {
-            SetarPropriedades(motorista, funcionario, administrador);
+            SetarPropriedades(Id, NomeCargo, Descricao);
         }
 
-        private void SetarPropriedades(Pessoa motorista, Pessoa funcionario, Pessoa administrador)
+        private void SetarPropriedades(int Id, string NomeCargo, string Descricao)
         {
-            _Motorista = motorista;
-            _Funcionario = funcionario;
-            _Administrador = administrador;
+            this.Id = Id;
+            this.NomeCargo = NomeCargo;
+            this.Descricao = Descricao;
+        }
+        private void ValidarPropriedades(int Id, string NomeCargo, string Descricao)
+        {
+            DomainException.when(Id < 1, "Id inválido");
+            DomainException.when(string.IsNullOrWhiteSpace(NomeCargo), "Nome do cargo é obrigatório");
+            DomainException.when(string.IsNullOrWhiteSpace(Descricao), "Informe a descrição do cargo");
         }
     }
 }

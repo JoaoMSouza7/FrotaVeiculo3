@@ -6,16 +6,21 @@ namespace FrotaPim.Domain.Servicos
     public class CargoServico
     {
         private readonly IRepositorio<Cargo> _cargoRepositorio;
-        private readonly IRepositorio<Pessoa> _pessoaRepositorio;
 
-        public CargoServico(IRepositorio<Cargo> cargoRepositorio, IRepositorio<Pessoa> pessoaRepositorio)
+        public CargoServico(IRepositorio<Cargo> cargoRepositorio)
         {
             _cargoRepositorio = cargoRepositorio;
-            _pessoaRepositorio = pessoaRepositorio;
         }
-        public void InserirCargo(CargoDTO dto)
+        public void InserirCargo(Cargo cargo)
         {
-            var cargo = _cargoRepositorio.ConsultarPorID(dto.C)
+            if(cargo == null)
+                throw new DomainException($"O parâmetro {nameof(cargo)} não pode ser nulo");
+            
+            var consulta = _cargoRepositorio.ConsultarPorNome(cargo.NomeCargo);
+            if(consulta.NomeCargo == cargo.NomeCargo)
+                throw new DomainException("Já existe um cargo com este nome");
+
+            _cargoRepositorio.Inserir(cargo);               
         }
     }
 }

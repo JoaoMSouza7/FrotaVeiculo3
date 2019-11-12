@@ -2,7 +2,7 @@ namespace FrotaPim.Domain.Entidades
 {
     public class TipoCombustivel
     {
-        public string Gasolina { get; private set; }
-        public string Etanol { get; private set; }
+        public int Id { get; set; }
+        public string NomeTipo { get; set; }
     }
 }

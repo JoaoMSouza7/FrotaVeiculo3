@@ -4,8 +4,7 @@ namespace FrotaPim.Domain.DTOS
 {
     public class CargoDTO
     {
-        public Pessoa _Motorista { get; set; }
-        public Pessoa _Funcionario { get; set; }
-        public Pessoa _Administrador { get; set; }
+        public int Id { get; set; }
+        public string Descricao { get; set; }
     }
 }
