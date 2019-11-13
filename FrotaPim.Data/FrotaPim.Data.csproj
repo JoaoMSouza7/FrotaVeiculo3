@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\FrotaPim.Domain\FrotaPim.csproj" />
+    <ProjectReference Include="..\FrotaPim\FrotaPim.csproj" />
   </ItemGroup>
 
   <ItemGroup>

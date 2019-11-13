@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim", "FrotaPim.Domain\FrotaPim.csproj", "{6BDFBFE0-DE3E-42E2-9A81-12F063A4B45D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim", "FrotaPim\FrotaPim.csproj", "{6BDFBFE0-DE3E-42E2-9A81-12F063A4B45D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim.Data", "FrotaPim.Data\FrotaPim.Data.csproj", "{DBA4BF23-2F7E-4A96-A5CE-E6E131F5CEAA}"
 EndProject

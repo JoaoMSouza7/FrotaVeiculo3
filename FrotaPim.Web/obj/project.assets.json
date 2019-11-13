@@ -12179,8 +12179,8 @@
     },
     "FrotaPim/1.0.0": {
       "type": "project",
-      "path": "../FrotaPim.Domain/FrotaPim.csproj",
-      "msbuildProject": "../FrotaPim.Domain/FrotaPim.csproj"
+      "path": "../FrotaPim/FrotaPim.csproj",
+      "msbuildProject": "../FrotaPim/FrotaPim.csproj"
     },
     "FrotaPim.Data/1.0.0": {
       "type": "project",

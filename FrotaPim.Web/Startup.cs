@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using FrotaPim.DI;
 using FrotaPim.Domain.Servicos;
+using Microsoft.Extensions.Logging;
 
 namespace FrotaPim.Web
 {
@@ -43,10 +44,11 @@ namespace FrotaPim.Web
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             app.Use(async(context, next) =>
-            {   //Requisição
+            {  
+                //Requisição
                 await next.Invoke();
                 //Resposta
                 var unitOfWork = (IUnitOfWork)context.RequestServices.GetService(typeof(IUnitOfWork));

@@ -32,5 +32,5 @@ C:\pim\FrotaPim.Web\bin\Debug\netcoreapp2.2\FrotaPim.pdb
 C:\pim\FrotaPim.Web\bin\Debug\netcoreapp2.2\FrotaPim.Data.pdb
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.Views.pdb
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.csproj.CopyComplete
-C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Cargo.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\CriarOuEditar.g.cshtml.cs

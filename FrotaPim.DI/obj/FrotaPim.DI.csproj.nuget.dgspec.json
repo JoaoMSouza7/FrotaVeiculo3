@@ -30,8 +30,8 @@
         "frameworks": {
           "netstandard2.0": {
             "projectReferences": {
-              "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj": {
-                "projectPath": "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj"
+              "C:\\pim\\FrotaPim\\FrotaPim.csproj": {
+                "projectPath": "C:\\pim\\FrotaPim\\FrotaPim.csproj"
               }
             }
           }
@@ -156,14 +156,14 @@
         }
       }
     },
-    "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj": {
+    "C:\\pim\\FrotaPim\\FrotaPim.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj",
+        "projectUniqueName": "C:\\pim\\FrotaPim\\FrotaPim.csproj",
         "projectName": "FrotaPim",
-        "projectPath": "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj",
+        "projectPath": "C:\\pim\\FrotaPim\\FrotaPim.csproj",
         "packagesPath": "C:\\Users\\joao.souza\\.nuget\\packages\\",
-        "outputPath": "C:\\pim\\FrotaPim.Domain\\obj\\",
+        "outputPath": "C:\\pim\\FrotaPim\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
