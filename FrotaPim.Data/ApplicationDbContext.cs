@@ -1,3 +1,4 @@
+
 using FrotaPim.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
 

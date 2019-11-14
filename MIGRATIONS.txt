@@ -1,0 +1,4 @@
+dotnet ef --startup-project ..\FrotaPim.Web\FrotaPim.Web.csproj --project .\FrotaPim.Data.csproj migrations add addCargo
+
+dotnet ef --startup-project ..\FrotaPim.Web\FrotaPim.Web.csproj --project .\FrotaPim.Data.csproj database update 
+

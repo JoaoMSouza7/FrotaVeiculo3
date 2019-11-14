@@ -8,7 +8,7 @@ C:\pim\FrotaPim.DI\obj\Debug\netstandard2.0\FrotaPim.DI.AssemblyInfo.cs
 C:\pim\FrotaPim.DI\obj\Debug\netstandard2.0\FrotaPim.DI.dll
 C:\pim\FrotaPim.DI\obj\Debug\netstandard2.0\FrotaPim.DI.pdb
 C:\pim\FrotaPim.DI\bin\Debug\netstandard2.0\FrotaPim.Data.dll
-C:\pim\FrotaPim.DI\bin\Debug\netstandard2.0\FrotaPim.dll
 C:\pim\FrotaPim.DI\bin\Debug\netstandard2.0\FrotaPim.Data.pdb
-C:\pim\FrotaPim.DI\bin\Debug\netstandard2.0\FrotaPim.pdb
 C:\pim\FrotaPim.DI\obj\Debug\netstandard2.0\FrotaPim.DI.csproj.CopyComplete
+C:\pim\FrotaPim.DI\bin\Debug\netstandard2.0\FrotaPim.dll
+C:\pim\FrotaPim.DI\bin\Debug\netstandard2.0\FrotaPim.pdb

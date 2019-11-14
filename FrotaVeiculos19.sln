@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim", "FrotaPim\FrotaPim.csproj", "{6BDFBFE0-DE3E-42E2-9A81-12F063A4B45D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrotaPim.Data", "FrotaPim.Data\FrotaPim.Data.csproj", "{DBA4BF23-2F7E-4A96-A5CE-E6E131F5CEAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim.Data", "FrotaPim.Data\FrotaPim.Data.csproj", "{DBA4BF23-2F7E-4A96-A5CE-E6E131F5CEAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrotaPim.DI", "FrotaPim.DI\FrotaPim.DI.csproj", "{966A4F13-8E18-4C52-B5D3-8BCAD4C86CAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim.DI", "FrotaPim.DI\FrotaPim.DI.csproj", "{966A4F13-8E18-4C52-B5D3-8BCAD4C86CAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrotaPim.Web", "FrotaPim.Web\FrotaPim.Web.csproj", "{3A0D9EA0-57B8-4101-81BC-9FF978C726A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim.Web", "FrotaPim.Web\FrotaPim.Web.csproj", "{3A0D9EA0-57B8-4101-81BC-9FF978C726A0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrotaPim", "FrotaPim.Domain\FrotaPim.csproj", "{F5475BE2-5399-4324-812A-B618E1C3A9E7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{6BDFBFE0-DE3E-42E2-9A81-12F063A4B45D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +69,35 @@ Global
 		{3A0D9EA0-57B8-4101-81BC-9FF978C726A0}.Release|x64.Build.0 = Release|Any CPU
 		{3A0D9EA0-57B8-4101-81BC-9FF978C726A0}.Release|x86.ActiveCfg = Release|Any CPU
 		{3A0D9EA0-57B8-4101-81BC-9FF978C726A0}.Release|x86.Build.0 = Release|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Debug|x64.Build.0 = Debug|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Debug|x86.Build.0 = Debug|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Release|x64.ActiveCfg = Release|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Release|x64.Build.0 = Release|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Release|x86.ActiveCfg = Release|Any CPU
+		{523BF12D-C94F-43D6-9C8C-35CE138B9562}.Release|x86.Build.0 = Release|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Debug|x64.Build.0 = Debug|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Debug|x86.Build.0 = Debug|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Release|x64.ActiveCfg = Release|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Release|x64.Build.0 = Release|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Release|x86.ActiveCfg = Release|Any CPU
+		{F5475BE2-5399-4324-812A-B618E1C3A9E7}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1068EFAE-BF26-41EB-AC73-82707E29D566}
 	EndGlobalSection
 EndGlobal

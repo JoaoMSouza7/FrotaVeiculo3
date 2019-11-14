@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using FrotaPim.Domain.DTOS;
 using FrotaPim.Domain.Entidades;
+using FrotaPim.Web.Models.ViewsModels;
 
 namespace FrotaPim.Web.Helper
 {
     public class CargoHelper
     {
-        internal static Cargo converterDtoParaEntidade(CargoDTO dto)
+        internal static Cargo converterDtoParaEntidade(CargoViewModel dto)
         {
             Cargo cargo = new Cargo();
             
@@ -14,15 +15,15 @@ namespace FrotaPim.Web.Helper
             cargo.Descricao = dto.Descricao;
             return cargo;
         }
-        internal static CargoDTO converterEntidadeParaDto(Cargo cargo)
+        internal static CargoViewModel converterEntidadeParaDto(Cargo cargo)
         {
-            CargoDTO dto = new CargoDTO();
+            CargoViewModel dto = new CargoViewModel();
 
             dto.NomeCargo = cargo.NomeCargo;
             dto.Descricao = cargo.Descricao;
             return dto;
         }
-        internal static List<Cargo> converterListaDtoParaEntidade(List<CargoDTO> dto)
+        internal static List<Cargo> converterListaDtoParaEntidade(List<CargoViewModel> dto)
         {
             var cargo = new List<Cargo>();
 
@@ -30,9 +31,9 @@ namespace FrotaPim.Web.Helper
                 cargo.Add(converterDtoParaEntidade(item));
             return cargo;
         }
-        internal static List<CargoDTO> converterListaEntidadeParaDto(List<Cargo> cargo)
+        internal static List<CargoViewModel> converterListaEntidadeParaDto(List<Cargo> cargo)
         {
-            var dto = new List<CargoDTO>();
+            var dto = new List<CargoViewModel>();
 
             foreach(var item in cargo)
                 dto.Add(converterEntidadeParaDto(item));

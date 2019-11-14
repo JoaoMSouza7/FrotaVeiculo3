@@ -10,6 +10,7 @@ using FrotaPim.Domain.Servicos;
 using FrotaPim.Web.Helper;
 using FrotaPim.Domain;
 using FrotaPim.Domain.Entidades;
+using FrotaPim.Web.Models.ViewsModels;
 
 namespace FrotaPim.Web.Controllers
 {
@@ -35,9 +36,9 @@ namespace FrotaPim.Web.Controllers
         }
 
         [HttpPost]
-        public IActionResult CriarOuEditar(CargoDTO dto)
+        public IActionResult CriarOuEditar(CargoViewModel cargo)
         {
-            _cargoServico.InserirCargo(CargoHelper.converterDtoParaEntidade(dto));
+            _cargoServico.InserirCargo(CargoHelper.converterDtoParaEntidade(cargo));
             return View();
         }
     }

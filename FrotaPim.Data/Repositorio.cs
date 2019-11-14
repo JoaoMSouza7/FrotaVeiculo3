@@ -17,11 +17,6 @@ namespace FrotaPim.Data
             return _context.Set<TEntity>().SingleOrDefault(e => e.Id == ID);
         }
 
-        public TEntity ConsultarPorNome(string nome)
-        {
-            throw new System.NotImplementedException();
-        }
-
         public void Deletar(int id)
         {
             throw new System.NotImplementedException();

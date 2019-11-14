@@ -3216,8 +3216,8 @@
     },
     "FrotaPim/1.0.0": {
       "type": "project",
-      "path": "../FrotaPim/FrotaPim.csproj",
-      "msbuildProject": "../FrotaPim/FrotaPim.csproj"
+      "path": "../FrotaPim.Domain/FrotaPim.csproj",
+      "msbuildProject": "../FrotaPim.Domain/FrotaPim.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -3260,8 +3260,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "C:\\pim\\FrotaPim\\FrotaPim.csproj": {
-              "projectPath": "C:\\pim\\FrotaPim\\FrotaPim.csproj"
+            "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj": {
+              "projectPath": "C:\\pim\\FrotaPim.Domain\\FrotaPim.csproj"
             }
           }
         }
