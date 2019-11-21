@@ -2999,6 +2999,11 @@
       "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "Views\\Cargo\\Deletar.cshtml",
+      "TargetPath": "Views\\Cargo\\Deletar.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

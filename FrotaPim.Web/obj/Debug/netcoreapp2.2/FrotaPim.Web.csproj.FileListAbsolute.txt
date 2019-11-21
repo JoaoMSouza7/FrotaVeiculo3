@@ -20,8 +20,9 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.AssemblyInfo.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.TagHelpers.input.cache
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.TagHelpers.output.cache
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.RazorCoreGenerate.cache
-C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\CriarOuEditar.g.cshtml.cs
-C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Cargo\CriarOuEditar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Cargo\Deletar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Cargo\index.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\Error.g.cshtml.cs
@@ -34,3 +35,8 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.Views.pdb
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.csproj.CopyComplete
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.dll
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.pdb
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Deletar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Detalhes.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Editar.g.cshtml.cs

@@ -1,10 +1,13 @@
+using System.Collections.Generic;
+
 namespace FrotaPim.Domain
 {
-    public interface IRepositorio<TEntidade> 
+    public interface IRepositorio<TEntity> 
     {
-        TEntidade ConsultarPorID(int ID);
-        void Inserir(TEntidade entidade);
-        TEntidade Editar (TEntidade entidade);
-        void Deletar(int id);
+        TEntity ConsultarPorID(int ID);
+        IEnumerable<TEntity> ObterTodos();
+        void Inserir(TEntity entity);
+        TEntity Editar(TEntity entity);
+        void Deletar(TEntity entity);
     }
 }

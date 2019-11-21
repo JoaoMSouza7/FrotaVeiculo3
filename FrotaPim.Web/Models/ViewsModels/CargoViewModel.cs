@@ -6,7 +6,8 @@ namespace FrotaPim.Web.Models.ViewsModels
     {
         public int Id { get; set; }
         [Required]
-        public string NomeCargo { get; set; }
+        public string Nome { get; set; }
         public string Descricao { get; set; }  
     }
 }
+//name="NomeCargo" id="NomeCargo"

@@ -1,12 +1,3 @@
-C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.csprojAssemblyReference.cache
-C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.csproj.CoreCompileInputs.cache
-C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.AssemblyInfoInputs.cache
-C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.AssemblyInfo.cs
-C:\pim\FrotaPim.Domain\bin\Debug\netstandard2.0\FrotaPim.deps.json
-C:\pim\FrotaPim.Domain\bin\Debug\netstandard2.0\FrotaPim.dll
-C:\pim\FrotaPim.Domain\bin\Debug\netstandard2.0\FrotaPim.pdb
-C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.dll
-C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.pdb
 C:\pim\FrotaPim\bin\Debug\netstandard2.0\FrotaPim.deps.json
 C:\pim\FrotaPim\bin\Debug\netstandard2.0\FrotaPim.dll
 C:\pim\FrotaPim\bin\Debug\netstandard2.0\FrotaPim.pdb
@@ -16,3 +7,12 @@ C:\pim\FrotaPim\obj\Debug\netstandard2.0\FrotaPim.AssemblyInfoInputs.cache
 C:\pim\FrotaPim\obj\Debug\netstandard2.0\FrotaPim.AssemblyInfo.cs
 C:\pim\FrotaPim\obj\Debug\netstandard2.0\FrotaPim.dll
 C:\pim\FrotaPim\obj\Debug\netstandard2.0\FrotaPim.pdb
+C:\pim\FrotaPim.Domain\bin\Debug\netstandard2.0\FrotaPim.deps.json
+C:\pim\FrotaPim.Domain\bin\Debug\netstandard2.0\FrotaPim.dll
+C:\pim\FrotaPim.Domain\bin\Debug\netstandard2.0\FrotaPim.pdb
+C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.csprojAssemblyReference.cache
+C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.csproj.CoreCompileInputs.cache
+C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.AssemblyInfoInputs.cache
+C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.AssemblyInfo.cs
+C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.dll
+C:\pim\FrotaPim.Domain\obj\Debug\netstandard2.0\FrotaPim.pdb

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 using FrotaPim.Data;
 using FrotaPim.Domain;
@@ -17,19 +18,22 @@ namespace FrotaPim.Data
             return _context.Set<TEntity>().SingleOrDefault(e => e.Id == ID);
         }
 
-        public void Deletar(int id)
+        public void Deletar(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            _context.Remove(entity);
         }
-
-        public TEntity Editar(TEntity entidade)
+        public TEntity Editar(TEntity entity)
         {
-            throw new System.NotImplementedException();
+             _context.Update(entity);
+             return entity;
         }
-
         public void Inserir(TEntity entidade)
         {
             _context.Set<TEntity>().Add(entidade);
+        }
+        public IEnumerable<TEntity> ObterTodos()
+        {
+            return _context.Set<TEntity>().AsEnumerable();
         }
     }
 }

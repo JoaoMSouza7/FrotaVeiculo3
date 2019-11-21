@@ -9,9 +9,9 @@ namespace FrotaPim.Domain
 
         }
 
-        public static void when(bool valid, string error)
+        public static void when(bool notValid, string error)
         {
-            if(!valid)
+            if(notValid)
             {
                 throw new DomainException(error);
             }       

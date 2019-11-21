@@ -1,4 +1,3 @@
-using FrotaPim.Domain.DTOS;
 using FrotaPim.Domain.Entidades;
 
 namespace FrotaPim.Domain.Servicos
@@ -11,16 +10,28 @@ namespace FrotaPim.Domain.Servicos
         {
             _cargoRepositorio = cargoRepositorio;
         }
-        public void InserirCargo(Cargo cargo)
+        public void InserirCargo(int id, string nome, string descricao)
         {
+            var cargo = _cargoRepositorio.ConsultarPorID(id);
             if(cargo == null)
-                throw new DomainException($"O parâmetro {nameof(cargo)} não pode ser nulo");
-            
-            //var consulta = _cargoRepositorio.ConsultarPorID(cargo.Id);
-            //if(consulta.NomeCargo == cargo.NomeCargo)
-                //throw new DomainException("Já existe um cargo com este Id");
-
-            _cargoRepositorio.Inserir(cargo);               
+            {
+                cargo = new Cargo { NomeCargo = nome, Descricao = descricao};
+                _cargoRepositorio.Inserir(cargo);
+            }
+            else
+            {
+                cargo.NomeCargo = nome;
+                cargo.Descricao = descricao;
+                _cargoRepositorio.Editar(cargo);
+            }         
+        }
+        public void ApagarCargo(int id)
+        {
+            var cargoDlt = _cargoRepositorio.ConsultarPorID(id);
+            if(cargoDlt != null)
+            {
+                _cargoRepositorio.Deletar(cargoDlt);
+            }
         }
     }
 }

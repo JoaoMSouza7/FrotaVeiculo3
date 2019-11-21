@@ -1,30 +1,42 @@
-@model IEnumerable<FrotaPim.Web.Models.ViewsModels.CargoViewModel>
+﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.CargoViewModel>
+
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="row header">
-    <div class="col-md-12">
-        <h3>Categories</h3>
-        <a href="/Cargo/CriarOuEditar" class="btn btn-primary">Novo</a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12">
-        <table class="table table-hover">
-            <tbody>
-                @foreach(var viewModel in @Model)
-                {
-                    <tr>
-                        <td>
-                            <a class="name">@viewModel.NomeCargo</a>
-                        </td>
-                        <td>
-                            <a href="/Cargo/CriarOuEditar/@viewModel.Id" class="btn">Edit</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-</div>
+<h1>Index</h1>
+
+<p>
+    <a href="/Cargo/Criar" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                <a href="/Cargo/Editar/@item.Id" class="btn">Edit</a> |
+                <a href="/Cargo/Detalhes/@item.Id" class="btn btn-primary">Details</a> |
+                <a href="/Cargo/Deletar/@item.Id" class="btn">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,8 +1,14 @@
-@model FrotaPim.Web.Models.ViewsModels.CargoViewModel
+﻿@model FrotaPim.Web.Models.ViewsModels.CargoViewModel
+
 @{
-    ViewData["Title"] = "Cargo";
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<h1>Create</h1>
+
+<h4>Cargo</h4>
+<hr />
 <div class="row header">
     <div class="col-md-12">
         <h3>Category</h3>
@@ -11,17 +17,16 @@
 </div>
 <div class="row form-wrapper">
     <div class="col-md-12">
-        <form id="form" class="form-horizontal" asp-action="CriarOuEditar" asp-controller="Cargo" method="post" asp-anti-forgery>
-            <input type="hidden" class="form-control" asp-for="Id" >
+        <form class="form-group" asp-action="Criar" asp-controller="Cargo" method="post" asp-anti-forgery>
+            <input type="hidden" class="form-control" asp-for="Id">
             <div class="form-group">
                 <label class="col-md-2 control-label">Nome</label>
                 <div class="col-md-8">
-            <input type="text" class="form-control" name="NomeCargo" id="NomeCargo">    
-                   
+                    <input type="text" class="form-control" name="Nome">
                 </div>
                 <label class="col-md-2 control-label">Descrição</label>
                 <div class="col-md-8">
-                    <input type="text" class="form-control" name="Descricao" id="Descricao">    
+                    <input type="text" class="form-control" name="Descricao">
                     <span asp-validation-for="Descricao" class="text-danger"></span>
                 </div>
             </div>
@@ -33,3 +38,7 @@
         </form>
     </div>
 </div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
