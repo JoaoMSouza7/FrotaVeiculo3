@@ -92,22 +92,10 @@ namespace FrotaPim.Web.Controllers
             return View(cargo);
         }
 
-        public IActionResult Deletar(int id)
-        {
-            var cargo = _context.ConsultarPorID(id);
-            if (cargo == null)
-            {
-                return NotFound();
-            }
-            var viewModel = new CargoViewModel { Id = cargo.Id, Nome = cargo.NomeCargo, Descricao = cargo.Descricao };
-            return View(viewModel);
-        }
-
         [HttpPost]
-        public IActionResult Apagar(int id, CargoViewModel cargo)
+        public IActionResult Delete(int id)
         {
-            var cargoDlt = new Cargo(id, cargo.Nome, cargo.Descricao);
-            _context.Deletar(cargoDlt);
+            _cargoServico.ApagarCargo(id);
             return RedirectToAction(nameof(Index));
         }
     }

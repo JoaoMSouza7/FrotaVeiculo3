@@ -23,20 +23,47 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Descricao)
-            </td>
-            <td>
-                <a href="/Cargo/Editar/@item.Id" class="btn">Edit</a> |
-                <a href="/Cargo/Detalhes/@item.Id" class="btn btn-primary">Details</a> |
-                <a href="/Cargo/Deletar/@item.Id" class="btn">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    <a href="/Cargo/Editar/@item.Id" class="btn">Edit</a> |
+                    <a href="/Cargo/Detalhes/@item.Id" class="btn btn-primary">Details</a> |
+                    <a href="#deleteModal" class="deleteItem" data-toggle="modal" data-name="@item.Nome" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Deletar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja deletar o cargo <b class="data-name bold"></b>?</p>
+                <p class="text-warning">Está ação não tem volta!</p>
+            </div>
+            <div class="modal-footer">
+                <form class="form-group" asp-action="Delete" method="post">
+                    <!--<input type="hidden" class="form-control modalCode" asp-for="Id"/>-->
+                    <div class="form-actions no-color">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+                        <button id="btnContinueDelete" type="submit" class="btn btn-primary">Apagar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+</script>

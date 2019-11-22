@@ -34,6 +34,5 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.dll
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\FrotaPim.Web.pdb
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Index.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Criar.g.cshtml.cs
-C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Deletar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Detalhes.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Cargo\Editar.g.cshtml.cs
