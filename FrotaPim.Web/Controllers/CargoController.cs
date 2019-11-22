@@ -92,7 +92,7 @@ namespace FrotaPim.Web.Controllers
             return View(cargo);
         }
 
-        [HttpPost]
+        [HttpDelete]
         public IActionResult Delete(int id)
         {
             _cargoServico.ApagarCargo(id);

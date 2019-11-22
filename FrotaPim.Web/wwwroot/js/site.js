@@ -11,16 +11,16 @@ $(".deleteItem").click(function (e) {
     name_received = $(this).attr('data-name');
     path_to_delete = window.location.href + "/Delete/" + code_received;
     $(".data-name").html(name_received);
-});
+}); 
 
 $('#btnContinueDelete').click(function (e) {
-    //$(".modalCode").val(code_received);
-    
-    e.preventDefault();
+    e.preventDefault(); 
     $.ajax({
-        type: "POST",
+        type: "DELETE",
         url: path_to_delete,
-        data: null
+        data: null,
+        success: function () {
+            location.reload();
+        }
     });
-    //window.location = path_to_delete;
 });
