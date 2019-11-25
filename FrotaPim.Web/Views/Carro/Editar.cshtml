@@ -1,0 +1,63 @@
+﻿@model FrotaPim.Web.Models.ViewsModels.CarroViewModel
+
+@{
+    ViewData["Title"] = "Editar Veículo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar" asp-controller="Cargo" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" class="form-control" asp-for="Id" value="@Model.IDCarro" />
+            <div class="form-group">
+                <label asp-for="Placa" class="control-label">Placa</label>
+                <input name="Placa" asp-for="Placa" class="form-control" value="@Model.Placa"/>
+                <span asp-validation-for="Placa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipo" class="control-label">Tipo</label>
+                <input name="Tipo" asp-for="Tipo" class="form-control" value="@Model.Tipo"/>
+                <span asp-validation-for="Tipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Marca" class="control-label">Marca</label>
+                <input name="Marca" asp-for="Marca" class="form-control" value="@Model.Marca"/>
+                <span asp-validation-for="Marca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Modelo" class="control-label">Modelo</label>
+                <input name="Modelo" asp-for="Modelo" class="form-control" value="@Model.Modelo"/>
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Combustivel" class="control-label">Combustivel</label>
+                <input name="Combustivel" asp-for="Combustivel" class="form-control" value="@Model.Combustivel"/>
+                <span asp-validation-for="Combustivel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cor" class="control-label">Cor</label>
+                <input name="Cor" asp-for="Cor" class="form-control" value="@Model.Cor"/>
+                <span asp-validation-for="Cor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ano" class="control-label"></label>
+                <input name="Ano" asp-for="Ano" class="form-control" value="@Model.Ano"/>
+                <span asp-validation-for="Ano" class="text-danger">Ano</span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

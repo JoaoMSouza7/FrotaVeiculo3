@@ -1,8 +1,7 @@
 namespace FrotaPim.Domain.Entidades
 {
-    public class Endereco
+    public class Endereco : Entidade
     {
-        public int Id { get; set; }
         public string Rua { get; private set; }
         public int Numero { get; private set; }
         public string Bairro { get; private set; }
@@ -15,6 +14,8 @@ namespace FrotaPim.Domain.Entidades
             SetarPropriedades(rua, numero, bairro, cep, cidade, estado);
             ValidarProps(rua, numero, bairro, cep, cidade, estado);
         }
+        public Endereco()
+        {}
 
         private void SetarPropriedades(string rua, int numero, string bairro, int cep, string cidade, string estado)
         {

@@ -24,3 +24,5 @@ $('#btnContinueDelete').click(function (e) {
         }
     });
 });
+
+$( ".input-year" ).datepicker({dateFormat: 'yy'});

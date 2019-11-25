@@ -1,0 +1,101 @@
+﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.CarroViewModel>
+
+@{
+    ViewData["Title"] = "Veículos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a href="/Carro/Criar" class="btn btn-primary btn-sm">Criar novo cargo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combustivel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ano)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model._Motorista)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Combustivel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ano)
+            </td>
+           <td>
+                @Html.DisplayFor(modelItem => item._Motorista)
+            </td>
+            <td>
+                <a href="/Carro/Editar/@item.IDCarro" class="btn btn-primary btn-sm">Editar</a> |
+                <a href="/Carro/Detalhes/@item.IDCarro" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Placa" code="@item.IDCarro"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Deletar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja deletar o carro com a placa <b class="data-name bold"></b>?</p>
+                <p class="text-warning">Está ação não tem volta!</p>
+            </div>
+            <div class="modal-footer">
+                <form class="form-group" asp-controller="Carro" asp-action="Delete" method="delete">
+                    <div class="form-actions no-color">
+                        <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2961,53 +2961,93 @@
   "RootNamespace": "FrotaPim.Web",
   "Documents": [
     {
-      "FilePath": "Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Criar.cshtml",
+      "TargetPath": "Views\\Carro\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Cargo\\Criar.cshtml",
-      "TargetPath": "Views\\Cargo\\Criar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Cargo\\Editar.cshtml",
+      "TargetPath": "Views\\Cargo\\Editar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Cargo\\Detalhes.cshtml",
-      "TargetPath": "Views\\Cargo\\Detalhes.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Cargo\\Criar.cshtml",
+      "TargetPath": "Views\\Cargo\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Cargo\\Index.cshtml",
-      "TargetPath": "Views\\Cargo\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Cargo\\Editar.cshtml",
-      "TargetPath": "Views\\Cargo\\Editar.cshtml",
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Detalhes.cshtml",
+      "TargetPath": "Views\\Carro\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\ContasAPagar\\Criar.cshtml",
+      "TargetPath": "Views\\ContasAPagar\\Criar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Index.cshtml",
+      "TargetPath": "Views\\Carro\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\ContasAPagar\\Editar.cshtml",
+      "TargetPath": "Views\\ContasAPagar\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_CookieConsentPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Editar.cshtml",
+      "TargetPath": "Views\\Carro\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Cargo\\Index.cshtml",
+      "TargetPath": "Views\\Cargo\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\ContasAPagar\\Index.cshtml",
+      "TargetPath": "Views\\ContasAPagar\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\ContasAPagar\\Detalhes.cshtml",
+      "TargetPath": "Views\\ContasAPagar\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Cargo\\Detalhes.cshtml",
+      "TargetPath": "Views\\Cargo\\Detalhes.cshtml",
       "FileKind": "mvc"
     }
   ],

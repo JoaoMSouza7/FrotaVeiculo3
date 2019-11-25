@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.ContasAPagarViewModel>
+
+@{
+    ViewData["Title"] = "Contas a Pagar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a href="/ContasAPagar/Criar" class="btn btn-primary btn-sm">Criar nova conta</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CentroDeCusto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TipoDespesa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vencimento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CentroDeCusto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDespesa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vencimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valor)
+            </td>
+            <td>
+                <a href="/ContasAPagar/Editar/@item.IdConta" class="btn btn-primary btn-sm">Editar</a> |
+                <a href="/ContasAPagar/Detalhes/@item.IdConta" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.TipoDespesa" code="@item.IdConta"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Deletar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja deletar a conta <b class="data-name bold"></b>?</p>
+                <p class="text-warning">Está ação não tem volta!</p>
+            </div>
+            <div class="modal-footer">
+                <form class="form-group" asp-action="Delete" method="delete">
+                    <div class="form-actions no-color">
+                        <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

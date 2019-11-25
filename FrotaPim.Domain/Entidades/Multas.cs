@@ -2,9 +2,8 @@ using System;
 
 namespace FrotaPim.Domain.Entidades
 {
-    public class Multas
+    public class Multas : Entidade
     {
-        public int Id { get; set; }
         public Pessoa Pessoa { get; set; }
         public string Gravidade { get; set; }
         public DateTime DataMulta { get; set; }
@@ -17,6 +16,8 @@ namespace FrotaPim.Domain.Entidades
             SetarPropriedades(pessoa, dataMulta, valorMulta, carro, status);
             ValidarProps(pessoa, dataMulta, valorMulta, carro);
         }
+        public Multas()
+        {}
 
         private void SetarPropriedades(Pessoa pessoa, DateTime dataMulta, decimal valorMulta, Carro carro, bool status)
         {

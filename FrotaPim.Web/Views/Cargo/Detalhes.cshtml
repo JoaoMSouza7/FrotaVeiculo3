@@ -1,11 +1,11 @@
 ﻿@model FrotaPim.Web.Models.ViewsModels.CargoViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes do Cargo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Details</h1>
+<h1>@ViewData["Title"]</h1>
 <div>
     <h4>Cargo</h4>
     <hr />
@@ -25,6 +25,6 @@
     </dl>
 </div>
 <div>
-    <a href="../Editar/@Model.Id" class="btn btn-primary">Edit</a> |
-    <a href="../Index" class="btn btn-primary">Back to List</a>
+    <a href="../Editar/@Model.Id" class="btn btn-primary btn-sm">Editar</a> |
+    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
 </div>

@@ -2,7 +2,7 @@ using System;
 
 namespace FrotaPim.Domain.Entidades
 {
-    public class Manutencao
+    public class Manutencao : Entidade
     {
         public string DescricaoManutencao { get; private set; }
         public decimal Valor { get; set; }
@@ -14,6 +14,8 @@ namespace FrotaPim.Domain.Entidades
             SetarPropriedades(descricaoManutencao, valor, carro, data);
             ValidarProps(descricaoManutencao, valor, carro, data);
         }
+        public Manutencao()
+        {}
 
         private void SetarPropriedades(string descricaoManutencao, decimal valor, Carro carro, DateTime data)
         {

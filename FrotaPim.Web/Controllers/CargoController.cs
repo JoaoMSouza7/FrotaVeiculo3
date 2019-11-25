@@ -89,7 +89,7 @@ namespace FrotaPim.Web.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(cargo);
+            return RedirectToAction("Index");
         }
 
         [HttpDelete]

@@ -10,6 +10,6 @@ namespace FrotaPim.Web.Models.ViewsModels
         public Carro _Carro { get; set; }
         public DateTime DataContratacao { get; set; }
         public DateTime DataValidade { get; set; }
-        public StatusSeguro Status { get; set; }
+        public bool Status { get; set; }
     }
 }

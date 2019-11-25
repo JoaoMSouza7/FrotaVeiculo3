@@ -2,7 +2,7 @@ using System;
 
 namespace FrotaPim.Domain.Entidades
 {
-    public class ContasAPagar
+    public class ContasAPagar : Entidade
     {
         public string CentroDeCusto { get; set; }
         public string TipoDespesa { get; set; }
@@ -10,19 +10,22 @@ namespace FrotaPim.Domain.Entidades
         public DateTime Vencimento { get; set; }
         public decimal Valor { get; set; }
 
-        public ContasAPagar(string centroDeCusto, string tipoDespesa, string descricao, DateTime vencimento, decimal valor)
+        public ContasAPagar(int id, string centroDeCusto, string tipoDespesa, string descricao, DateTime vencimento, decimal valor)
         {
-            SetarPropriedades(centroDeCusto, tipoDespesa, descricao, vencimento, valor);
+            SetarPropriedades(id, centroDeCusto, tipoDespesa, descricao, vencimento, valor);
             ValidarProps(centroDeCusto, tipoDespesa, descricao, vencimento, valor);
         }
+        public ContasAPagar()
+        {}
 
-        private void SetarPropriedades(string centroDeCusto, string tipoDespesa, string descricao, DateTime vencimento, decimal valor)
+        private void SetarPropriedades(int id, string centroDeCusto, string tipoDespesa, string descricao, DateTime vencimento, decimal valor)
         {
             CentroDeCusto = centroDeCusto;
             TipoDespesa = tipoDespesa;
             Descricao = descricao;
             Vencimento = vencimento;
             Valor = valor;
+            this.Id = id;
         }
 
         private static void ValidarProps(string centroDeCusto, string tipoDespesa, string descricao, DateTime vencimento, decimal valor)

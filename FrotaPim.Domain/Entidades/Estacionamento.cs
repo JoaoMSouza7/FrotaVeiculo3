@@ -1,6 +1,6 @@
 namespace FrotaPim.Domain.Entidades
 {
-    public class Estacionamento
+    public class Estacionamento : Entidade
     {
         public Carro Carro { get; private set; }
         public string Local { get; private set; }
@@ -12,6 +12,8 @@ namespace FrotaPim.Domain.Entidades
             SetarPropriedades(carro, local, valor, descricao);
             ValidarProps(carro, local, valor, descricao);
         }
+        public Estacionamento()
+        {}
 
         private void SetarPropriedades(Carro carro, string local, decimal valor, string descricao)
         {

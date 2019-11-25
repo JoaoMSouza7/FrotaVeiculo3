@@ -1,0 +1,52 @@
+﻿@model FrotaPim.Web.Models.ViewsModels.ContasAPagarViewModel
+
+@{
+    ViewData["Title"] = "Criar Nova Despesa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h4>@ViewData["Title"]</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Criar" asp-controller="ContasAPagar" method="post" asp-anti-forgery>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CentroDeCusto" class="control-label">Centro de Custo</label>
+                <input asp-for="CentroDeCusto" class="form-control" name="CentroDeCusto"/>
+                <span asp-validation-for="CentroDeCusto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TipoDespesa" class="control-label">Tipo de despesa</label>
+                <input asp-for="TipoDespesa" class="form-control" name="TipoDespesa" />
+                <span asp-validation-for="TipoDespesa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label">Descrição</label>
+                <input asp-for="Descricao" class="form-control" name="Descricao"/>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Vencimento" class="control-label">Vencimento</label>
+                <input type="date" asp-for="Vencimento" class="form-control" name="Vencimento"/>
+                <span asp-validation-for="Vencimento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label">Valor</label>
+                <input type="number" asp-for="Valor" class="form-control" name="Valor"/>
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,14 +1,14 @@
 ﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.CargoViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Cargos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
 <p>
-    <a href="/Cargo/Criar" class="btn btn-primary">Create New</a>
+    <a href="/Cargo/Criar" class="btn btn-primary btn-sm">Criar novo cargo</a>
 </p>
 <table class="table">
     <thead>
@@ -33,9 +33,9 @@
                     @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    <a href="/Cargo/Editar/@item.Id" class="btn">Edit</a> |
-                    <a href="/Cargo/Detalhes/@item.Id" class="btn btn-primary">Details</a> |
-                    <a href="#deleteModal" class="deleteItem" data-toggle="modal" data-name="@item.Nome" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Delete</a>
+                    <a href="/Cargo/Editar/@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                    <a href="/Cargo/Detalhes/@item.Id" class="btn btn-primary btn-sm">Detalhes</a> |
+                    <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
                 </td>
             </tr>
         }
@@ -54,10 +54,10 @@
                 <p class="text-warning">Está ação não tem volta!</p>
             </div>
             <div class="modal-footer">
-                <form class="form-group" asp-action="Delete" method="post">
+                <form class="form-group" asp-action="Delete" method="delete">
                     <div class="form-actions no-color">
-                        <button id="btnContinueDelete" type="submit" class="btn btn-danger">Apagar</button>
-                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                        <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
                     </div>
                 </form>
             </div>
