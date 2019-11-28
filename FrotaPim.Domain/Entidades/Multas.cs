@@ -4,12 +4,12 @@ namespace FrotaPim.Domain.Entidades
 {
     public class Multas : Entidade
     {
-        public Pessoa Pessoa { get; set; }
-        public string Gravidade { get; set; }
-        public DateTime DataMulta { get; set; }
-        public decimal ValorMulta { get; set; }
-        public Carro _Carro { get; set; }
-        public bool Status { get; set; }
+        public Pessoa Pessoa { get; private set; }
+        public string Gravidade { get; private set; }
+        public DateTime DataMulta { get; private set; }
+        public decimal ValorMulta { get; private set; }
+        public Carro Carro { get; private set; }
+        public bool Status { get; private set; }
 
         public Multas(Pessoa pessoa, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro, bool status)
         {
@@ -25,7 +25,7 @@ namespace FrotaPim.Domain.Entidades
             Gravidade = Gravidade;
             DataMulta = dataMulta;
             ValorMulta = valorMulta;
-            _Carro = carro;
+            Carro = carro;
             Status = status;
         }
 

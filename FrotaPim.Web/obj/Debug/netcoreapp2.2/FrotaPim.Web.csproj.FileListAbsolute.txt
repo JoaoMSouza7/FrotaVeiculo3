@@ -44,3 +44,15 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\ContasAPagar\Criar.g.csh
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\ContasAPagar\Detalhes.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\ContasAPagar\Editar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\ContasAPagar\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Endereco\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Endereco\Detalhes.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Endereco\Editar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Endereco\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Estoque\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Estoque\Detalhes.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Estoque\Editar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Estoque\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Manutencao\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Manutencao\Detalhes.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Manutencao\Editar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Manutencao\Index.g.cshtml.cs

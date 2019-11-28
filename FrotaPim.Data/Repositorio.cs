@@ -7,13 +7,13 @@ namespace FrotaPim.Data
 {
     public class Repositorio<TEntity> : IRepositorio<TEntity> where TEntity : Entidade
     {
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
 
         public Repositorio(ApplicationDbContext context)
         {
             _context = context;
         }
-        public TEntity ConsultarPorID(int ID)
+        public virtual TEntity ConsultarPorID(int ID)
         {
             return _context.Set<TEntity>().SingleOrDefault(e => e.Id == ID);
         }
@@ -27,11 +27,11 @@ namespace FrotaPim.Data
              _context.Update(entity);
              return entity;
         }
-        public void Inserir(TEntity entidade)
+        public virtual void Inserir(TEntity entidade)
         {
             _context.Set<TEntity>().Add(entidade);
         }
-        public IEnumerable<TEntity> ObterTodos()
+        public virtual IEnumerable<TEntity> ObterTodos()
         {
             return _context.Set<TEntity>().AsEnumerable();
         }

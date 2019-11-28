@@ -9,15 +9,15 @@ namespace FrotaPim.Domain.Entidades
         public string Cidade { get; private set; }
         public string Estado { get; private set; }
 
-        public Endereco(string rua, int numero, string bairro, int cep, string cidade, string estado)
+        public Endereco(int id, string rua, int numero, string bairro, int cep, string cidade, string estado)
         {
-            SetarPropriedades(rua, numero, bairro, cep, cidade, estado);
+            SetarPropriedades(id, rua, numero, bairro, cep, cidade, estado);
             ValidarProps(rua, numero, bairro, cep, cidade, estado);
         }
         public Endereco()
         {}
 
-        private void SetarPropriedades(string rua, int numero, string bairro, int cep, string cidade, string estado)
+        private void SetarPropriedades(int id, string rua, int numero, string bairro, int cep, string cidade, string estado)
         {
             Rua = rua;
             Numero = numero;
@@ -25,6 +25,7 @@ namespace FrotaPim.Domain.Entidades
             CEP = cep;
             Cidade = cidade;
             Estado = estado;
+            this.Id = id;
         }
 
         private static void ValidarProps(string rua, int numero, string bairro, int cep, string cidade, string estado)

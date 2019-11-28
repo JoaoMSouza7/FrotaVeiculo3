@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.EstoqueViewModel>
+
+@{
+    ViewData["Title"] = "Estoque";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a href="/Estoque/Criar" class="btn btn-primary btn-sm">Adicionar ao estoque</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePeca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fornecedor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorPeca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePeca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fornecedor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorPeca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                <a href="/Estoque/Editar/@item.IdEstoque" class="btn btn-primary btn-sm">Editar</a> |
+                <a href="/Estoque/Detalhes/@item.IdEstoque" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.NomePeca" code="@item.IdEstoque"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Deletar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja deletar a peça <b class="data-name bold"></b>?</p>
+                <p class="text-warning">Está ação não tem volta!</p>
+            </div>
+            <div class="modal-footer">
+                <form class="form-group" asp-controller="Estoque" asp-action="Delete" method="delete">
+                    <div class="form-actions no-color">
+                        <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

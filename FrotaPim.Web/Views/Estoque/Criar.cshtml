@@ -1,0 +1,55 @@
+﻿@model FrotaPim.Web.Models.ViewsModels.EstoqueViewModel
+
+@{
+    ViewData["Title"] = "Adicionar estoque";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row header">
+    <div class="col-md-12">
+        <h3>@ViewData["Title"]</h3>
+        <a href="/Estoque" class="btn btn-secondary btn-sm">Voltar</a>
+    </div>
+</div>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Criar" asp-controller="Estoque" method="post" asp-anti-forgery>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomePeca" class="control-label">Nome da peça</label>
+                <input asp-for="NomePeca" class="form-control" name="NomePeca"/>
+                <span asp-validation-for="NomePeca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label">Descrição</label>
+                <input asp-for="Descricao" class="form-control" name="Descricao"/>
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fornecedor" class="control-label">Fornecedor</label>
+                <input asp-for="Fornecedor" class="form-control" name="Fornecedor"/>
+                <span asp-validation-for="Fornecedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ValorPeca" class="control-label">Valor da peça</label>
+                <input asp-for="ValorPeca" placeholder="R$" class="form-control" name="ValorPeca"/>
+                <span asp-validation-for="ValorPeca" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantidade" class="control-label">Quantidade</label>
+                <input asp-for="Quantidade" class="form-control" name="Quantidade"/>
+                <span asp-validation-for="Quantidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -6,7 +6,7 @@ namespace FrotaPim.Domain.Entidades
     {
         public string Apolice { get; private set; }
         public string Seguradora { get; private set; }
-        public Carro _Carro { get; private set; }
+        public Carro Carro { get; private set; }
         public DateTime DataContratacao { get; private set; }
         public DateTime DataValidade { get; private set; }
         public bool Status { get; private set; }
@@ -21,7 +21,7 @@ namespace FrotaPim.Domain.Entidades
         {
             Apolice = apolice;
             Seguradora = seguradora;
-            _Carro = carro;
+            Carro = carro;
             DataContratacao = dataContratacao;
             DataValidade = validade;
             Status = status;

@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using FrotaPim.Data;
 using FrotaPim.Domain;
 using FrotaPim.Domain.Servicos;
+using FrotaPim.Domain.Entidades;
 
 namespace FrotaPim.DI
 {
@@ -15,7 +16,9 @@ namespace FrotaPim.DI
                 options.UseSqlServer(connection));
 
             services.AddScoped(typeof(IRepositorio<>), typeof(Repositorio<>));
+            services.AddScoped(typeof(IRepositorio<Manutencao>), typeof(ManutencaoRepositorio));
             services.AddScoped(typeof(CargoServico));
+            services.AddScoped(typeof(ManutencaoServico));
             services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
         }
     }

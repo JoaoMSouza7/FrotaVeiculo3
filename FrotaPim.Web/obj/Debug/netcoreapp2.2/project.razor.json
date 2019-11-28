@@ -2961,6 +2961,26 @@
   "RootNamespace": "FrotaPim.Web",
   "Documents": [
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Estoque\\Criar.cshtml",
+      "TargetPath": "Views\\Estoque\\Criar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Estoque\\Index.cshtml",
+      "TargetPath": "Views\\Estoque\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Detalhes.cshtml",
+      "TargetPath": "Views\\Manutencao\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Endereco\\Index.cshtml",
+      "TargetPath": "Views\\Endereco\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Criar.cshtml",
       "TargetPath": "Views\\Carro\\Criar.cshtml",
       "FileKind": "mvc"
@@ -2968,6 +2988,16 @@
     {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Endereco\\Criar.cshtml",
+      "TargetPath": "Views\\Endereco\\Criar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Editar.cshtml",
+      "TargetPath": "Views\\Manutencao\\Editar.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -2981,13 +3011,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Estoque\\Editar.cshtml",
+      "TargetPath": "Views\\Estoque\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Cargo\\Criar.cshtml",
       "TargetPath": "Views\\Cargo\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Endereco\\Detalhes.cshtml",
+      "TargetPath": "Views\\Endereco\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Criar.cshtml",
+      "TargetPath": "Views\\Manutencao\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3016,8 +3061,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Index.cshtml",
+      "TargetPath": "Views\\Manutencao\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_CookieConsentPartial.cshtml",
       "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Estoque\\Detalhes.cshtml",
+      "TargetPath": "Views\\Estoque\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Endereco\\Editar.cshtml",
+      "TargetPath": "Views\\Endereco\\Editar.cshtml",
       "FileKind": "mvc"
     },
     {
