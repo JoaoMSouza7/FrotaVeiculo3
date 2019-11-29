@@ -4,10 +4,24 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FrotaPim.Data.Migrations
 {
-    public partial class addOtherEntities : Migration
+    public partial class AddPropriedades : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "cargo",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    NomeCargo = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_cargo", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "contasAPagar",
                 columns: table => new
@@ -49,7 +63,6 @@ namespace FrotaPim.Data.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DataEntrada = table.Column<DateTime>(nullable: false),
                     NomePeca = table.Column<string>(nullable: true),
                     Descricao = table.Column<string>(nullable: true),
                     Fornecedor = table.Column<string>(nullable: true),
@@ -118,28 +131,6 @@ namespace FrotaPim.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "estacionamento",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    CarroId = table.Column<int>(nullable: true),
-                    Local = table.Column<string>(nullable: true),
-                    Valor = table.Column<decimal>(nullable: false),
-                    Descricao = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_estacionamento", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_estacionamento_carro_CarroId",
-                        column: x => x.CarroId,
-                        principalTable: "carro",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "manutencao",
                 columns: table => new
                 {
@@ -147,15 +138,15 @@ namespace FrotaPim.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     DescricaoManutencao = table.Column<string>(nullable: true),
                     Valor = table.Column<decimal>(nullable: false),
-                    _CarroId = table.Column<int>(nullable: true),
+                    CarroId = table.Column<int>(nullable: true),
                     Data = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_manutencao", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_manutencao_carro__CarroId",
-                        column: x => x._CarroId,
+                        name: "FK_manutencao_carro_CarroId",
+                        column: x => x.CarroId,
                         principalTable: "carro",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -169,24 +160,24 @@ namespace FrotaPim.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PessoaId = table.Column<int>(nullable: true),
                     Gravidade = table.Column<string>(nullable: true),
+                    TipoMulta = table.Column<string>(nullable: true),
                     DataMulta = table.Column<DateTime>(nullable: false),
                     ValorMulta = table.Column<decimal>(nullable: false),
-                    _CarroId = table.Column<int>(nullable: true),
-                    Status = table.Column<bool>(nullable: false)
+                    CarroId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_multas", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_multas_pessoa_PessoaId",
-                        column: x => x.PessoaId,
-                        principalTable: "pessoa",
+                        name: "FK_multas_carro_CarroId",
+                        column: x => x.CarroId,
+                        principalTable: "carro",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_multas_carro__CarroId",
-                        column: x => x._CarroId,
-                        principalTable: "carro",
+                        name: "FK_multas_pessoa_PessoaId",
+                        column: x => x.PessoaId,
+                        principalTable: "pessoa",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -199,17 +190,16 @@ namespace FrotaPim.Data.Migrations
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Apolice = table.Column<string>(nullable: true),
                     Seguradora = table.Column<string>(nullable: true),
-                    _CarroId = table.Column<int>(nullable: true),
+                    CarroId = table.Column<int>(nullable: true),
                     DataContratacao = table.Column<DateTime>(nullable: false),
-                    DataValidade = table.Column<DateTime>(nullable: false),
-                    Status = table.Column<bool>(nullable: false)
+                    DataValidade = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_seguro", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_seguro_carro__CarroId",
-                        column: x => x._CarroId,
+                        name: "FK_seguro_carro_CarroId",
+                        column: x => x.CarroId,
                         principalTable: "carro",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -221,24 +211,19 @@ namespace FrotaPim.Data.Migrations
                 column: "MotoristaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_estacionamento_CarroId",
-                table: "estacionamento",
+                name: "IX_manutencao_CarroId",
+                table: "manutencao",
                 column: "CarroId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_manutencao__CarroId",
-                table: "manutencao",
-                column: "_CarroId");
+                name: "IX_multas_CarroId",
+                table: "multas",
+                column: "CarroId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_multas_PessoaId",
                 table: "multas",
                 column: "PessoaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_multas__CarroId",
-                table: "multas",
-                column: "_CarroId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_pessoa_CargoId",
@@ -251,18 +236,15 @@ namespace FrotaPim.Data.Migrations
                 column: "EnderecoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_seguro__CarroId",
+                name: "IX_seguro_CarroId",
                 table: "seguro",
-                column: "_CarroId");
+                column: "CarroId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "contasAPagar");
-
-            migrationBuilder.DropTable(
-                name: "estacionamento");
 
             migrationBuilder.DropTable(
                 name: "estoque");
@@ -281,6 +263,9 @@ namespace FrotaPim.Data.Migrations
 
             migrationBuilder.DropTable(
                 name: "pessoa");
+
+            migrationBuilder.DropTable(
+                name: "cargo");
 
             migrationBuilder.DropTable(
                 name: "endereco");

@@ -20,7 +20,7 @@ namespace FrotaPim.Data
 
         public void Deletar(TEntity entity)
         {
-            _context.Remove(entity);
+            _context.Set<TEntity>().Remove(entity);
         }
         public TEntity Editar(TEntity entity)
         {

@@ -204,7 +204,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": "\n            <summary>\n            The name of the action method.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Page\" /> is non-<c>null</c>.\n            </remarks>\n        ",
+            "Documentation": null,
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Action"
@@ -2996,6 +2996,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Multa\\Editar.cshtml",
+      "TargetPath": "Views\\Multa\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Editar.cshtml",
       "TargetPath": "Views\\Manutencao\\Editar.cshtml",
       "FileKind": "mvc"
@@ -3006,6 +3011,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Multa\\Criar.cshtml",
+      "TargetPath": "Views\\Multa\\Criar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Cargo\\Editar.cshtml",
       "TargetPath": "Views\\Cargo\\Editar.cshtml",
       "FileKind": "mvc"
@@ -3013,6 +3023,11 @@
     {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Estoque\\Editar.cshtml",
       "TargetPath": "Views\\Estoque\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Pessoa\\Index.cshtml",
+      "TargetPath": "Views\\Pessoa\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3028,6 +3043,16 @@
     {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Pessoa\\Criar.cshtml",
+      "TargetPath": "Views\\Pessoa\\Criar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Pessoa\\Detalhes.cshtml",
+      "TargetPath": "Views\\Pessoa\\Detalhes.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3081,13 +3106,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Pessoa\\Editar.cshtml",
+      "TargetPath": "Views\\Pessoa\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Multa\\Detalhes.cshtml",
+      "TargetPath": "Views\\Multa\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Editar.cshtml",
       "TargetPath": "Views\\Carro\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Multa\\Index.cshtml",
+      "TargetPath": "Views\\Multa\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

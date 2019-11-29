@@ -1,0 +1,49 @@
+﻿@model FrotaPim.Web.Models.ViewsModels.MultaViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Multas</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomePessoa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomePessoa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Placa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Gravidade)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Gravidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DataMulta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataMulta)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.ValorMulta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.ValorMulta)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="../Editar/@Model.Id" class="btn btn-primary btn-sm">Editar</a> |
+    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
+</div>

@@ -54,7 +54,8 @@ namespace FrotaPim.Web.Controllers
             {
                 return NotFound();
             }
-            var manutencaoModel = new ManutencaoViewModel { Id = manutencao.Id, DescricaoManutencao = manutencao.DescricaoManutencao, IdCarro = manutencao.Carro.Id, Data = manutencao.Data, Valor = manutencao.Valor };
+            var carro = _contextCar.ConsultarPorID(manutencao.Carro.Id);
+            var manutencaoModel = new ManutencaoViewModel { Id = manutencao.Id, DescricaoManutencao = manutencao.DescricaoManutencao, Data = manutencao.Data, Valor = manutencao.Valor, Placa = carro.Placa };
             return View(manutencaoModel);
         }
 
@@ -89,7 +90,17 @@ namespace FrotaPim.Web.Controllers
             {
                 return NotFound();
             }
-            var manutModel = new ManutencaoViewModel { Id = manut.Id, DescricaoManutencao = manut.DescricaoManutencao, IdCarro = manut.Carro.Id, Data = manut.Data, Valor = manut.Valor };
+            var carro = _contextCar.ConsultarPorID(manut.Carro.Id);
+
+            var viewModel = new ManutencaoViewModel();
+            var carros = _contextCar.ObterTodos().ToList();
+            carros.Insert(0, new Carro { Placa = carro.Placa });
+            viewModel.Carros = carros.Any()
+                ? carros.Select(c => new CarroViewModel { IDCarro = c.Id, Placa = c.Placa, Marca = c.Marca, Tipo = c.Tipo, Modelo = c.Modelo, Combustivel = c.Combustivel, Cor = c.Cor, Ano = c.Ano })
+                : new List<CarroViewModel>();
+
+            var manutModel = new ManutencaoViewModel { Id = manut.Id, DescricaoManutencao = manut.DescricaoManutencao, Placa = carro.Placa, Data = manut.Data, Valor = manut.Valor, Carros = viewModel.Carros };
+            
             return View(manutModel);
         }
 

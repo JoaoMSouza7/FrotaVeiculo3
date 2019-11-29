@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrotaPim.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191126193102_AlteracaoDados")]
-    partial class AlteracaoDados
+    [Migration("20191129185553_AddPropriedades")]
+    partial class AddPropriedades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -165,7 +165,7 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<int?>("PessoaId");
 
-                    b.Property<bool>("Status");
+                    b.Property<string>("TipoMulta");
 
                     b.Property<decimal>("ValorMulta");
 
@@ -220,8 +220,6 @@ namespace FrotaPim.Data.Migrations
                     b.Property<DateTime>("DataValidade");
 
                     b.Property<string>("Seguradora");
-
-                    b.Property<bool>("Status");
 
                     b.HasKey("Id");
 

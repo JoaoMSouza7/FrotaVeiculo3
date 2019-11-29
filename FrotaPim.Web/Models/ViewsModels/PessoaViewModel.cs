@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using FrotaPim.Domain.Entidades;
 
 namespace FrotaPim.Web.Models.ViewsModels
@@ -8,9 +9,12 @@ namespace FrotaPim.Web.Models.ViewsModels
         public int Id { get; set; }
         public string Nome { get; set; }
         public int CPF { get; set; }
-        public Cargo _Cargo { get; set; }
-        public Endereco _Endereco { get; set; }
+        public int CargoId { get; set; }
+        public IEnumerable<CargoViewModel> Cargos { get; set; }
+        public string NomeCargo { get; set; }
+        public int EnderecoId { get; set; }
         public DateTime Admissao { get; set; }
-        public string Telefone { get; set; }  
+        public string Telefone { get; set; } 
+        public EnderecoViewModel Endereco { get; set; } 
     }
 }

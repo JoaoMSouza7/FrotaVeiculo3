@@ -22,7 +22,7 @@ namespace FrotaPim.Web.Controllers
         public IActionResult Index()
         {
             var cargos = _context.ObterTodos();
-            var viewModels = cargos.Select(c => new CargoViewModel { Id = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao });
+            var viewModels = cargos.Select(c => new CargoViewModel { CargoId = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao });
             return View(viewModels);
         }
 
@@ -33,7 +33,7 @@ namespace FrotaPim.Web.Controllers
             {
                 return NotFound();
             }
-            var cargoModel = new CargoViewModel { Id = cargo.Id, Nome = cargo.NomeCargo, Descricao = cargo.Descricao };
+            var cargoModel = new CargoViewModel { CargoId = cargo.Id, Nome = cargo.NomeCargo, Descricao = cargo.Descricao };
             return View(cargoModel);
         }
 
@@ -65,7 +65,7 @@ namespace FrotaPim.Web.Controllers
         public IActionResult Editar(int id, CargoViewModel cargo)
         {
             var cargoEdit = new Cargo(id, cargo.Nome, cargo.Descricao);
-            if (id != cargo.Id)
+            if (id != cargo.CargoId)
             {
                 return NotFound();
             }

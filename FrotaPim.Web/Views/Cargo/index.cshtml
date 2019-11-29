@@ -33,9 +33,9 @@
                     @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    <a href="/Cargo/Editar/@item.Id" class="btn btn-primary btn-sm">Editar</a> |
-                    <a href="/Cargo/Detalhes/@item.Id" class="btn btn-primary btn-sm">Detalhes</a> |
-                    <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+                    <a href="/Cargo/Editar/@item.CargoId" class="btn btn-primary btn-sm">Editar</a> |
+                    <a href="/Cargo/Detalhes/@item.CargoId" class="btn btn-primary btn-sm">Detalhes</a> |
+                    <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.CargoId"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
                 </td>
             </tr>
         }
@@ -54,7 +54,7 @@
                 <p class="text-warning">Está ação não tem volta!</p>
             </div>
             <div class="modal-footer">
-                <form class="form-group" asp-action="Delete" method="delete">
+                <form class="form-group" asp-controller="Cargo" asp-action="Delete" method="delete">
                     <div class="form-actions no-color">
                         <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
                         <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>

@@ -1,0 +1,82 @@
+﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.MultaViewModel>
+
+@{
+    ViewData["Title"] = "Multas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<p>
+    <a href="/Multas/Criar" class="btn btn-primary btn-sm">Adicionar Multa</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomePessoa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gravidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DataMulta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorMulta)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomePessoa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gravidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataMulta)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorMulta)
+            </td>
+            <td>
+                <a href="/Multa/Editar/@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                <a href="/Multa/Detalhes/@item.Id" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.TipoMulta" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<div id="deleteModal" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Deletar</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p>Tem certeza que deseja deletar a Multa <b class="data-name bold"></b>?</p>
+                <p class="text-warning">Está ação não tem volta!</p>
+            </div>
+            <div class="modal-footer">
+                <form class="form-group" asp-action="Delete" method="delete">
+                    <div class="form-actions no-color">
+                        <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
+                        <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

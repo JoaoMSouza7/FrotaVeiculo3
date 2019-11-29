@@ -163,7 +163,7 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<int?>("PessoaId");
 
-                    b.Property<bool>("Status");
+                    b.Property<string>("TipoMulta");
 
                     b.Property<decimal>("ValorMulta");
 
@@ -218,8 +218,6 @@ namespace FrotaPim.Data.Migrations
                     b.Property<DateTime>("DataValidade");
 
                     b.Property<string>("Seguradora");
-
-                    b.Property<bool>("Status");
 
                     b.HasKey("Id");
 

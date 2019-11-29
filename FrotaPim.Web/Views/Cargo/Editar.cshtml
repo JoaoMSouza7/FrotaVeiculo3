@@ -11,7 +11,7 @@
     <div class="col-md-4">
         <form class="form-group" asp-action="Editar" asp-controller="Cargo" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" class="form-control" asp-for="Id" value="@Model.Id" />
+            <input type="hidden" class="form-control" asp-for="Id" value="@Model.CargoId" />
             <div class="form-group">
                 <label asp-for="Nome" class="control-label">Nome</label>
                 <input name="Nome" class="form-control" asp-for="Nome" value="@Model.Nome" />
