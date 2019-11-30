@@ -64,3 +64,7 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Pessoa\Criar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Pessoa\Detalhes.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Pessoa\Editar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Pessoa\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Detalhes.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Editar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Index.g.cshtml.cs

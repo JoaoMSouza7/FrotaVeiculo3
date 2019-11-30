@@ -17,8 +17,10 @@ namespace FrotaPim.DI
 
             services.AddScoped(typeof(IRepositorio<>), typeof(Repositorio<>));
             services.AddScoped(typeof(IRepositorio<Manutencao>), typeof(ManutencaoRepositorio));
+            services.AddScoped(typeof(IRepositorio<Seguro>), typeof(SeguroRepositorio));
             services.AddScoped(typeof(IRepositorio<Pessoa>), typeof(PessoaRepositorio));
             services.AddScoped(typeof(CargoServico));
+            services.AddScoped(typeof(SeguroServico));
             services.AddScoped(typeof(MultaServico));
             services.AddScoped(typeof(PessoaServico));
             services.AddScoped(typeof(ManutencaoServico));

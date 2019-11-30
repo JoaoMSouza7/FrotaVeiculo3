@@ -204,7 +204,7 @@
             "IsEnum": false,
             "IndexerNamePrefix": null,
             "IndexerTypeName": null,
-            "Documentation": null,
+            "Documentation": "\n            <summary>\n            The name of the action method.\n            </summary>\n            <remarks>\n            Must be <c>null</c> if <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Route\" /> or <see cref=\"P:Microsoft.AspNetCore.Mvc.TagHelpers.AnchorTagHelper.Page\" /> is non-<c>null</c>.\n            </remarks>\n        ",
             "Diagnostics": [],
             "Metadata": {
               "Common.PropertyName": "Action"
@@ -3001,6 +3001,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Seguro\\Editar.cshtml",
+      "TargetPath": "Views\\Seguro\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Editar.cshtml",
       "TargetPath": "Views\\Manutencao\\Editar.cshtml",
       "FileKind": "mvc"
@@ -3071,6 +3076,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Seguro\\Detalhes.cshtml",
+      "TargetPath": "Views\\Seguro\\Detalhes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\ContasAPagar\\Criar.cshtml",
       "TargetPath": "Views\\ContasAPagar\\Criar.cshtml",
       "FileKind": "mvc"
@@ -3088,6 +3098,11 @@
     {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Manutencao\\Index.cshtml",
       "TargetPath": "Views\\Manutencao\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Seguro\\Criar.cshtml",
+      "TargetPath": "Views\\Seguro\\Criar.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -3123,6 +3138,11 @@
     {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Carro\\Editar.cshtml",
       "TargetPath": "Views\\Carro\\Editar.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Seguro\\Index.cshtml",
+      "TargetPath": "Views\\Seguro\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
