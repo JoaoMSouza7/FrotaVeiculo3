@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿ 
+using Microsoft.AspNetCore.Mvc;
 using FrotaPim.Domain.Servicos;
 using FrotaPim.Domain;
 using FrotaPim.Domain.Entidades;
@@ -6,6 +7,8 @@ using FrotaPim.Web.Models.ViewsModels;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using Microsoft.IdentityModel.Protocols;
 
 namespace FrotaPim.Web.Controllers
 {
@@ -29,7 +32,7 @@ namespace FrotaPim.Web.Controllers
             var pessoas = _context.ObterTodos().ToList();
             if (pessoas.Any())
             {
-                var viewsModels = pessoas.Select(p => new PessoaViewModel { Id = p.Id, Nome = p.Nome, CPF = p.CPF, Admissao = p.Admissao, Telefone = p.Telefone, CargoId = p.Cargo.Id, EnderecoId = p.Endereco.Id }).ToList();
+                var viewsModels = pessoas.Select(p => new PessoaViewModel { IDPessoa = p.Id, Nome = p.Nome, CPF = p.CPF, Admissao = p.Admissao, Telefone = p.Telefone, CargoId = p.Cargo.Id, EnderecoId = p.Endereco.Id }).ToList();
 
                 foreach (PessoaViewModel item in viewsModels)
                 {
@@ -44,7 +47,7 @@ namespace FrotaPim.Web.Controllers
             }
             else
             {
-                var viewsModel = pessoas.Select(p => new PessoaViewModel { Id = p.Id, Nome = p.Nome, CargoId = p.Cargo.Id, CPF = p.CPF, Admissao = p.Admissao, Telefone = p.Telefone, EnderecoId = p.Endereco.Id });
+                var viewsModel = pessoas.Select(p => new PessoaViewModel { IDPessoa = p.Id, Nome = p.Nome, CargoId = p.Cargo.Id, CPF = p.CPF, Admissao = p.Admissao, Telefone = p.Telefone, EnderecoId = p.Endereco.Id });
                 return View(viewsModel);
             }
         }
@@ -62,22 +65,20 @@ namespace FrotaPim.Web.Controllers
             var enderecoModel = new EnderecoViewModel { Rua = model.Rua, Numero = model.Numero, Bairro = model.Bairro, CEP = model.CEP, Cidade = model.Cidade, Estado = model.Estado };
 
 
-            var pessoaModel = new PessoaViewModel { Id = pessoa.Id, Nome = pessoa.Nome, NomeCargo = cargo.NomeCargo, CargoId = pessoa.Cargo.Id, CPF = pessoa.CPF, Admissao = pessoa.Admissao, Telefone = pessoa.Telefone, Endereco = enderecoModel };
+            var pessoaModel = new PessoaViewModel { IDPessoa = pessoa.Id, Nome = pessoa.Nome, NomeCargo = cargo.NomeCargo, CargoId = pessoa.Cargo.Id, CPF = pessoa.CPF, Admissao = pessoa.Admissao, Telefone = pessoa.Telefone, Endereco = enderecoModel };
             return View(pessoaModel);
         }
 
         public IActionResult Criar()
         {
             var viewModel = new PessoaViewModel();
-
-
+            viewModel.Endereco = new EnderecoViewModel();
 
             var cargos = _contextCargo.ObterTodos().ToList();
             cargos.Insert(0, new Cargo { NomeCargo = "Selecione..." });
             viewModel.Cargos = cargos.Any()
-                ? cargos.Select(c => new CargoViewModel { CargoId = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao })
+                ? cargos.Select(c => new CargoViewModel { CargoId = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao }).ToList()
                 : new List<CargoViewModel>();
-
 
 
             return View(viewModel);
@@ -86,7 +87,12 @@ namespace FrotaPim.Web.Controllers
         [HttpPost]
         public IActionResult Criar(PessoaViewModel viewModel)
         {
-            _service.Criar(viewModel.Id, viewModel.Nome, viewModel.CPF, viewModel.CargoId, viewModel.EnderecoId, viewModel.Admissao, viewModel.Telefone);
+            var endereco = viewModel.Endereco;
+            Endereco enderecoInsert = new Endereco(endereco.IdEndereco, endereco.Rua, endereco.Numero, endereco.Bairro, endereco.CEP, endereco.Cidade, endereco.Estado);
+            endereco.IdEndereco = _contextEndereco.Inserir(enderecoInsert);
+
+            _service.Criar(viewModel.IDPessoa, viewModel.Nome, viewModel.CPF, viewModel.CargoId, endereco.IdEndereco, viewModel.Admissao, viewModel.Telefone);
+            
             return RedirectToAction("Index");
         }
 
@@ -103,15 +109,14 @@ namespace FrotaPim.Web.Controllers
             var cargos = _contextCargo.ObterTodos().ToList();
             cargos.Insert(0, new Cargo { NomeCargo = cargo.NomeCargo });
             viewModel.Cargos = cargos.Any()
-                ? cargos.Select(c => new CargoViewModel { CargoId = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao })
+                ? cargos.Select(c => new CargoViewModel { CargoId = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao }).ToList()
                 : new List<CargoViewModel>();
 
 
             var model = _contextEndereco.ConsultarPorID(pessoa.Endereco.Id);
-            var enderecoModel = new EnderecoViewModel { Rua = model.Rua, Numero = model.Numero, Bairro = model.Bairro, CEP = model.CEP, Cidade = model.Cidade, Estado = model.Estado };
 
-
-            var pessoaModel = new PessoaViewModel { Id = pessoa.Id, Nome = pessoa.Nome, NomeCargo = pessoa.Cargo.NomeCargo, Admissao = pessoa.Admissao, CPF = pessoa.CPF, Telefone = pessoa.Telefone, Cargos = viewModel.Cargos, Endereco = enderecoModel };
+            var pessoaModel = new PessoaViewModel { IDPessoa = pessoa.Id, Nome = pessoa.Nome, NomeCargo = cargo.NomeCargo, Admissao = pessoa.Admissao, CPF = pessoa.CPF, Telefone = pessoa.Telefone, Cargos = viewModel.Cargos, CargoId = cargo.Id, EnderecoId = model.Id };
+            pessoaModel.Endereco = new EnderecoViewModel {IdEndereco = model.Id, Rua = model.Rua, Numero = model.Numero, Bairro = model.Bairro, CEP = model.CEP, Cidade = model.Cidade, Estado = model.Estado };
 
             return View(pessoaModel);
         }
@@ -119,7 +124,10 @@ namespace FrotaPim.Web.Controllers
         [HttpPost]
         public IActionResult Editar(int id, PessoaViewModel pessoa)
         {
-            _service.Editar(pessoa.Id, pessoa.Nome, pessoa.CPF, pessoa.CargoId, pessoa.EnderecoId, pessoa.Admissao, pessoa.Telefone);
+            var pessoaEditar = new PessoaViewModel {IDPessoa = id, Nome = pessoa.Nome, CPF = pessoa.CPF, CargoId = pessoa.CargoId, NomeCargo = pessoa.NomeCargo, Admissao = pessoa.Admissao, Telefone = pessoa.Telefone};           
+            pessoaEditar.Endereco = new EnderecoViewModel{Rua = pessoa.Endereco.Rua, Numero = pessoa.Endereco.Numero, Bairro = pessoa.Endereco.Bairro, CEP = pessoa.Endereco.CEP, Cidade = pessoa.Endereco.Cidade, Estado = pessoa.Endereco.Estado};
+
+            _service.Editar(id, pessoaEditar.Nome, pessoaEditar.CPF, pessoaEditar.CargoId, pessoaEditar.EnderecoId, pessoaEditar.Admissao, pessoaEditar.Telefone, pessoaEditar.Endereco.Rua, pessoaEditar.Endereco.Numero, pessoaEditar.Endereco.Bairro, pessoaEditar.Endereco.CEP, pessoaEditar.Endereco.Cidade, pessoaEditar.Endereco.Estado);
             return RedirectToAction(nameof(Index));
         }
 
@@ -127,10 +135,9 @@ namespace FrotaPim.Web.Controllers
         public IActionResult Delete(int id)
         {
             var pessoaDlt = _context.ConsultarPorID(id);
-            pessoaDlt.Cargo = null;
-            pessoaDlt.Endereco = null;
             _context.Deletar(pessoaDlt);
             return RedirectToAction(nameof(Index));
         }
     }
 }
+

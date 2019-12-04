@@ -2991,11 +2991,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Endereco\\Criar.cshtml",
-      "TargetPath": "Views\\Endereco\\Criar.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\pim\\FrotaPim.Web\\Views\\Multa\\Editar.cshtml",
       "TargetPath": "Views\\Multa\\Editar.cshtml",
       "FileKind": "mvc"

@@ -17,7 +17,7 @@ namespace FrotaPim.Data
         public DbSet<Endereco> endereco { get; set; }
         public DbSet<Estoque> estoque { get; set; }
         public DbSet<Manutencao> manutencao { get; set; }
-        public DbSet<Multas> multas { get; set; }
+        public DbSet<Multa> multas { get; set; }
         public DbSet<Pessoa> pessoa { get; set; }
         public DbSet<Seguro> seguro { get; set; }
 

@@ -2,31 +2,31 @@ using System;
 
 namespace FrotaPim.Domain.Entidades
 {
-    public class Multas : Entidade
+    public class Multa : Entidade
     {
         public Pessoa Pessoa { get; private set; }
-        public string Gravidade { get; private set; }
         public string TipoMulta { get; set; }
+        public string Gravidade { get; private set; }
         public DateTime DataMulta { get; private set; }
         public decimal ValorMulta { get; private set; }
         public Carro Carro { get; private set; }
 
-        public Multas(int id, Pessoa pessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro)
+        public Multa(int id, Pessoa pessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta,  Carro carro)
         {
-            SetarPropriedades(id, pessoa, tipoMulta, dataMulta, valorMulta, carro);
+            SetarPropriedades(id, pessoa, tipoMulta, gravidade, dataMulta, valorMulta, carro);
             ValidarProps(pessoa, tipoMulta, dataMulta, valorMulta, carro);
         }
-        public Multas()
+        public Multa()
         {}
 
-        private void SetarPropriedades(int id, Pessoa pessoa, string tipoMulta, DateTime dataMulta, decimal valorMulta, Carro carro)
+        private void SetarPropriedades(int id, Pessoa pessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro)
         {
-            Pessoa = pessoa;
-            Gravidade = Gravidade;
+            Pessoa = pessoa;          
             DataMulta = dataMulta;
             ValorMulta = valorMulta;
             Carro = carro;
             TipoMulta = tipoMulta;
+            Gravidade = gravidade;
             this.Id = id;
         }
 

@@ -1,21 +1,14 @@
 ﻿@model FrotaPim.Web.Models.ViewsModels.PessoaViewModel
 
 @{
-    ViewData["Title"] = "Detalhes";
+    ViewData["Title"] = "Informações do(a) colaborador(a) ";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Title"]@Model.Nome</h2>
 
 <div>
-    <h4>Pessoa</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.CPF)
         </dt>
@@ -23,60 +16,66 @@
             @Html.DisplayFor(model => model.CPF)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Admissao)
+            Data de Admissão
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Admissao)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefone)
+            Telefone
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Telefone)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NomeCargo)
+            Cargo
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.NomeCargo)
         </dd>
+        <dd class = "col-sm-2">
+            ------------------
+        </dd>
+        <dd class = "col-sm-10">
+            ---------------------------------------
+        </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco)
+            Endereço Completo
         </dt>
         <dd class = "col-sm-10">
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco.Rua)
+            Rua
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Endereco.Rua)
         </dd>
-                <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco.Numero)
+        <dt class = "col-sm-2">
+            Número
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Endereco.Numero)
         </dd>
-                <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco.CEP)
+        <dt class = "col-sm-2">
+            CEP
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Endereco.CEP)
         </dd>
-                <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco.Bairro)
+        <dt class = "col-sm-2">
+            Bairro
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Endereco.Bairro)
         </dd>
-                <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco.Cidade)
+        <dt class = "col-sm-2">
+            Cidade
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Endereco.Cidade)
         </dd>
-                <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco.Estado)
+        <dt class = "col-sm-2">
+            UF
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Endereco.Estado)
@@ -84,6 +83,6 @@
     </dl>
 </div>
 <div>
-    <a href="../Editar/@Model.Id" class="btn btn-primary btn-sm">Editar</a> |
+    <a href="../Editar/@Model.IDPessoa" class="btn btn-primary btn-sm">Editar</a> |
     <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
 </div>

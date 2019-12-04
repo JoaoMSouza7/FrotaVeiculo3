@@ -6,7 +6,7 @@ namespace FrotaPim.Domain
     {
         TEntity ConsultarPorID(int ID);
         IEnumerable<TEntity> ObterTodos();
-        void Inserir(TEntity entity);
+        int Inserir(TEntity entity);
         TEntity Editar(TEntity entity);
         void Deletar(TEntity entity);
     }

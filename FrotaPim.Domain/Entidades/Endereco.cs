@@ -2,12 +2,12 @@ namespace FrotaPim.Domain.Entidades
 {
     public class Endereco : Entidade
     {
-        public string Rua { get; private set; }
-        public int Numero { get; private set; }
-        public string Bairro { get; private set; }
-        public int CEP { get; private set; }
-        public string Cidade { get; private set; }
-        public string Estado { get; private set; }
+        public string Rua { get; set; }
+        public int Numero { get; set; }
+        public string Bairro { get; set; }
+        public int CEP { get; set; }
+        public string Cidade { get; set; }
+        public string Estado { get; set; }
 
         public Endereco(int id, string rua, int numero, string bairro, int cep, string cidade, string estado)
         {

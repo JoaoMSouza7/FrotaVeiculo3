@@ -11,11 +11,13 @@ namespace FrotaPim.Web.Controllers
     public class EnderecoController : Controller
     {
         public readonly IRepositorio<Endereco> _context;
+        public readonly IRepositorio<Pessoa> _contextPessoa;
 
 
-        public EnderecoController(IRepositorio<Endereco> enderecoRepositorio)
+        public EnderecoController(IRepositorio<Endereco> enderecoRepositorio, IRepositorio<Pessoa> contextPessoa)
         {
             _context = enderecoRepositorio;
+            _contextPessoa = contextPessoa;
         }
         public IActionResult Index()
         {
@@ -93,7 +95,9 @@ namespace FrotaPim.Web.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
+            
             var enderecoDlt = _context.ConsultarPorID(id);
+            
             _context.Deletar(enderecoDlt);
             return RedirectToAction(nameof(Index));
         }

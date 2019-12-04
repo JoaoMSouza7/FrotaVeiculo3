@@ -17,7 +17,11 @@ namespace FrotaPim.Domain.Entidades
             ValidarProps(nome, cpf, cargo, endereco, admissao, telefone);
         }
         public Pessoa()
-        {}
+        {
+            this.Cargo = new Cargo();
+            this.Endereco = new Endereco();
+
+        }
 
         private void SetarPropriedades(int id, string nome, int cpf, Cargo cargo, Endereco endereco, DateTime admissao, string telefone)
         {

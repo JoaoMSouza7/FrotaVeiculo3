@@ -19,6 +19,7 @@
   <ItemGroup>
     <ProjectReference Include="..\FrotaPim.DI\FrotaPim.DI.csproj" />
     <ProjectReference Include="..\FrotaPim.Domain\FrotaPim.csproj" />
+    <ProjectReference Include="..\FrotaPim.Data\FrotaPim.csproj" />
   </ItemGroup>
 
 </Project>

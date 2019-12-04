@@ -1,14 +1,13 @@
 ﻿@model FrotaPim.Web.Models.ViewsModels.MultaViewModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes da multa";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <h2>@ViewData["Title"]</h2>
 
 <div>
-    <h4>Multas</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -28,6 +27,12 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Gravidade)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TipoMulta)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoMulta)
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.DataMulta)

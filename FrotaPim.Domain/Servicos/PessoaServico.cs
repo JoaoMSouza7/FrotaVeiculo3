@@ -30,12 +30,13 @@ public class PessoaServico
         }
     }
 
-    public Pessoa Editar(int id, string nome, int cpf, int IdCargo, int IdEndereco, DateTime admissao, string telefone)
+    public Pessoa Editar(int id, string nome, int cpf, int IdCargo, int enderecoId, DateTime admissao, string telefone, string rua, int numero, string bairro, int cep, string cidade, string estado)
     {
-        var carg = _cargoRepository.ConsultarPorID(IdCargo);
-        var enderec = _enderecoRepository.ConsultarPorID(IdEndereco);
+        var cargo = _cargoRepository.ConsultarPorID(IdCargo);
+        Endereco endereco = new Endereco(enderecoId, rua, numero, bairro, cep, cidade, estado);
 
-        var pessoaEditar = new Pessoa(id, nome, cpf, carg, enderec, admissao, telefone);
+        Pessoa pessoaEditar = new Pessoa(id, nome, cpf, cargo, endereco, admissao, telefone);
+
         _pessoaRepository.Editar(pessoaEditar);
         return pessoaEditar;
     }

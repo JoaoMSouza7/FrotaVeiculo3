@@ -7,18 +7,23 @@
 <div class="row header">
     <div class="col-md-12">
         <h3>@ViewData["Title"]</h3>
-        <a href="/Multas" class="btn btn-secondary btn-sm">Voltar</a>
+        <a href="/Multa" class="btn btn-secondary btn-sm">Voltar</a>
     </div>
 </div>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Criar" asp-controller="Multa" method="post" asp-anti-forgery>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Gravidade" class="control-label">Gravidade</label>
                 <input asp-for="Gravidade" class="form-control" name="Gravidade"/>
                 <span asp-validation-for="Gravidade" class="text-danger"></span>
+            </div>
+           <div class="form-group">
+                <label asp-for="TipoMulta" class="control-label">Tipo de Multa</label>
+                <input type="TipoMulta" asp-for="TipoMulta" class="form-control" name="TipoMulta"/>
+                <span asp-validation-for="ValorMulta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataMulta" class="control-label">Data da Multa</label>
@@ -33,17 +38,17 @@
             <div class="form-group">
                 <label class="control-label">Pessoa</label>
                 <div>
-                    @Html.DropDownList("Id", new SelectList(@Model.Pessoas, "Id", "Nome", "0"), new { @class = "form-control" })
+                    @Html.DropDownList("IDPessoa", new SelectList(@Model.Pessoas, "IDPessoa", "Nome", "0"), new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
                 <label class="control-label">Veículo</label>
                 <div>
-                    @Html.DropDownList("Id", new SelectList(@Model.Carros, "IDCarro", "Placa", "0"), new { @class = "form-control" })
+                    @Html.DropDownList("IDCarro", new SelectList(@Model.Carros, "IDCarro", "Placa", "0"), new { @class = "form-control" })
                 </div>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-success btn-sm" />
+                <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
             </div>
         </form>
     </div>

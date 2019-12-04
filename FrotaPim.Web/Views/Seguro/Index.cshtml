@@ -1,36 +1,30 @@
 ﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.SeguroViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Seguros";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h2>@ViewData["Title"]</h2>
 
 <p>
-    <a href="/Seguro/Criar" class="btn btn-primary btn-sm">Adicionar Manutenção</a>
+    <a href="/Seguro/Criar" class="btn btn-primary btn-sm">Adicionar Novo Seguro</a>
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Apolice)
+                <b>@Html.DisplayNameFor(model => model.Apolice)</b>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Seguradora)
+                <b>@Html.DisplayNameFor(model => model.Seguradora)</b>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataContratacao)
+                <b>@Html.DisplayNameFor(model => model.Placa)</b>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataValidade)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Placa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ValorSeguro)
-            </th>
+                <b>@Html.DisplayNameFor(model => model.ValorSeguro)
+            </th></b>
             <th></th>
         </tr>
     </thead>
@@ -42,12 +36,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Seguradora)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataContratacao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DataValidade)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Placa)
@@ -76,7 +64,7 @@
                 <p class="text-warning">Está ação não tem volta!</p>
             </div>
             <div class="modal-footer">
-                <form class="form-group" asp-action="Delete" method="delete">
+                <form class="form-group" asp-controller="Seguro" asp-action="Delete" method="delete">
                     <div class="form-actions no-color">
                         <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
                         <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>

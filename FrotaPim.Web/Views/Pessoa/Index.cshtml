@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<FrotaPim.Web.Models.ViewsModels.PessoaViewModel>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quadro de Funcionários";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>@ViewData["Title"]</h1>
+<h2>@ViewData["Title"]</h1>
 
 <p>
     <a href="/Pessoa/Criar" class="btn btn-primary btn-sm">Adicionar Funcionário</a>
@@ -50,9 +50,9 @@
                 @Html.DisplayFor(modelItem => item.NomeCargo)
             </td>
             <td>
-                <a href="/Pessoa/Editar/@item.Id" class="btn btn-primary btn-sm">Editar</a> |
-                <a href="/Pessoa/Detalhes/@item.Id" class="btn btn-primary btn-sm">Detalhes</a> |
-                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+                <a href="/Pessoa/Editar/@item.IDPessoa" class="btn btn-primary btn-sm">Editar</a> |
+                <a href="/Pessoa/Detalhes/@item.IDPessoa" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.IDPessoa"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
             </td>
         </tr>
 }
@@ -70,7 +70,7 @@
                 <p class="text-warning">Está ação não tem volta!</p>
             </div>
             <div class="modal-footer">
-                <form class="form-group" asp-action="Delete" method="delete">
+                <form class="form-group" asp-controller="Pessoa" asp-action="Delete" method="delete">
                     <div class="form-actions no-color">
                         <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
                         <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>

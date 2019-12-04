@@ -27,9 +27,13 @@ namespace FrotaPim.Data
              _context.Update(entity);
              return entity;
         }
-        public virtual void Inserir(TEntity entidade)
+        public virtual int Inserir(TEntity entidade)
         {
             _context.Set<TEntity>().Add(entidade);
+            _context.SaveChanges();
+             
+            return entidade.Id;
+            
         }
         public virtual IEnumerable<TEntity> ObterTodos()
         {

@@ -8,7 +8,7 @@
 <h2>@ViewData["Title"]</h2>
 
 <p>
-    <a href="/Multas/Criar" class="btn btn-primary btn-sm">Adicionar Multa</a>
+    <a href="/Multa/Criar" class="btn btn-primary btn-sm">Adicionar Multa</a>
 </p>
 <table class="table">
     <thead>
@@ -23,7 +23,7 @@
                 @Html.DisplayNameFor(model => model.Gravidade)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DataMulta)
+                @Html.DisplayNameFor(model => model.TipoMulta)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ValorMulta)
@@ -44,7 +44,7 @@
                 @Html.DisplayFor(modelItem => item.Gravidade)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DataMulta)
+                @Html.DisplayFor(modelItem => item.TipoMulta)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ValorMulta)
@@ -70,7 +70,7 @@
                 <p class="text-warning">Está ação não tem volta!</p>
             </div>
             <div class="modal-footer">
-                <form class="form-group" asp-action="Delete" method="delete">
+                <form class="form-group" asp-controller="Multa" asp-action="Delete" method="delete">
                     <div class="form-actions no-color">
                         <button id="btnContinueDelete" type="submit" class="btn btn-danger btn-sm">Apagar</button>
                         <button type="button" class="btn btn-primary btn-sm" data-dismiss="modal">Cancelar</button>

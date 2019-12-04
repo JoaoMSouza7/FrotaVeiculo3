@@ -65,16 +65,17 @@ namespace FrotaPim.Web.Controllers
         public IActionResult Editar(int id, CargoViewModel cargo)
         {
             var cargoEdit = new Cargo(id, cargo.Nome, cargo.Descricao);
-            if (id != cargo.CargoId)
+            if (id != cargoEdit.Id)
             {
                 return NotFound();
             }
+            _context.Editar(cargoEdit);
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    _context.Editar(cargoEdit);
+                    
                 }
                 catch (DbUpdateConcurrencyException)
                 {

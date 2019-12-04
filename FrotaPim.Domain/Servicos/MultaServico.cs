@@ -4,39 +4,39 @@ using System;
 
 public class MultaServico
 {
-    private readonly IRepositorio<Multas> _multaRepository;
+    private readonly IRepositorio<Multa> _multaRepository;
     private readonly IRepositorio<Carro> _carroRepository;
     private readonly IRepositorio<Pessoa> _pessoaRepository;
 
-    public MultaServico(IRepositorio<Multas> multaRepository, IRepositorio<Carro> carroRepository, IRepositorio<Pessoa> pessoaRepository)
+    public MultaServico(IRepositorio<Multa> multaRepository, IRepositorio<Carro> carroRepository, IRepositorio<Pessoa> pessoaRepository)
     {
         _multaRepository = multaRepository;
         _carroRepository = carroRepository;
         _pessoaRepository = pessoaRepository;
     }
 
-    public void Criar(int id, Pessoa pessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro)
+    public void Criar(int id, int idPessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, int idCarro)
     {
-        var car = _carroRepository.ConsultarPorID(carro.Id);
+        var car = _carroRepository.ConsultarPorID(idCarro);
         DomainException.when(car == null, "Carro inválido");
 
-        var people = _pessoaRepository.ConsultarPorID(pessoa.Id);
+        var people = _pessoaRepository.ConsultarPorID(idPessoa);
         DomainException.when(car == null, "Pessoa inválida");
 
         var mult = _multaRepository.ConsultarPorID(id);
         if (mult == null)
         {
-            mult = new Multas(id, people, tipoMulta, gravidade, dataMulta, valorMulta, car);
+            mult = new Multa(id, people, tipoMulta, gravidade, dataMulta, valorMulta, car);
             _multaRepository.Inserir(mult);
         }
     }
 
-    public Multas Editar(int id, Pessoa pessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, Carro carro)
+    public Multa Editar(int id, int pessoaId, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, int carroId)
     {
-        var car = _carroRepository.ConsultarPorID(carro.Id);
-        var people = _pessoaRepository.ConsultarPorID(pessoa.Id);
+        var car = _carroRepository.ConsultarPorID(carroId);
+        var people = _pessoaRepository.ConsultarPorID(pessoaId);
 
-        var multaEditar = new Multas(id, people, tipoMulta, gravidade, dataMulta, valorMulta, car);
+        var multaEditar = new Multa(id, people, tipoMulta, gravidade, dataMulta, valorMulta, car);
         _multaRepository.Editar(multaEditar);
         return multaEditar;
     }

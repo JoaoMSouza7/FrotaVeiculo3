@@ -11,13 +11,13 @@ namespace FrotaPim.Web.Controllers
 {
     public class MultaController : Controller
     {
-        public readonly IRepositorio<Multas> _context;
+        public readonly IRepositorio<Multa> _context;
         public readonly IRepositorio<Carro> _contextCar;
         public readonly IRepositorio<Pessoa> _contextPessoa;
         public readonly MultaServico _service;
 
 
-        public MultaController(IRepositorio<Multas> multaRepositorio, IRepositorio<Carro> carroRepositorio, IRepositorio<Pessoa> pessoaRepositorio, MultaServico service)
+        public MultaController(IRepositorio<Multa> multaRepositorio, IRepositorio<Carro> carroRepositorio, IRepositorio<Pessoa> pessoaRepositorio, MultaServico service)
         {
             _context = multaRepositorio;
             _contextCar = carroRepositorio;
@@ -29,12 +29,12 @@ namespace FrotaPim.Web.Controllers
             var multas = _context.ObterTodos();
             if (multas.Any())
             {
-                var viewsModels = multas.Select(p => new MultaViewModel { Id = p.Id, Gravidade = p.Gravidade, TipoMulta = p.TipoMulta, DataMulta = p.DataMulta, ValorMulta = p.ValorMulta }).ToList();
+                List<MultaViewModel> viewsModels = multas.Select(p => new MultaViewModel { Id = p.Id, Gravidade = p.Gravidade, IdCarro = p.Carro.Id, IdPessoa = p.Pessoa.Id, TipoMulta = p.TipoMulta, DataMulta = p.DataMulta, ValorMulta = p.ValorMulta }).ToList();
 
                 foreach (MultaViewModel item in viewsModels)
                 {
-                    var carro = _contextCar.ConsultarPorID(item.Carro.Id);
-                    var pessoa = _contextPessoa.ConsultarPorID(item.Motorista.Id);
+                    Carro carro = _contextCar.ConsultarPorID(item.IdCarro);
+                    Pessoa pessoa = _contextPessoa.ConsultarPorID(item.IdPessoa);
 
                     if (carro != null && pessoa != null)
                     {
@@ -77,7 +77,7 @@ namespace FrotaPim.Web.Controllers
             var pessoas = _contextPessoa.ObterTodos().ToList();
             pessoas.Insert(0, new Pessoa { Nome = "Selecione..." });
             viewModel.Pessoas = pessoas.Any()
-                ? pessoas.Select(p => new PessoaViewModel { Id = p.Id, Nome = p.Nome, CPF = p.CPF, CargoId = p.Cargo.Id, EnderecoId = p.Endereco.Id, Admissao = p.Admissao, Telefone = p.Telefone })
+                ? pessoas.Select(p => new PessoaViewModel { IDPessoa = p.Id, Nome = p.Nome, CPF = p.CPF, CargoId = p.Cargo.Id, EnderecoId = p.Endereco.Id, Admissao = p.Admissao, Telefone = p.Telefone })
                 : new List<PessoaViewModel>();
 
             return View(viewModel);
@@ -86,7 +86,7 @@ namespace FrotaPim.Web.Controllers
         [HttpPost]
         public IActionResult Criar(MultaViewModel multa)
         {
-            _service.Criar(multa.Id, multa.Motorista, multa.TipoMulta, multa.Gravidade, multa.DataMulta, multa.ValorMulta, multa.Carro);
+            _service.Criar(multa.Id, multa.IdPessoa, multa.TipoMulta, multa.Gravidade, multa.DataMulta, multa.ValorMulta, multa.IdCarro);
             return RedirectToAction("Index");
         }
 
@@ -100,20 +100,21 @@ namespace FrotaPim.Web.Controllers
             var carro = _contextCar.ConsultarPorID(multa.Carro.Id);
             var pessoa = _contextPessoa.ConsultarPorID(multa.Pessoa.Id);
 
-            var viewModel = new MultaViewModel();
+            var model = new MultaViewModel();
+
             var carros = _contextCar.ObterTodos().ToList();
             carros.Insert(0, new Carro { Placa = carro.Placa });
-            viewModel.Carros = carros.Any()
+            model.Carros = carros.Any()
                 ? carros.Select(c => new CarroViewModel { IDCarro = c.Id, Placa = c.Placa, Marca = c.Marca, Tipo = c.Tipo, Modelo = c.Modelo, Combustivel = c.Combustivel, Cor = c.Cor, Ano = c.Ano })
                 : new List<CarroViewModel>();
 
             var pessoas = _contextPessoa.ObterTodos().ToList();
             pessoas.Insert(0, new Pessoa { Nome = pessoa.Nome });
-            viewModel.Pessoas = pessoas.Any()
-                ? pessoas.Select(c => new PessoaViewModel { Id = c.Id, Nome = c.Nome, CPF = c.CPF, Telefone = c.Telefone, Admissao =c.Admissao, CargoId = c.Cargo.Id, EnderecoId = c.Endereco.Id })
+            model.Pessoas = pessoas.Any()
+                ? pessoas.Select(p => new PessoaViewModel { IDPessoa = p.Id, Nome = p.Nome, CPF = p.CPF, CargoId = p.Cargo.Id, NomeCargo = p.Cargo.NomeCargo, EnderecoId = p.Endereco.Id, Admissao = p.Admissao, Telefone = p.Telefone })
                 : new List<PessoaViewModel>();
 
-            var multaModel = new MultaViewModel { Id = multa.Id, NomePessoa = pessoa.Nome, Placa = carro.Placa, Gravidade = multa.Gravidade, DataMulta = multa.DataMulta, TipoMulta = multa.TipoMulta, ValorMulta = multa.ValorMulta };
+            var multaModel = new MultaViewModel { Id = multa.Id, NomePessoa = pessoa.Nome, IdCarro = carro.Id, IdPessoa = pessoa.Id, Placa = carro.Placa, Gravidade = multa.Gravidade, DataMulta = multa.DataMulta, TipoMulta = multa.TipoMulta, ValorMulta = multa.ValorMulta, Carros = model.Carros, Pessoas = model.Pessoas };
 
             return View(multaModel);
         }
@@ -121,8 +122,8 @@ namespace FrotaPim.Web.Controllers
         [HttpPost]
         public IActionResult Editar(int id, MultaViewModel multa)
         {
-            _service.Editar(multa.Id, multa.Motorista, multa.TipoMulta, multa.Gravidade, multa.DataMulta, multa.ValorMulta, multa.Carro);
-            return View(multa);
+            _service.Editar(multa.Id, multa.IdPessoa, multa.TipoMulta, multa.Gravidade, multa.DataMulta, multa.ValorMulta, multa.IdCarro);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpDelete]

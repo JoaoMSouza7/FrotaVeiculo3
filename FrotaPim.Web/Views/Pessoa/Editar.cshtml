@@ -1,55 +1,83 @@
 ﻿@model FrotaPim.Web.Models.ViewsModels.PessoaViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Edit</h1>
-
-<h4>Pessoa</h4>
+<h2>@ViewData["Title"]</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Editar" asp-controller="Pessoa" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Nome" class="control-label">Nome Completo</label>
+                <label asp-for="Nome" class="control-label"><b>Nome Completo</b></label>
                 <input asp-for="Nome" class="form-control" name="Nome" value="@Model.Nome"/>
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CPF" class="control-label">CPF</label>
+                <label asp-for="CPF" class="control-label"><b>CPF</b></label>
                 <input asp-for="CPF" class="form-control" name="CPF" value="@Model.CPF"/>
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Admissao" class="control-label">Admissão</label>
-                <input asp-for="Admissao" class="form-control" name="Admissao" value="@Model.Admissao"/>
+                <label asp-for="Admissao" class="control-label"><b>Admissão</b></label>
+                <input placeholder="dd/mm/aaaa" asp-for="Admissao" class="form-control" name="Admissao" value="@Model.Admissao"/>
                 <span asp-validation-for="Admissao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Telefone" class="control-label">Telefone</label>
+                <label asp-for="Telefone" class="control-label"><b>Telefone</b></label>
                 <input asp-for="Telefone" class="form-control" name="Telefone" value="@Model.Telefone"/>
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Cargo</label>
+                <label class="control-label"><b>Cargo</b></label>
                 <div>
                     @Html.DropDownList("CargoId", new SelectList(@Model.Cargos, "CargoId", "Nome", "0"), new { @class = "form-control" })
                 </div>
             </div>
-            <input type="hidden" asp-for="Id" />
+            <input type="hidden" asp-for="IDPessoa" />
+            <p><b>Endereço do Colaborador</b></p>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-success btn-sm" />
+                <input type="hidden" asp-for="IdEndereco" />
+                <label asp-for="@Model.Endereco.Rua" class="control-label">Rua</label>
+                @Html.TextBoxFor(m => m.Endereco.Rua, new{@class = "form-control"})
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Numero" class="control-label">Número</label>
+                @Html.TextBoxFor(m => m.Endereco.Numero, new{@class = "form-control"})
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Bairro" class="control-label">Bairro</label>
+                @Html.TextBoxFor(m => m.Endereco.Bairro, new{@class = "form-control"})
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.CEP" class="control-label">CEP</label>
+                @Html.TextBoxFor(m => m.Endereco.CEP, new{@class = "form-control"})
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Cidade" class="control-label">Cidade</label>
+                @Html.TextBoxFor(m => m.Endereco.Cidade, new{@class = "form-control"})
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Estado" class="control-label">UF</label>
+                @Html.TextBoxFor(m => m.Endereco.Estado, new{@class = "form-control"})
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a href="../Editar/@Model.Id" class="btn btn-primary btn-sm">Editar</a> |
-    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
+    <a href="../Index" class="btn btn-primary btn-sm">Voltar</a>
 </div>
 
 @section Scripts {

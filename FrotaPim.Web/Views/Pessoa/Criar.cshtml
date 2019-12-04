@@ -42,6 +42,38 @@
                     @Html.DropDownList("CargoId", new SelectList(@Model.Cargos, "CargoId", "Nome", "0"), new { @class = "form-control" })
                 </div>
             </div>
+            <p><b>Adicione o Endereço do Colaborador</b></p>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Rua" class="control-label">Rua</label>
+                @Html.TextBoxFor(m => m.Endereco.Rua, new{@class = "form-control"})
+                <span asp-validation-for="Rua" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Numero" class="control-label">Número</label>
+                @Html.TextBoxFor(m => m.Endereco.Numero, new{@class = "form-control"})
+                <span asp-validation-for="Numero" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Bairro" class="control-label">Bairro</label>
+                @Html.TextBoxFor(m => m.Endereco.Bairro, new{@class = "form-control"})
+                <span asp-validation-for="Bairro" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.CEP" class="control-label">CEP</label>
+                @Html.TextBoxFor(m => m.Endereco.CEP, new{@class = "form-control"})
+                <span asp-validation-for="CEP" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Cidade" class="control-label">Cidade</label>
+                @Html.TextBoxFor(m => m.Endereco.Cidade, new{@class = "form-control"})
+                <span asp-validation-for="Cidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Endereco.Estado" class="control-label">UF</label>
+                @Html.TextBoxFor(m => m.Endereco.Estado, new{@class = "form-control"})
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-success btn-sm" />
             </div>

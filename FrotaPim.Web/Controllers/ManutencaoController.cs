@@ -108,7 +108,7 @@ namespace FrotaPim.Web.Controllers
         public IActionResult Editar(int id, ManutencaoViewModel manutencao)
         {
             _service.Editar(manutencao.Id, manutencao.DescricaoManutencao, manutencao.Valor, manutencao.IdCarro, manutencao.Data);
-            return View(manutencao);
+            return RedirectToAction(nameof(Index));
         }
 
         [HttpDelete]

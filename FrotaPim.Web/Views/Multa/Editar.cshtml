@@ -1,48 +1,50 @@
 ﻿@model FrotaPim.Web.Models.ViewsModels.MultaViewModel
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Editar Multa";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Edit</h1>
-
-<h4>Multas</h4>
+<h2>@ViewData["Title"]</h2>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Editar" asp-controller="Multa" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Gravidade" class="control-label"></label>
-                <input asp-for="Gravidade" class="form-control" />
+                <label asp-for="Gravidade" class="control-label"><b>Gravidade</b></label>
+                <input asp-for="Gravidade" class="form-control" name="Gravidade" value="@Model.Gravidade"/>
                 <span asp-validation-for="Gravidade" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataMulta" class="control-label"></label>
-                <input asp-for="DataMulta" class="form-control" />
+                <label asp-for="TipoMulta" class="control-label"><b>Tipo de Multa</b></label>
+                <input asp-for="GraviTipoMultadade" class="form-control" name="TipoMulta" value="@Model.TipoMulta"/>
+                <span asp-validation-for="Gravidade" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataMulta" class="control-label"><b>Data da Multa</b></label>
+                <input placeholder="dd/mm/aaaa" asp-for="DataMulta" class="form-control" name="DataMulta" value="@Model.DataMulta"/>
                 <span asp-validation-for="DataMulta" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ValorMulta" class="control-label"></label>
-                <input asp-for="ValorMulta" class="form-control" />
+                <label asp-for="ValorMulta" class="control-label"><b>Valor da Multa</b></label>
+                <input asp-for="ValorMulta" class="form-control" name="ValorMulta" value="@Model.ValorMulta"/>
                 <span asp-validation-for="ValorMulta" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-            <div class="form-group">
-                <label class="control-label">Pessoa</label>
+                <label class="control-label"><b>Pessoa</b></label>
                 <div>
-                     @Html.DropDownList("Id", new SelectList(@Model.Pessoas, "Id", "Nome", "0"), new {@class="form-control"})
+                     @Html.DropDownList("IDPessoa", new SelectList(@Model.Pessoas, "IDPessoa", "Nome", "0"), new {@class="form-control"})
                 </div>
             </div>
             <div class="form-group">
-                <label class="control-label">Veículo</label>
+                <label class="control-label"><b>Veículo</b></label>
                 <div>
                      @Html.DropDownList("IDCarro", new SelectList(@Model.Carros, "IDCarro", "Placa", "0"), new {@class="form-control"})
                 </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary btn-sm" />
             </div>
         </form>
     </div>
