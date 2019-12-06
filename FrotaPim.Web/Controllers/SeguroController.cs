@@ -6,9 +6,11 @@ using FrotaPim.Web.Models.ViewsModels;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FrotaPim.Web.Controllers
 {
+    [Authorize]
     public class SeguroController : Controller
     {
         private readonly IRepositorio<Seguro> _context;

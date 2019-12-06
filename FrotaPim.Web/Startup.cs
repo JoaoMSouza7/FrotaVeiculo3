@@ -12,6 +12,8 @@ using Microsoft.Extensions.DependencyInjection;
 using FrotaPim.DI;
 using FrotaPim.Domain.Servicos;
 using Microsoft.Extensions.Logging;
+using Aurochses.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 
 namespace FrotaPim.Web
 {
@@ -30,7 +32,6 @@ namespace FrotaPim.Web
             Bootstrap.Configure(services, Configuration.GetConnectionString("DefaultConnection"));
 
             services.AddMvc();
-
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -69,6 +70,8 @@ namespace FrotaPim.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

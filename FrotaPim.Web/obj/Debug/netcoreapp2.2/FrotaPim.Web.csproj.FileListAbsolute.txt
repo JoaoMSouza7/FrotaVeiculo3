@@ -67,3 +67,7 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Criar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Detalhes.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Editar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Seguro\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\Index.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccessDenied.g.cshtml.cs

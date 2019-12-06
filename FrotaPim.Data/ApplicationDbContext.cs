@@ -1,10 +1,11 @@
-
 using FrotaPim.Domain.Entidades;
 using Microsoft.EntityFrameworkCore;
+using FrotaPim.Data.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace FrotaPim.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

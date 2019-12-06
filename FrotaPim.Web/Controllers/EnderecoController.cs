@@ -5,9 +5,11 @@ using FrotaPim.Domain.Entidades;
 using FrotaPim.Web.Models.ViewsModels;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FrotaPim.Web.Controllers
 {
+    [Authorize]
     public class EnderecoController : Controller
     {
         public readonly IRepositorio<Endereco> _context;

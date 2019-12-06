@@ -12,7 +12,6 @@ namespace FrotaPim.Domain.Entidades
         public string Combustivel { get; set; }
         public string Cor { get; set; }
         public int Ano { get; set; }
-        public Pessoa Motorista { get; set; }
 
         public Carro(int id, string placa, string tipo, string marca, string Modelo, string combustivel, string cor, int ano)
         {

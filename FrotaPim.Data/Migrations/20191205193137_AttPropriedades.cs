@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FrotaPim.Data.Migrations
 {
-    public partial class AddPropriedades : Migration
+    public partial class AttPropriedades : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,25 @@ namespace FrotaPim.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_cargo", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "carro",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Placa = table.Column<string>(nullable: true),
+                    Tipo = table.Column<string>(nullable: true),
+                    Marca = table.Column<string>(nullable: true),
+                    Modelo = table.Column<string>(nullable: true),
+                    Combustivel = table.Column<string>(nullable: true),
+                    Cor = table.Column<string>(nullable: true),
+                    Ano = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_carro", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -75,6 +94,52 @@ namespace FrotaPim.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "manutencao",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    DescricaoManutencao = table.Column<string>(nullable: true),
+                    Valor = table.Column<decimal>(nullable: false),
+                    CarroId = table.Column<int>(nullable: true),
+                    Data = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_manutencao", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_manutencao_carro_CarroId",
+                        column: x => x.CarroId,
+                        principalTable: "carro",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "seguro",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Apolice = table.Column<string>(nullable: true),
+                    Seguradora = table.Column<string>(nullable: true),
+                    CarroId = table.Column<int>(nullable: true),
+                    ValorSeguro = table.Column<decimal>(nullable: false),
+                    DataContratacao = table.Column<DateTime>(nullable: false),
+                    DataValidade = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_seguro", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_seguro_carro_CarroId",
+                        column: x => x.CarroId,
+                        principalTable: "carro",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "pessoa",
                 columns: table => new
                 {
@@ -105,62 +170,14 @@ namespace FrotaPim.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "carro",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Placa = table.Column<string>(nullable: true),
-                    Tipo = table.Column<string>(nullable: true),
-                    Marca = table.Column<string>(nullable: true),
-                    Modelo = table.Column<string>(nullable: true),
-                    Combustivel = table.Column<string>(nullable: true),
-                    Cor = table.Column<string>(nullable: true),
-                    Ano = table.Column<int>(nullable: false),
-                    MotoristaId = table.Column<int>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_carro", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_carro_pessoa_MotoristaId",
-                        column: x => x.MotoristaId,
-                        principalTable: "pessoa",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "manutencao",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    DescricaoManutencao = table.Column<string>(nullable: true),
-                    Valor = table.Column<decimal>(nullable: false),
-                    CarroId = table.Column<int>(nullable: true),
-                    Data = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_manutencao", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_manutencao_carro_CarroId",
-                        column: x => x.CarroId,
-                        principalTable: "carro",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "multas",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     PessoaId = table.Column<int>(nullable: true),
-                    Gravidade = table.Column<string>(nullable: true),
                     TipoMulta = table.Column<string>(nullable: true),
+                    Gravidade = table.Column<string>(nullable: true),
                     DataMulta = table.Column<DateTime>(nullable: false),
                     ValorMulta = table.Column<decimal>(nullable: false),
                     CarroId = table.Column<int>(nullable: true)
@@ -181,34 +198,6 @@ namespace FrotaPim.Data.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
-
-            migrationBuilder.CreateTable(
-                name: "seguro",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Apolice = table.Column<string>(nullable: true),
-                    Seguradora = table.Column<string>(nullable: true),
-                    CarroId = table.Column<int>(nullable: true),
-                    DataContratacao = table.Column<DateTime>(nullable: false),
-                    DataValidade = table.Column<DateTime>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_seguro", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_seguro_carro_CarroId",
-                        column: x => x.CarroId,
-                        principalTable: "carro",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_carro_MotoristaId",
-                table: "carro",
-                column: "MotoristaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_manutencao_CarroId",
@@ -259,10 +248,10 @@ namespace FrotaPim.Data.Migrations
                 name: "seguro");
 
             migrationBuilder.DropTable(
-                name: "carro");
+                name: "pessoa");
 
             migrationBuilder.DropTable(
-                name: "pessoa");
+                name: "carro");
 
             migrationBuilder.DropTable(
                 name: "cargo");

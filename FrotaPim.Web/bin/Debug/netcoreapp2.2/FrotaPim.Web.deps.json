@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "71e44793da6c0aae6e65f0808cffa0c256da21c3"
+    "signature": "bb7a814bf58aad7b2842a689f22c8580728da39f"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,9 @@
           "FrotaPim.DI": "1.0.0",
           "Microsoft.AspNetCore": "2.2.0",
           "Microsoft.AspNetCore.App": "2.2.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Microsoft.AspNetCore.Mvc": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
           "Microsoft.AspNetCore.StaticFiles": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
@@ -40,6 +42,101 @@
         },
         "compile": {
           "FrotaPim.Web.dll": {}
+        }
+      },
+      "Aurochses.AspNetCore.Identity/2.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.dll": {}
+        }
+      },
+      "Aurochses.AspNetCore.Identity.EntityFrameworkCore/2.2.0": {
+        "dependencies": {
+          "Aurochses.AspNetCore.Identity": "2.2.0",
+          "Aurochses.Data.EntityFrameworkCore": "2.2.0",
+          "Aurochses.Data.Extensions.MsSql": "2.2.0",
+          "IdentityModel": "3.10.5",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Aurochses.Data/2.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.Data.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.Data.dll": {}
+        }
+      },
+      "Aurochses.Data.EntityFrameworkCore/2.2.0": {
+        "dependencies": {
+          "Aurochses.Data": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.Data.EntityFrameworkCore.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.Data.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Aurochses.Data.Extensions.MsSql/2.2.0": {
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.Data.Extensions.MsSql.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.Data.Extensions.MsSql.dll": {}
+        }
+      },
+      "IdentityModel/3.10.5": {
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.2",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdentityModel.dll": {
+            "assemblyVersion": "3.10.5.0",
+            "fileVersion": "3.10.5.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/IdentityModel.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.RazorPages/2.2.5": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Mvc.Razor": "2.2.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.RazorPages.dll": {
+            "assemblyVersion": "2.2.5.0",
+            "fileVersion": "2.2.5.19109"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.RazorPages.dll": {}
         }
       },
       "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
@@ -380,6 +477,9 @@
         }
       },
       "FrotaPim/1.0.0": {
+        "dependencies": {
+          "Aurochses.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
+        },
         "runtime": {
           "FrotaPim.dll": {}
         },
@@ -389,7 +489,10 @@
       },
       "FrotaPim.Data/1.0.0": {
         "dependencies": {
+          "Aurochses.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "FrotaPim": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "Microsoft.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
@@ -532,7 +635,7 @@
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor.Extensions": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.2.0",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.AspNetCore.NodeServices": "2.2.0",
@@ -1141,7 +1244,7 @@
           "Microsoft.AspNetCore.Mvc.Formatters.Json": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Localization": "2.2.0",
           "Microsoft.AspNetCore.Mvc.Razor.Extensions": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "Microsoft.AspNetCore.Mvc.TagHelpers": "2.2.0",
           "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
@@ -1278,16 +1381,7 @@
       "Microsoft.AspNetCore.Mvc.Razor.ViewCompilation/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting": "2.2.0",
-          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.0"
-        },
-        "compileOnly": true
-      },
-      "Microsoft.AspNetCore.Mvc.RazorPages/2.2.0": {
-        "dependencies": {
-          "Microsoft.AspNetCore.Mvc.Razor": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.RazorPages.dll": {}
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5"
         },
         "compileOnly": true
       },
@@ -3621,6 +3715,55 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Aurochses.AspNetCore.Identity/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MJeCN/reCYkDwMf3hBJYdzeELDefwMrrIoFlsveZmpDrBilZMNCiUjlZVIb3cTiqNCK7k8igr0GHwHk/WvVxWg==",
+      "path": "aurochses.aspnetcore.identity/2.2.0",
+      "hashPath": "aurochses.aspnetcore.identity.2.2.0.nupkg.sha512"
+    },
+    "Aurochses.AspNetCore.Identity.EntityFrameworkCore/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wbwjzw0uzT9d7XIjp3vzaiWxmRckCZnl77FTRiNjJswpcgn1Pn16L0g/I2AMThzaMlmgSEXSJTM0B9CE7y1qxg==",
+      "path": "aurochses.aspnetcore.identity.entityframeworkcore/2.2.0",
+      "hashPath": "aurochses.aspnetcore.identity.entityframeworkcore.2.2.0.nupkg.sha512"
+    },
+    "Aurochses.Data/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-mRU+La0gijfHVEoOdeE71ZigpPsrH81rF5+Tv02dcl03WxfCym9RuUjn7PfiP3zoJ4PpXAtPobeHj4nS2X7nCw==",
+      "path": "aurochses.data/2.2.0",
+      "hashPath": "aurochses.data.2.2.0.nupkg.sha512"
+    },
+    "Aurochses.Data.EntityFrameworkCore/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U1m3HX2rEPw+J7nKu2zZchmqYgvOg/s3rdrV+UMwq1O/b+2KmQ1gdq1XkISqvu3QBVrhdVO2A3qsKaFE3NIBHw==",
+      "path": "aurochses.data.entityframeworkcore/2.2.0",
+      "hashPath": "aurochses.data.entityframeworkcore.2.2.0.nupkg.sha512"
+    },
+    "Aurochses.Data.Extensions.MsSql/2.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-z2xB7hsxxbWAMIYJ5oFUgvkIHcHBrg4C+IU10gkJtNvbOQc5uo+4L1+o/qr8lEISpNiaScnUEWs0wHOl85dJwQ==",
+      "path": "aurochses.data.extensions.mssql/2.2.0",
+      "hashPath": "aurochses.data.extensions.mssql.2.2.0.nupkg.sha512"
+    },
+    "IdentityModel/3.10.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-D8r8LSH5nRfvp7Rp0u+IerM7CYeZ63ltvg7S/qRk6CrgZY+V1e3wvk8LQBWGfEeiM50/I/wK9LvcStNR6wwxig==",
+      "path": "identitymodel/3.10.5",
+      "hashPath": "identitymodel.3.10.5.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Mvc.RazorPages/2.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-l0Lcx0lfCF7SJQiv+5Aib9/pdkP4sXwMsal+pdAUekHu4MJrZB80r+LGvHyaJF8Z7ROMnjQ0oDVCccdneqXX8Q==",
+      "path": "microsoft.aspnetcore.mvc.razorpages/2.2.5",
+      "hashPath": "microsoft.aspnetcore.mvc.razorpages.2.2.5.nupkg.sha512"
+    },
     "Microsoft.CodeAnalysis.CSharp.Workspaces/2.8.0": {
       "type": "package",
       "serviceable": true,
@@ -4216,13 +4359,6 @@
       "sha512": "sha512-dys8ggIDth3g5GBpCfeayU9sNg6Z9IbKFKOuaXbVaAiZQUd+Egk9op4NLHpqfR9Ey2HGw+u87LYC55bhEeOpag==",
       "path": "microsoft.aspnetcore.mvc.razor.viewcompilation/2.2.0",
       "hashPath": "microsoft.aspnetcore.mvc.razor.viewcompilation.2.2.0.nupkg.sha512"
-    },
-    "Microsoft.AspNetCore.Mvc.RazorPages/2.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GsMs4QKCf5VgdGZq9/nfAVkMJ/8uE4ie0Iugv4FtxbHBmMdpPQQBfTFKoUpwMbgIRw7hzV8xy2HPPU5o58PsdQ==",
-      "path": "microsoft.aspnetcore.mvc.razorpages/2.2.0",
-      "hashPath": "microsoft.aspnetcore.mvc.razorpages.2.2.0.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Mvc.TagHelpers/2.2.0": {
       "type": "package",

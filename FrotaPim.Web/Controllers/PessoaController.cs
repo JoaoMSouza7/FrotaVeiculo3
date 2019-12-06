@@ -9,9 +9,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using Microsoft.IdentityModel.Protocols;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FrotaPim.Web.Controllers
 {
+    [Authorize]
     public class PessoaController : Controller
     {
         private readonly IRepositorio<Pessoa> _context;

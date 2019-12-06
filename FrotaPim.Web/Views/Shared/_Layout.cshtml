@@ -29,11 +29,17 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a href="/Home" class="btn btn-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Página Inicial</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a href="/Privacy" class="btn btn-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Termos de Uso</a>
                         </li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="/Account/Logout" type="submit" class="btn btn-link text-dark btn-sm">Logout</a>
+                            </li>
+                        </ul>
+
                     </ul>
                 </div>
             </div>

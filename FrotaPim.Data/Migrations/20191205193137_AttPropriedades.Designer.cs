@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FrotaPim.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20191129185553_AddPropriedades")]
-    partial class AddPropriedades
+    [Migration("20191205193137_AttPropriedades")]
+    partial class AttPropriedades
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,15 +52,11 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<string>("Modelo");
 
-                    b.Property<int?>("MotoristaId");
-
                     b.Property<string>("Placa");
 
                     b.Property<string>("Tipo");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("MotoristaId");
 
                     b.ToTable("carro");
                 });
@@ -151,7 +147,7 @@ namespace FrotaPim.Data.Migrations
                     b.ToTable("manutencao");
                 });
 
-            modelBuilder.Entity("FrotaPim.Domain.Entidades.Multas", b =>
+            modelBuilder.Entity("FrotaPim.Domain.Entidades.Multa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -221,18 +217,13 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<string>("Seguradora");
 
+                    b.Property<decimal>("ValorSeguro");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CarroId");
 
                     b.ToTable("seguro");
-                });
-
-            modelBuilder.Entity("FrotaPim.Domain.Entidades.Carro", b =>
-                {
-                    b.HasOne("FrotaPim.Domain.Entidades.Pessoa", "Motorista")
-                        .WithMany()
-                        .HasForeignKey("MotoristaId");
                 });
 
             modelBuilder.Entity("FrotaPim.Domain.Entidades.Manutencao", b =>
@@ -242,7 +233,7 @@ namespace FrotaPim.Data.Migrations
                         .HasForeignKey("CarroId");
                 });
 
-            modelBuilder.Entity("FrotaPim.Domain.Entidades.Multas", b =>
+            modelBuilder.Entity("FrotaPim.Domain.Entidades.Multa", b =>
                 {
                     b.HasOne("FrotaPim.Domain.Entidades.Carro", "Carro")
                         .WithMany()

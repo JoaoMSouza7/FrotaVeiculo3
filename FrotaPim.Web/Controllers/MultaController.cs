@@ -6,11 +6,13 @@ using FrotaPim.Web.Models.ViewsModels;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FrotaPim.Web.Controllers
 {
+    [Authorize]
     public class MultaController : Controller
-    {
+    {   
         public readonly IRepositorio<Multa> _context;
         public readonly IRepositorio<Carro> _contextCar;
         public readonly IRepositorio<Pessoa> _contextPessoa;

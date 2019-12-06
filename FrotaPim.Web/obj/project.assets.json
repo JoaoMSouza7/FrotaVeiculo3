@@ -2,6 +2,75 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v2.2": {
+      "Aurochses.AspNetCore.Identity/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.dll": {}
+        }
+      },
+      "Aurochses.AspNetCore.Identity.EntityFrameworkCore/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Aurochses.AspNetCore.Identity": "2.2.0",
+          "Aurochses.Data.EntityFrameworkCore": "2.2.0",
+          "Aurochses.Data.Extensions.MsSql": "2.2.0",
+          "IdentityModel": "3.10.5",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.AspNetCore.Identity.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Aurochses.Data/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Aurochses.Data.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.Data.dll": {}
+        }
+      },
+      "Aurochses.Data.EntityFrameworkCore/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Aurochses.Data": "2.2.0",
+          "Microsoft.EntityFrameworkCore": "2.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Aurochses.Data.EntityFrameworkCore.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.Data.EntityFrameworkCore.dll": {}
+        }
+      },
+      "Aurochses.Data.Extensions.MsSql/2.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Aurochses.Data.Extensions.MsSql.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Aurochses.Data.Extensions.MsSql.dll": {}
+        }
+      },
+      "IdentityModel/3.10.5": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "System.Text.Encodings.Web": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/IdentityModel.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/IdentityModel.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "type": "package",
         "dependencies": {
@@ -1064,7 +1133,7 @@
           "build/netstandard2.0/Microsoft.AspNetCore.Mvc.Razor.ViewCompilation.targets": {}
         }
       },
-      "Microsoft.AspNetCore.Mvc.RazorPages/2.2.0": {
+      "Microsoft.AspNetCore.Mvc.RazorPages/2.2.5": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNetCore.Mvc.Razor": "2.2.0"
@@ -4751,6 +4820,9 @@
       "FrotaPim/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Aurochses.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
+        },
         "compile": {
           "bin/placeholder/FrotaPim.dll": {}
         },
@@ -4762,7 +4834,10 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
+          "Aurochses.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "FrotaPim": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
+          "Microsoft.AspNetCore.Mvc.RazorPages": "2.2.5",
           "Microsoft.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.0",
           "Microsoft.EntityFrameworkCore.Tools": "2.2.0",
@@ -4797,6 +4872,91 @@
     }
   },
   "libraries": {
+    "Aurochses.AspNetCore.Identity/2.2.0": {
+      "sha512": "MJeCN/reCYkDwMf3hBJYdzeELDefwMrrIoFlsveZmpDrBilZMNCiUjlZVIb3cTiqNCK7k8igr0GHwHk/WvVxWg==",
+      "type": "package",
+      "path": "aurochses.aspnetcore.identity/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aurochses.aspnetcore.identity.2.2.0.nupkg.sha512",
+        "aurochses.aspnetcore.identity.nuspec",
+        "lib/netstandard2.0/Aurochses.AspNetCore.Identity.dll",
+        "lib/netstandard2.0/Aurochses.AspNetCore.Identity.xml"
+      ]
+    },
+    "Aurochses.AspNetCore.Identity.EntityFrameworkCore/2.2.0": {
+      "sha512": "wbwjzw0uzT9d7XIjp3vzaiWxmRckCZnl77FTRiNjJswpcgn1Pn16L0g/I2AMThzaMlmgSEXSJTM0B9CE7y1qxg==",
+      "type": "package",
+      "path": "aurochses.aspnetcore.identity.entityframeworkcore/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aurochses.aspnetcore.identity.entityframeworkcore.2.2.0.nupkg.sha512",
+        "aurochses.aspnetcore.identity.entityframeworkcore.nuspec",
+        "lib/netstandard2.0/Aurochses.AspNetCore.Identity.EntityFrameworkCore.dll",
+        "lib/netstandard2.0/Aurochses.AspNetCore.Identity.EntityFrameworkCore.xml"
+      ]
+    },
+    "Aurochses.Data/2.2.0": {
+      "sha512": "mRU+La0gijfHVEoOdeE71ZigpPsrH81rF5+Tv02dcl03WxfCym9RuUjn7PfiP3zoJ4PpXAtPobeHj4nS2X7nCw==",
+      "type": "package",
+      "path": "aurochses.data/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aurochses.data.2.2.0.nupkg.sha512",
+        "aurochses.data.nuspec",
+        "lib/netstandard2.0/Aurochses.Data.dll",
+        "lib/netstandard2.0/Aurochses.Data.xml"
+      ]
+    },
+    "Aurochses.Data.EntityFrameworkCore/2.2.0": {
+      "sha512": "U1m3HX2rEPw+J7nKu2zZchmqYgvOg/s3rdrV+UMwq1O/b+2KmQ1gdq1XkISqvu3QBVrhdVO2A3qsKaFE3NIBHw==",
+      "type": "package",
+      "path": "aurochses.data.entityframeworkcore/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aurochses.data.entityframeworkcore.2.2.0.nupkg.sha512",
+        "aurochses.data.entityframeworkcore.nuspec",
+        "lib/netstandard2.0/Aurochses.Data.EntityFrameworkCore.dll",
+        "lib/netstandard2.0/Aurochses.Data.EntityFrameworkCore.xml"
+      ]
+    },
+    "Aurochses.Data.Extensions.MsSql/2.2.0": {
+      "sha512": "z2xB7hsxxbWAMIYJ5oFUgvkIHcHBrg4C+IU10gkJtNvbOQc5uo+4L1+o/qr8lEISpNiaScnUEWs0wHOl85dJwQ==",
+      "type": "package",
+      "path": "aurochses.data.extensions.mssql/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "aurochses.data.extensions.mssql.2.2.0.nupkg.sha512",
+        "aurochses.data.extensions.mssql.nuspec",
+        "lib/netstandard2.0/Aurochses.Data.Extensions.MsSql.dll",
+        "lib/netstandard2.0/Aurochses.Data.Extensions.MsSql.xml"
+      ]
+    },
+    "IdentityModel/3.10.5": {
+      "sha512": "D8r8LSH5nRfvp7Rp0u+IerM7CYeZ63ltvg7S/qRk6CrgZY+V1e3wvk8LQBWGfEeiM50/I/wK9LvcStNR6wwxig==",
+      "type": "package",
+      "path": "identitymodel/3.10.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "identitymodel.3.10.5.nupkg.sha512",
+        "identitymodel.nuspec",
+        "lib/net452/IdentityModel.dll",
+        "lib/net452/IdentityModel.pdb",
+        "lib/net452/IdentityModel.xml",
+        "lib/netstandard1.4/IdentityModel.dll",
+        "lib/netstandard1.4/IdentityModel.pdb",
+        "lib/netstandard1.4/IdentityModel.xml",
+        "lib/netstandard2.0/IdentityModel.dll",
+        "lib/netstandard2.0/IdentityModel.pdb",
+        "lib/netstandard2.0/IdentityModel.xml"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "sha512": "owAlEIUZXWSnkK8Z1c+zR47A0X6ykF4XjbPok4lQKNuciUfHLGPd6QnI+rt/8KlQ17PmF+I4S3f+m+Qe4IvViw==",
       "type": "package",
@@ -5634,16 +5794,16 @@
         "microsoft.aspnetcore.mvc.razor.viewcompilation.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Mvc.RazorPages/2.2.0": {
-      "sha512": "GsMs4QKCf5VgdGZq9/nfAVkMJ/8uE4ie0Iugv4FtxbHBmMdpPQQBfTFKoUpwMbgIRw7hzV8xy2HPPU5o58PsdQ==",
+    "Microsoft.AspNetCore.Mvc.RazorPages/2.2.5": {
+      "sha512": "l0Lcx0lfCF7SJQiv+5Aib9/pdkP4sXwMsal+pdAUekHu4MJrZB80r+LGvHyaJF8Z7ROMnjQ0oDVCccdneqXX8Q==",
       "type": "package",
-      "path": "microsoft.aspnetcore.mvc.razorpages/2.2.0",
+      "path": "microsoft.aspnetcore.mvc.razorpages/2.2.5",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.RazorPages.dll",
         "lib/netstandard2.0/Microsoft.AspNetCore.Mvc.RazorPages.xml",
-        "microsoft.aspnetcore.mvc.razorpages.2.2.0.nupkg.sha512",
+        "microsoft.aspnetcore.mvc.razorpages.2.2.5.nupkg.sha512",
         "microsoft.aspnetcore.mvc.razorpages.nuspec"
       ]
     },
@@ -13063,7 +13223,9 @@
       "FrotaPim.DI >= 1.0.0",
       "Microsoft.AspNetCore >= 2.2.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 2.2.0",
       "Microsoft.AspNetCore.Mvc >= 2.2.0",
+      "Microsoft.AspNetCore.Mvc.RazorPages >= 2.2.5",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.AspNetCore.StaticFiles >= 2.2.0",
       "Microsoft.Extensions.DependencyInjection >= 2.2.0",
@@ -13127,9 +13289,17 @@
             "target": "Package",
             "version": "[2.2.0, )"
           },
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+            "target": "Package",
+            "version": "[2.2.0, )"
+          },
           "Microsoft.AspNetCore.Mvc": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Microsoft.AspNetCore.Mvc.RazorPages": {
+            "target": "Package",
+            "version": "[2.2.5, )"
           },
           "Microsoft.AspNetCore.Razor.Design": {
             "suppressParent": "All",

@@ -5,9 +5,11 @@ using FrotaPim.Domain.Entidades;
 using FrotaPim.Web.Models.ViewsModels;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FrotaPim.Web.Controllers
 {
+    [Authorize]
     public class CarroController : Controller
     {
         public readonly IRepositorio<Carro> _context;
@@ -20,7 +22,7 @@ namespace FrotaPim.Web.Controllers
         public IActionResult Index()
         {
             var carros = _context.ObterTodos();
-            var viewModels = carros.Select(c => new CarroViewModel { IDCarro = c.Id, Placa = c.Placa, Tipo = c.Tipo, Marca = c.Marca, Modelo = c.Modelo, Combustivel = c.Combustivel, Cor = c.Cor, Ano = c.Ano, _Motorista = c.Motorista });
+            var viewModels = carros.Select(c => new CarroViewModel { IDCarro = c.Id, Placa = c.Placa, Tipo = c.Tipo, Marca = c.Marca, Modelo = c.Modelo, Combustivel = c.Combustivel, Cor = c.Cor, Ano = c.Ano });
             return View(viewModels);
         }
 
@@ -31,7 +33,7 @@ namespace FrotaPim.Web.Controllers
             {
                 return NotFound();
             }
-            var carroModel = new CarroViewModel { IDCarro = carro.Id, Placa = carro.Placa, Tipo = carro.Tipo, Marca = carro.Marca, Modelo = carro.Modelo, Combustivel = carro.Combustivel, Cor = carro.Cor, Ano = carro.Ano, _Motorista = carro.Motorista };
+            var carroModel = new CarroViewModel { IDCarro = carro.Id, Placa = carro.Placa, Tipo = carro.Tipo, Marca = carro.Marca, Modelo = carro.Modelo, Combustivel = carro.Combustivel, Cor = carro.Cor, Ano = carro.Ano };
             return View(carroModel);
         }
 
@@ -55,7 +57,7 @@ namespace FrotaPim.Web.Controllers
             {
                 return NotFound();
             }
-            var carroViewModel = new CarroViewModel { IDCarro = carro.Id, Placa = carro.Placa, Tipo = carro.Tipo, Marca = carro.Marca, Modelo = carro.Modelo, Combustivel = carro.Combustivel,Cor = carro.Cor, Ano = carro.Ano, _Motorista = carro.Motorista };
+            var carroViewModel = new CarroViewModel { IDCarro = carro.Id, Placa = carro.Placa, Tipo = carro.Tipo, Marca = carro.Marca, Modelo = carro.Modelo, Combustivel = carro.Combustivel,Cor = carro.Cor, Ano = carro.Ano };
             return View(carroViewModel);
         }
 
