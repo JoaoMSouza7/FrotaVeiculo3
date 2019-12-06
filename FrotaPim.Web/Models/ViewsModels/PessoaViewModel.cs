@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using FrotaPim.Domain.Entidades;
 
 namespace FrotaPim.Web.Models.ViewsModels
@@ -8,11 +9,12 @@ namespace FrotaPim.Web.Models.ViewsModels
     {
         public int IDPessoa { get; set; }
         public string Nome { get; set; }
-        public int CPF { get; set; }
+        public string CPF { get; set; }
         public int CargoId { get; set; }
         public List<CargoViewModel> Cargos { get; set; }
         public string NomeCargo { get; set; }
         public int EnderecoId { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         public DateTime Admissao { get; set; }
         public string Telefone { get; set; } 
         public EnderecoViewModel Endereco { get; set; } 

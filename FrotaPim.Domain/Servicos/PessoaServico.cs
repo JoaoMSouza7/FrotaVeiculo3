@@ -15,7 +15,7 @@ public class PessoaServico
         _enderecoRepository = enderecoRepository;
     }
 
-    public void Criar(int id, string nome, int cpf, int idCargo, int enderecoId, DateTime admissao, string telefone)
+    public void Criar(int id, string nome, string cpf, int idCargo, int enderecoId, DateTime admissao, string telefone)
     {
         var carg = _cargoRepository.ConsultarPorID(idCargo);
         DomainException.when(carg == null, "Cargo inválido");
@@ -30,7 +30,7 @@ public class PessoaServico
         }
     }
 
-    public Pessoa Editar(int id, string nome, int cpf, int IdCargo, int enderecoId, DateTime admissao, string telefone, string rua, int numero, string bairro, int cep, string cidade, string estado)
+    public Pessoa Editar(int id, string nome, string cpf, int IdCargo, int enderecoId, DateTime admissao, string telefone, string rua, int numero, string bairro, int cep, string cidade, string estado)
     {
         var cargo = _cargoRepository.ConsultarPorID(IdCargo);
         Endereco endereco = new Endereco(enderecoId, rua, numero, bairro, cep, cidade, estado);

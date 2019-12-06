@@ -13,6 +13,6 @@ namespace FrotaPim.Web.Models.ViewsModels
         public string Cor { get; set; }
         public string Combustivel { get; set; }
         public int Ano { get; set; }
-        public Pessoa _Motorista { get; set; }
+
     }
 }

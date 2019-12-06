@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using FrotaPim.Domain.Entidades;
 
 namespace FrotaPim.Web.Models.ViewsModels
@@ -13,6 +14,7 @@ namespace FrotaPim.Web.Models.ViewsModels
         public string NomePessoa { get; set; }
         public string Gravidade { get; set; }
         public string TipoMulta { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
         public DateTime DataMulta { get; set; }
         public decimal ValorMulta { get; set; }
         public Carro Carro { get; set; }
