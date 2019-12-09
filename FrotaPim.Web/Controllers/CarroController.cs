@@ -13,11 +13,15 @@ namespace FrotaPim.Web.Controllers
     public class CarroController : Controller
     {
         public readonly IRepositorio<Carro> _context;
+        public readonly IRepositorio<Manutencao> _contextManut;
+        public readonly IRepositorio<Seguro> _contextSeguro;
 
 
-        public CarroController(IRepositorio<Carro> carroRepositorio)
+        public CarroController(IRepositorio<Carro> carroRepositorio, IRepositorio<Manutencao> contextManut, IRepositorio<Seguro> contextSeguro)
         {
             _context = carroRepositorio;
+            _contextManut = contextManut;
+            _contextSeguro = contextSeguro;
         }
         public IActionResult Index()
         {
@@ -95,8 +99,24 @@ namespace FrotaPim.Web.Controllers
         [HttpDelete]
         public IActionResult Delete(int id)
         {
-            var cargoDlt = _context.ConsultarPorID(id);
-            _context.Deletar(cargoDlt);
+            var carro = _context.ConsultarPorID(id);
+            var manuts = _contextManut.ObterTodos();
+            foreach(var item in manuts)
+            {
+                if(item.Carro.Id == carro.Id)
+                {
+                    _contextManut.Deletar(item);
+                }
+            }
+            var seguros = _contextSeguro.ObterTodos();
+            foreach(var segur in seguros)
+            {
+                if(segur.Carro.Id == carro.Id)
+                {
+                    _contextSeguro.Deletar(segur);
+                }
+            }
+            _context.Deletar(carro);
             return RedirectToAction(nameof(Index));
         }
     }

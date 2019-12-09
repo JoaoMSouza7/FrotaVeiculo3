@@ -23,14 +23,17 @@ namespace StoreOfBuild.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+            if(string.IsNullOrEmpty(model.Email) || string.IsNullOrEmpty(model.Password))
+            {
+                return Redirect("/Account/AccessDenied");
+            }
             var result = await _authentication.Authenticate(model.Email, model.Password);
 
             if (result)
                 return Redirect("/");
             else
             {
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                return View(model);
+                return Redirect("/Account/AccessDenied");
             }
         }
         public IActionResult AccessDenied()

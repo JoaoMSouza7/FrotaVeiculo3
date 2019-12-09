@@ -30,7 +30,6 @@ namespace FrotaPim.Web.Controllers
             if (manuts.Any())
             {
                 var viewsModels = manuts.Select(p => new ManutencaoViewModel { Id = p.Id, DescricaoManutencao = p.DescricaoManutencao, Data = p.Data, Valor = p.Valor, IdCarro = p.Carro.Id }).ToList();
-
                 foreach (ManutencaoViewModel item in viewsModels)
                 {
                     var carro = _contextCar.ConsultarPorID(item.IdCarro);
@@ -38,6 +37,10 @@ namespace FrotaPim.Web.Controllers
                     if (carro != null)
                     {
                         item.Placa = carro.Placa;
+                    }
+                    else
+                    {
+                        item.Placa =  null;
                     }
                 }
                 return View(viewsModels);

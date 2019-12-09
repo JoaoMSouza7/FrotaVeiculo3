@@ -4,7 +4,7 @@
     ViewData["Title"] = "Editar Cargo";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<body class="">
 <h2>@ViewData["Title"]</h2>
 <hr />
 <div class="row">
@@ -32,7 +32,4 @@
 <div>
     <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}
+</body>

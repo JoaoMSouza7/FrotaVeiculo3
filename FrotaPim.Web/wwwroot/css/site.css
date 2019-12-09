@@ -6,11 +6,16 @@ a.navbar-brand {
   text-align: center;
   word-break: break-all;
 }
-
+.top-bar {
+  display: block;
+  float: right;
+  margin-right: 10px;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   font-size: 14px;
+  color: #e5e5e5;
 }
 @media (min-width: 768px) {
   html {
@@ -44,6 +49,9 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
+  /*background: url("telemetria-hunter.jpg") no-repeat center center;
+  background-size: cover;*/
+
 }
 .footer {
   position: absolute;
@@ -54,7 +62,18 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
-.botaoo{
-  float: right;
-  position: relative;
+.fundo{
+  background: url("logo.svg") no-repeat center center;
+  background-size: 800px;
+  background-color: #181717;
 }
+.display-4{
+  color: #e5e5e5;
+  font-weight: bold;
+}
+.headerColor{
+  color: #181717;
+}
+/*-----------------------------------------------------------------------------*/
+
+
