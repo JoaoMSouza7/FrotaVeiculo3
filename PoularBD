@@ -1,0 +1,132 @@
+select * from dbo.cargo
+select * from dbo.carro
+select * from dbo.contasAPagar
+select * from dbo.endereco
+select * from dbo.estoque
+select * from dbo.manutencao
+select * from dbo.multas
+select * from dbo.pessoa
+select * from dbo.AspNetUsers
+select * from dbo.AspNetRoles
+
+delete from dbo.cargo
+delete from dbo.carro
+delete from dbo.contasAPagar
+delete from dbo.endereco
+delete from dbo.estoque
+delete from dbo.manutencao
+delete from dbo.multas
+delete from dbo.pessoa
+delete from dbo.seguro
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.Cargo on
+go
+
+insert into dbo.cargo(Id, NomeCargo, Descricao) values(1, 'Faxineiro', 'Profissional de Limpeza')
+insert into dbo.cargo(Id, NomeCargo, Descricao) values(2, 'Motorista', 'Dirigir o veiculo')
+insert into dbo.cargo(Id, NomeCargo, Descricao) values(3, 'Mecânico', 'Manutenção em veículos')
+insert into dbo.cargo(Id, NomeCargo, Descricao) values(4, 'Borracheiro', 'Trocas de pneus')
+insert into dbo.cargo(Id, NomeCargo, Descricao) values(5, 'Cozinheiro', 'Prepara aliemntos para a equipe')
+
+set identity_insert dbo.Cargo off
+go
+--------------------------------------------------------------------------------------------------------
+
+set identity_insert dbo.Carro on
+go
+
+insert into dbo.Carro(Id, Placa, Ano, Combustivel, Cor, Marca, Modelo, Tipo) values(1, 'HNC - 3526', 2019, 'Flex', 'Preto', 'Hyundai', 'HB20', 'Carro pequeno porte')
+insert into dbo.Carro(Id, Placa, Ano, Combustivel, Cor, Marca, Modelo, Tipo) values(2, 'PNG - 1623', 2016, 'Gasolina', 'Branco', 'Ford', 'Ka', 'Carro pequeno porte')
+insert into dbo.Carro(Id, Placa, Ano, Combustivel, Cor, Marca, Modelo, Tipo) values(3, 'RTY - 7956', 2017, 'Etanol', 'Preto', 'WolksWagem', 'Gol', 'Carro pequeno porte')
+insert into dbo.Carro(Id, Placa, Ano, Combustivel, Cor, Marca, Modelo, Tipo) values(4, 'POQ - 1597', 2015, 'Diesel', 'Azul', 'Mercedes', 'Atego', 'Caminhão')
+insert into dbo.Carro(Id, Placa, Ano, Combustivel, Cor, Marca, Modelo, Tipo) values(5, 'CRU - 7531', 2019, 'Flex', 'Chumbo', 'BMW', 'X1', 'Carro')
+
+set identity_insert dbo.Carro off
+go
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.contasAPagar on
+go
+
+insert into dbo.contasAPagar(Id, CentroDeCusto, TipoDespesa, Descricao, Vencimento, Valor) values(1, 'RH', 'Perda de ativos', 'Perda devido a caso externo', '2019-08-10', 720.00)
+insert into dbo.contasAPagar(Id, CentroDeCusto, TipoDespesa, Descricao, Vencimento, Valor) values(2, 'Sinistro', 'Perda de ativos', 'Perda devido erro de transação', '2019-06-10', 600.00)
+insert into dbo.contasAPagar(Id, CentroDeCusto, TipoDespesa, Descricao, Vencimento, Valor) values(3, 'Marketing', 'Aluguel Salão', 'Aluguel salão para apresentação', '2019-10-22', 1300.00)
+insert into dbo.contasAPagar(Id, CentroDeCusto, TipoDespesa, Descricao, Vencimento, Valor) values(4, 'Contabilidade', 'Prejuízo com locação', 'Locação mal sucedida', '2019-10-30', 3800.00)
+
+set identity_insert dbo.contasAPagar off
+go
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.endereco on
+go
+
+insert into dbo.endereco(Id, Rua, Numero, Bairro, CEP, Cidade, Estado) values(1, 'José Francisco da Silva', 148, 'Centro', 15652322 ,'Santana da Vargem', 'Minas Gerais')
+insert into dbo.endereco(Id, Rua, Numero, Bairro, CEP, Cidade, Estado) values(2, 'Domingos de Morais', 1352, 'Aclimação', 1546533,'Nepomuceno', 'Minas Gerais')
+insert into dbo.endereco(Id, Rua, Numero, Bairro, CEP, Cidade, Estado) values(3, 'Avenida Brasil', 641, 'Padre Victor', 45487454,'Boa Esperança', 'Minas Gerais')
+insert into dbo.endereco(Id, Rua, Numero, Bairro, CEP, Cidade, Estado) values(4, 'Domingos Vieira de Lima', 767, 'Zarraia', 46987875,'Varginha', 'Minas Gerais')
+
+set identity_insert dbo.endereco off
+go 
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.estoque on
+go
+
+insert into dbo.estoque(Id, NomePeca, Descricao, Fornecedor, ValorPeca, Quantidade) values(1, 'Pistão', 'Peça para veículo', 'OLMix', 520.00 , 8)
+insert into dbo.estoque(Id, NomePeca, Descricao, Fornecedor, ValorPeca, Quantidade) values(2, 'Motor ACX/21', 'Motor para Caminão', 'SportCen', 4500.00 , 4)
+insert into dbo.estoque(Id, NomePeca, Descricao, Fornecedor, ValorPeca, Quantidade) values(3, 'Pneus', 'Pneus para carros Aro 17', 'Goodyear', 213.00 , 63)
+insert into dbo.estoque(Id, NomePeca, Descricao, Fornecedor, ValorPeca, Quantidade) values(4, 'Retrovisores', 'Peça para veículo', 'OLMix', 123.00 , 32)
+
+set identity_insert dbo.estoque off
+go 
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.manutencao on
+go
+
+insert into dbo.manutencao(Id, DescricaoManutencao, Valor, CarroId, Data) values(1, 'Conserto Motor', 1200.00, 1, '2019-10-24')
+insert into dbo.manutencao(Id, DescricaoManutencao, Valor, CarroId, Data) values(2, 'Troca Pistão', 1150.00, 2, '2019-10-12')
+insert into dbo.manutencao(Id, DescricaoManutencao, Valor, CarroId, Data) values(3, 'Troca Pneus', 1520.00, 3, '2019-10-06')
+insert into dbo.manutencao(Id, DescricaoManutencao, Valor, CarroId, Data) values(4, 'Troca Óleo', 800.00, 1, '2019-10-26')
+
+set identity_insert dbo.manutencao off
+go
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.pessoa on
+go
+
+insert into dbo.pessoa(Id, Nome, CPF, CargoId, EnderecoId, Admissao, Telefone) values(1, 'Jovilso', 1542621, 1, 1, '02-10-2019', '11 9 7756-2321')
+insert into dbo.pessoa(Id, Nome, CPF, CargoId, EnderecoId, Admissao, Telefone) values(2, 'José', 198631, 2, 2, '05-10-2019', '11 9 6541-2312')
+insert into dbo.pessoa(Id, Nome, CPF, CargoId, EnderecoId, Admissao, Telefone) values(3, 'Aristoteles', 1689454, 3, 3, '07-10-2019', '11 9 3674-2521')
+insert into dbo.pessoa(Id, Nome, CPF, CargoId, EnderecoId, Admissao, Telefone) values(4, 'Valdiscleydson', 321454, 4, 4, '08-10-2019', '11 9 9987-5162')
+
+set identity_insert dbo.pessoa off
+go
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.multas on
+go
+
+insert into dbo.multas(Id, PessoaId, Gravidade, DataMulta, ValorMulta, CarroId, TipoMulta) values(1, 1, 'Grave', '2019-10-20', 620.00, 1, 'Dirigir sem cinto')
+insert into dbo.multas(Id, PessoaId, Gravidade, DataMulta, ValorMulta, CarroId, TipoMulta) values(2, 2, 'Leve', '2019-10-16', 210.00, 3, 'Não dar seta ao virar')
+insert into dbo.multas(Id, PessoaId, Gravidade, DataMulta, ValorMulta, CarroId, TipoMulta) values(3, 3, 'Grave', '2019-10-10', 670.00, 2, 'Passar no sinal vermelho')
+insert into dbo.multas(Id, PessoaId, Gravidade, DataMulta, ValorMulta, CarroId, TipoMulta) values(4, 4, 'Muito Grave', '2019-10-13', 950.00, 4, 'Estacionar em via perigosa')
+
+set identity_insert dbo.multas off
+go
+--------------------------------------------------------------------------------------------------------
+set identity_insert dbo.seguro on
+go
+
+insert into dbo.seguro(Id, Apolice, Seguradora, CarroId, DataContratacao, DataValidade, ValorSeguro) values(1, '454698', 'Porto Seguro', 2, '2019-10-01', '2019-12-30', 1200.00)
+insert into dbo.seguro(Id, Apolice, Seguradora, CarroId, DataContratacao, DataValidade, ValorSeguro) values(2, '987462', 'Aon', 1, '2019-10-01', '2019-12-30', 1600.00)
+insert into dbo.seguro(Id, Apolice, Seguradora, CarroId, DataContratacao, DataValidade, ValorSeguro) values(3, '364985', 'Alfa Seguradora', 4, '2019-10-01', '2019-12-30', 2800.00)
+insert into dbo.seguro(Id, Apolice, Seguradora, CarroId, DataContratacao, DataValidade, ValorSeguro) values(4, '797523', 'Porto Seguro', 3, '2019-10-01', '2019-12-30', 3100.00)
+
+set identity_insert dbo.seguro off
+go
+------------------------------------------------------------------------------------------------------------------------
+ALTER TABLE dbo.cargo NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.carro NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.contasAPagar NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.endereco NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.estoque NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.manutencao NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.multas NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.pessoa NOCHECK CONSTRAINT ALL
+ALTER TABLE dbo.seguro NOCHECK CONSTRAINT ALL
