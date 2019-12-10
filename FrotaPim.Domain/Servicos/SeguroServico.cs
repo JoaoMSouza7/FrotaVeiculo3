@@ -13,7 +13,7 @@ public class SeguroServico
         _carroRepository = carroRepository;
     }
 
-    public void Criar(int id, string apolice, string seguradora, int idCarro, DateTime dataContratacao, DateTime validade, decimal valorSeguro)
+    public void Criar(int id, string apolice, string seguradora, int idCarro, DateTime dataContratacao, DateTime validade, string valorSeguro)
     {
         var carro = _carroRepository.ConsultarPorID(idCarro);
         DomainException.when(carro == null, "Carro inválido");
@@ -26,7 +26,7 @@ public class SeguroServico
         }
     }
 
-    public Seguro Editar(int id, string apolice, string seguradora, int idCarro, DateTime dataContratacao, DateTime validade, decimal valorSeguro)
+    public Seguro Editar(int id, string apolice, string seguradora, int idCarro, DateTime dataContratacao, DateTime validade, string valorSeguro)
     {
         var carro = _carroRepository.ConsultarPorID(idCarro);
         var seguroEditar = new Seguro(id, apolice, seguradora, carro, valorSeguro, dataContratacao, validade);

@@ -9,8 +9,8 @@ namespace FrotaPim.Web.Models.ViewsModels
         public string CentroDeCusto { get; set; }
         public string TipoDespesa { get; set; }
         public string Descricao { get; set; }
-        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Vencimento { get; set; }
-        public decimal Valor { get; set; }
+        public string Valor { get; set; }
     }
 }

@@ -17,7 +17,7 @@
         <form asp-action="Criar" asp-controller="Seguro" method="post" asp-anti-forgery>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Apolice" class="control-label"><b>Apolice</b></label>
+                <label asp-for="Apolice" class="control-label"><b>Apólice</b></label>
                 <input asp-for="Apolice" class="form-control"  name="Apolice"/>
                 <span asp-validation-for="Apolice" class="text-danger"></span>
             </div>
@@ -33,18 +33,18 @@
                 </div>
             </div>
             <div class="form-group">
-                <label asp-for="DataContratacao" class="control-label"><b>DataContratacao</b></label>
-                <input placeholder="dd/mm/aaaa" asp-for="DataContratacao" class="form-control"  name="DataContratacao"/>
+                <label asp-for="DataContratacao" class="control-label"><b>Data de Contratação</b></label>
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="DataContratacao" class="form-control"  name="DataContratacao"/>
                 <span asp-validation-for="DataContratacao" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DataValidade" class="control-label"><b>DataValidade</b></label>
-                <input placeholder="dd/mm/aaaa" asp-for="DataValidade" class="form-control" name="DataValidade" />
+                <label asp-for="DataValidade" class="control-label"><b>Data de Validade</b></label>
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="DataValidade" class="form-control" name="DataValidade" />
                 <span asp-validation-for="DataValidade" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorSeguro" class="control-label"><b>Valor do Seguro</b></label>
-                <input placeholder="R$" asp-for="ValorSeguro" class="form-control"  name="ValorSeguro"/>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="ValorSeguro" class="form-control"  name="ValorSeguro"/>
                 <span asp-validation-for="DataValidade" class="text-danger"></span>
             </div>
             <div class="form-group">

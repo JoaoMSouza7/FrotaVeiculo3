@@ -71,3 +71,7 @@ C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Account\Login.g.cshtml.c
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\Criar.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\User\Index.g.cshtml.cs
 C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Account\AccessDenied.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Viagem\Criar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Viagem\Detalhes.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Viagem\Editar.g.cshtml.cs
+C:\pim\FrotaPim.Web\obj\Debug\netcoreapp2.2\Razor\Views\Viagem\Index.g.cshtml.cs

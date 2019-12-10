@@ -37,6 +37,10 @@
     <td>
         <a href="/Pessoa" class="btn btn-secondary btn-sm">Funcionários</a>
     </td>
+        <td> <b>|</b> </td>
+    <td>
+        <a href="/Viagem" class="btn btn-secondary btn-sm">Viagens</a>
+    </td>
 <hr/>
 </div>
 <h2>@ViewData["Title"]</h2>
@@ -48,16 +52,16 @@
     <thead>
         <tr>
             <th>
-                <b>@Html.DisplayNameFor(model => model.Apolice)</b>
+                @Html.DisplayNameFor(model => model.Apolice)
             </th>
             <th>
-                <b>@Html.DisplayNameFor(model => model.Seguradora)</b>
+                @Html.DisplayNameFor(model => model.Seguradora)
             </th>
             <th>
-                <b>@Html.DisplayNameFor(model => model.Placa)</b>
+                @Html.DisplayNameFor(model => model.Placa)
             </th>
             <th>
-                <b>@Html.DisplayNameFor(model => model.ValorSeguro)
+                @Html.DisplayNameFor(model => model.ValorSeguro)
             </th></b>
             <th></th>
         </tr>

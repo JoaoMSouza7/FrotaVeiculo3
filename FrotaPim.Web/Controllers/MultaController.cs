@@ -31,7 +31,7 @@ namespace FrotaPim.Web.Controllers
             var multas = _context.ObterTodos();
             if (multas.Any())
             {
-                List<MultaViewModel> viewsModels = multas.Select(p => new MultaViewModel { Id = p.Id, Gravidade = p.Gravidade, IdCarro = p.Carro.Id, IdPessoa = p.Pessoa.Id, TipoMulta = p.TipoMulta, DataMulta = p.DataMulta, ValorMulta = p.ValorMulta }).ToList();
+                IEnumerable<MultaViewModel> viewsModels = multas.Select(p => new MultaViewModel { Id = p.Id, Gravidade = p.Gravidade, IdCarro = p.Carro.Id, IdPessoa = p.Pessoa.Id, TipoMulta = p.TipoMulta, DataMulta = p.DataMulta, ValorMulta = p.ValorMulta }).ToList();
 
                 foreach (MultaViewModel item in viewsModels)
                 {
@@ -105,13 +105,13 @@ namespace FrotaPim.Web.Controllers
             var model = new MultaViewModel();
 
             var carros = _contextCar.ObterTodos().ToList();
-            carros.Insert(0, new Carro { Placa = carro.Placa });
+            carros.Insert(0, new Carro { Id = carro.Id, Placa = carro.Placa });
             model.Carros = carros.Any()
                 ? carros.Select(c => new CarroViewModel { IDCarro = c.Id, Placa = c.Placa, Marca = c.Marca, Tipo = c.Tipo, Modelo = c.Modelo, Combustivel = c.Combustivel, Cor = c.Cor, Ano = c.Ano })
                 : new List<CarroViewModel>();
 
             var pessoas = _contextPessoa.ObterTodos().ToList();
-            pessoas.Insert(0, new Pessoa { Nome = pessoa.Nome });
+            pessoas.Insert(0, new Pessoa { Id = pessoa.Id, Nome = pessoa.Nome });
             model.Pessoas = pessoas.Any()
                 ? pessoas.Select(p => new PessoaViewModel { IDPessoa = p.Id, Nome = p.Nome, CPF = p.CPF, CargoId = p.Cargo.Id, NomeCargo = p.Cargo.NomeCargo, EnderecoId = p.Endereco.Id, Admissao = p.Admissao, Telefone = p.Telefone })
                 : new List<PessoaViewModel>();

@@ -7,7 +7,7 @@
 <div>
     <hr />
     <td>
-        <a href="/Cargo" class="btn btn-light btn-sm">Cargos</a>
+        <a href="/Cargo" class="btn btn-secondary btn-sm">Cargos</a>
     </td>
     <td> <b>|</b> </td> 
     <td>
@@ -37,6 +37,10 @@
     <td>
         <a href="/Seguro" class="btn btn-secondary btn-sm">Seguro</a>
     </td>
+    <td> <b>|</b> </td>
+    <td>
+        <a href="/Viagem" class="btn btn-secondary btn-sm">Viagens</a>
+    </td>
 <hr/>
 </div>
 <h2>@ViewData["Title"]</h2>
@@ -48,7 +52,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.NomePessoa)
+                Funcionário
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Placa)
@@ -57,10 +61,10 @@
                 @Html.DisplayNameFor(model => model.Gravidade)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.TipoMulta)
+                Tipo de Multa
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ValorMulta)
+                Valor
             </th>
             <th></th>
         </tr>

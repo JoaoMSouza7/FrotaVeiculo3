@@ -99,7 +99,7 @@ namespace FrotaPim.Web.Controllers
 
             var viewModel = new ManutencaoViewModel();
             var carros = _contextCar.ObterTodos().ToList();
-            carros.Insert(0, new Carro { Placa = carro.Placa });
+            carros.Insert(0, new Carro { Id = carro.Id, Placa = carro.Placa });
             viewModel.Carros = carros.Any()
                 ? carros.Select(c => new CarroViewModel { IDCarro = c.Id, Placa = c.Placa, Marca = c.Marca, Tipo = c.Tipo, Modelo = c.Modelo, Combustivel = c.Combustivel, Cor = c.Cor, Ano = c.Ano })
                 : new List<CarroViewModel>();

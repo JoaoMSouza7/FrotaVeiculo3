@@ -33,12 +33,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Vencimento" class="control-label">Vencimento</label>
-                <input type="date" asp-for="Vencimento" class="form-control" name="Vencimento"/>
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="Vencimento" class="form-control" name="Vencimento"/>
                 <span asp-validation-for="Vencimento" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Valor" class="control-label">Valor</label>
-                <input type="number" asp-for="Valor" class="form-control" name="Valor"/>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" asp-for="Valor" class="form-control" name="Valor"/>
                 <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
             <div class="form-group">

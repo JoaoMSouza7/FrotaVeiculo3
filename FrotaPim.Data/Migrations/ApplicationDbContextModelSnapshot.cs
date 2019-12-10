@@ -122,7 +122,7 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<string>("TipoDespesa");
 
-                    b.Property<decimal>("Valor");
+                    b.Property<string>("Valor");
 
                     b.Property<DateTime>("Vencimento");
 
@@ -168,7 +168,7 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<int>("Quantidade");
 
-                    b.Property<decimal>("ValorPeca");
+                    b.Property<string>("ValorPeca");
 
                     b.HasKey("Id");
 
@@ -212,7 +212,7 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<string>("TipoMulta");
 
-                    b.Property<decimal>("ValorMulta");
+                    b.Property<string>("ValorMulta");
 
                     b.HasKey("Id");
 
@@ -266,13 +266,42 @@ namespace FrotaPim.Data.Migrations
 
                     b.Property<string>("Seguradora");
 
-                    b.Property<decimal>("ValorSeguro");
+                    b.Property<string>("ValorSeguro");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CarroId");
 
                     b.ToTable("seguro");
+                });
+
+            modelBuilder.Entity("FrotaPim.Domain.Entidades.Viagem", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("CarroId");
+
+                    b.Property<DateTime>("DataViagem");
+
+                    b.Property<string>("Destino");
+
+                    b.Property<decimal>("KM");
+
+                    b.Property<string>("Origem");
+
+                    b.Property<int?>("PessoaId");
+
+                    b.Property<string>("Valor");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CarroId");
+
+                    b.HasIndex("PessoaId");
+
+                    b.ToTable("viagem");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -419,6 +448,17 @@ namespace FrotaPim.Data.Migrations
                     b.HasOne("FrotaPim.Domain.Entidades.Carro", "Carro")
                         .WithMany()
                         .HasForeignKey("CarroId");
+                });
+
+            modelBuilder.Entity("FrotaPim.Domain.Entidades.Viagem", b =>
+                {
+                    b.HasOne("FrotaPim.Domain.Entidades.Carro", "Carro")
+                        .WithMany()
+                        .HasForeignKey("CarroId");
+
+                    b.HasOne("FrotaPim.Domain.Entidades.Pessoa", "Pessoa")
+                        .WithMany()
+                        .HasForeignKey("PessoaId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

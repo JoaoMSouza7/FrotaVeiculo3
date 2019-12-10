@@ -12,7 +12,7 @@ namespace FrotaPim.Web.Models.ViewsModels
         public decimal Valor { get; set; }
         public int IdCarro { get; set; }
         public string Placa { get; set; }
-        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Data { get; set; }
         public IEnumerable<CarroViewModel> Carros { get; set; }
     }

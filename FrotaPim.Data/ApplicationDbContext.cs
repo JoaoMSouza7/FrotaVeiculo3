@@ -21,6 +21,7 @@ namespace FrotaPim.Data
         public DbSet<Multa> multas { get; set; }
         public DbSet<Pessoa> pessoa { get; set; }
         public DbSet<Seguro> seguro { get; set; }
+        public DbSet<Viagem> viagem {get; set;}
 
     }
 }

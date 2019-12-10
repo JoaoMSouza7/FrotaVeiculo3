@@ -8,7 +8,7 @@ namespace FrotaPim.Web.Models.ViewsModels
         public string NomePeca { get; set; }
         public string Descricao { get; set; }
         public string Fornecedor { get; set; }
-        public decimal ValorPeca { get; set; }
+        public string ValorPeca { get; set; }
         public int Quantidade { get; set; }
     }
 }

@@ -1,0 +1,60 @@
+@model FrotaPim.Web.Models.ViewsModels.ViagemViewModel
+
+@{
+    ViewData["Title"] = "Detalhes da Viagem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Origem
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Origem)
+        </dd>
+        <dt class="col-sm-2">
+            Destino
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Destino)
+        </dd>
+        <dt class="col-sm-2">
+            Quilometragem
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.KM)
+        </dd>
+        <dt class="col-sm-2">
+            Custo da Viagem
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Valor)
+        </dd>
+        <dt class="col-sm-2">
+            Veículo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Placa)
+        </dd>
+        <dt class="col-sm-2">
+            Motorista
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomePessoa)
+        </dd>
+        <dt class="col-sm-2">
+            Data da Viagem
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DataViagem)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a href="../Editar/@Model.Id" class="btn btn-primary btn-sm">Editar</a> |
+    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
+</div>

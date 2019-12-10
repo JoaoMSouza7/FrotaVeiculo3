@@ -14,9 +14,9 @@ namespace FrotaPim.Web.Models.ViewsModels
         public string NomePessoa { get; set; }
         public string Gravidade { get; set; }
         public string TipoMulta { get; set; }
-        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataMulta { get; set; }
-        public decimal ValorMulta { get; set; }
+        public string ValorMulta { get; set; }
         public Carro Carro { get; set; }
         public int IdCarro { get; set; }
         public IEnumerable<CarroViewModel> Carros { get; set; }

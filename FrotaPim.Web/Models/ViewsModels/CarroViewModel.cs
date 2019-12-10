@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using FrotaPim.Domain.Entidades;
 
 namespace FrotaPim.Web.Models.ViewsModels

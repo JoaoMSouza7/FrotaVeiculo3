@@ -1,0 +1,63 @@
+@model FrotaPim.Web.Models.ViewsModels.ViagemViewModel
+
+@{
+    ViewData["Title"] = "Editar Viagem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewData["Title"]</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Editar" asp-controller="Multa" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Origem" class="control-label"><b>Origem</b></label>
+                <input asp-for="Origem" class="form-control" name="Origem" value="@Model.Origem"/>
+                <span asp-validation-for="Origem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Destino" class="control-label"><b>Destino</b></label>
+                <input asp-for="Destino" class="form-control" name="Destino" value="@Model.Destino"/>
+                <span asp-validation-for="Destino" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KM" class="control-label"><b>Quilometragem</b></label>
+                <input placeholder="Km" asp-for="KM" class="form-control" name="KM" value="@Model.KM"/>
+                <span asp-validation-for="KM" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Valor" class="control-label"><b>Custo da Viagem</b></label>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" asp-for="Valor" class="form-control" name="Valor" value="@Model.Valor"/>
+                <span asp-validation-for="Valor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DataViagem" class="control-label"><b>Data da Viagem</b></label>
+                <input placeholder="dd/mm/aaaa" type="date" asp-for="DataViagem" class="form-control" name="DataViagem" value="@Model.DataViagem.ToString("yyyy-MM-dd")"""/>
+                <span asp-validation-for="DataViagem" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label class="control-label"><b>Motorista</b></label>
+                <div>
+                     @Html.DropDownList("IDPessoa", new SelectList(@Model.Pessoas, "IDPessoa", "Nome", "0"), new {@class="form-control"})
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label"><b>Veículo</b></label>
+                <div>
+                     @Html.DropDownList("IDCarro", new SelectList(@Model.Carros, "IDCarro", "Placa", "0"), new {@class="form-control"})
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary btn-sm" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="../Editar/@Model.Id" class="btn btn-primary btn-sm">Editar</a> |
+    <a href="../Index" class="btn btn-secondary btn-sm">Voltar</a>
+</div>
+
+

@@ -15,7 +15,7 @@ public class MultaServico
         _pessoaRepository = pessoaRepository;
     }
 
-    public void Criar(int id, int idPessoa, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, int idCarro)
+    public void Criar(int id, int idPessoa, string tipoMulta, string gravidade, DateTime dataMulta, string valorMulta, int idCarro)
     {
         var car = _carroRepository.ConsultarPorID(idCarro);
         DomainException.when(car == null, "Carro inválido");
@@ -31,7 +31,7 @@ public class MultaServico
         }
     }
 
-    public Multa Editar(int id, int pessoaId, string tipoMulta, string gravidade, DateTime dataMulta, decimal valorMulta, int carroId)
+    public Multa Editar(int id, int pessoaId, string tipoMulta, string gravidade, DateTime dataMulta, string valorMulta, int carroId)
     {
         var car = _carroRepository.ConsultarPorID(carroId);
         var people = _pessoaRepository.ConsultarPorID(pessoaId);

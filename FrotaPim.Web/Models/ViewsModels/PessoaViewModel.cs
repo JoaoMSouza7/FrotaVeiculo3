@@ -14,7 +14,7 @@ namespace FrotaPim.Web.Models.ViewsModels
         public List<CargoViewModel> Cargos { get; set; }
         public string NomeCargo { get; set; }
         public int EnderecoId { get; set; }
-        [DisplayFormat(DataFormatString = "{0:MMM dd, yyyy}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Admissao { get; set; }
         public string Telefone { get; set; } 
         public EnderecoViewModel Endereco { get; set; } 

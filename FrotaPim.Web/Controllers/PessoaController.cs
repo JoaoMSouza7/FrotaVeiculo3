@@ -109,7 +109,7 @@ namespace FrotaPim.Web.Controllers
 
             var viewModel = new PessoaViewModel();
             var cargos = _contextCargo.ObterTodos().ToList();
-            cargos.Insert(0, new Cargo { NomeCargo = cargo.NomeCargo });
+            cargos.Insert(0, new Cargo { Id = cargo.Id, NomeCargo = cargo.NomeCargo });
             viewModel.Cargos = cargos.Any()
                 ? cargos.Select(c => new CargoViewModel { CargoId = c.Id, Nome = c.NomeCargo, Descricao = c.Descricao }).ToList()
                 : new List<CargoViewModel>();

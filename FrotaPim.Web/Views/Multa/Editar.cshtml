@@ -22,12 +22,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataMulta" class="control-label"><b>Data da Multa</b></label>
-                <input placeholder="dd/mm/aaaa" asp-for="DataMulta" class="form-control" name="DataMulta" value="@Model.DataMulta"/>
+                <input type="date" asp-for="DataMulta" class="form-control" name="DataMulta" value="@Model.DataMulta.ToString("yyyy-MM-dd")""/>
                 <span asp-validation-for="DataMulta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorMulta" class="control-label"><b>Valor da Multa</b></label>
-                <input asp-for="ValorMulta" class="form-control" name="ValorMulta" value="@Model.ValorMulta"/>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" asp-for="ValorMulta" class="form-control" name="ValorMulta" value="@Model.ValorMulta"/>
                 <span asp-validation-for="ValorMulta" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />
