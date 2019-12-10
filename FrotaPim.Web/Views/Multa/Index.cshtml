@@ -88,9 +88,9 @@
                 @Html.DisplayFor(modelItem => item.ValorMulta)
             </td>
             <td>
-                <a href="/Multa/Editar/@item.Id" class="btn btn-primary btn-sm">Editar</a> |
+                <a href="/Multa/Editar/@item.Id" class="btn btn-primary btn-sm"><i class="fa fa-edit mx-2"></i>Editar</a> |
                 <a href="/Multa/Detalhes/@item.Id" class="btn btn-primary btn-sm">Detalhes</a> |
-                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.TipoMulta" code="@item.Id"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+                <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.TipoMulta" code="@item.Id"><i class="fas fa-trash mx-2" data-toggle="tooltip" title="Delete"></i>Deletar</a>
             </td>
         </tr>
 }

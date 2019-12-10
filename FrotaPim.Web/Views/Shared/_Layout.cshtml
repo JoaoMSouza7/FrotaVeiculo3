@@ -2,11 +2,15 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/jquery-2.2.0.min.js" type="text/javascript"></script>
+    <script src="lib/jquery/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js" type="text/javascript"></script>    
+    <script src="lib/fontawesome/js/fontawesome.min.js" type="text/javascript"></script>    
+    <script src="lib/fontawesome/js/all.min.js" type="text/javascript"></script>    
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href = "css/bootstrap.min.css" rel ="stylesheet">
-    <link href = "css/styles.css" rel ="stylesheet">
+    <link href = "lib/bootstrap/dist/css/bootstrap.min.css" rel ="stylesheet">
+    <link href = "css/site.css" rel ="stylesheet">
+    <link href = "lib/fontawesome/css/fontawesome.min.css" rel ="stylesheet">
+
     <title>@ViewData["Title"] - FrotaPim.Web</title>
 
     <environment include="Development">
@@ -40,12 +44,14 @@
                         </li>
                         <ul class="nav navbar-nav navbar-right ">
                             <li>
-                                <a href="/Account/Logout" type="submit" class="btn btn-dark text-whrite btn">Sair</a>
+                                
                             </li>
                         </ul>
-
                     </ul>
                 </div>
+                    <div>
+                        <a href="/Account/Logout" type="submit" class="btn btn-dark text-whrite btn">Sair</a>
+                    </div>                
             </div>
         </nav>
     </header>

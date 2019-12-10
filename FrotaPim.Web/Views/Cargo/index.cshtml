@@ -47,7 +47,7 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>
-    <a href="/Cargo/Criar" class="btn btn-primary btn-sm">Criar novo cargo</a>
+    <a href="/Cargo/Criar" class="btn btn-primary btn-sm"><i class="fas fa-plus mx-2"></i>Criar novo cargo</a>
 </p>
 <table class="table">
     <thead>
@@ -72,9 +72,9 @@
                     @Html.DisplayFor(modelItem => item.Descricao)
                 </td>
                 <td>
-                    <a href="/Cargo/Editar/@item.CargoId" class="btn btn-primary btn-sm">Editar</a> |
+                    <a href="/Cargo/Editar/@item.CargoId" class="btn btn-primary btn-sm"><i class="fa fa-edit mx-2"></i>Editar</a> |
                     <a href="/Cargo/Detalhes/@item.CargoId" class="btn btn-primary btn-sm">Detalhes</a> |
-                    <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.CargoId"><i class="fas fa-trash" data-toggle="tooltip" title="Delete"></i>Deletar</a>
+                    <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.Nome" code="@item.CargoId"><i class="fas fa-trash mx-2" data-toggle="tooltip" title="Delete"></i>Deletar</a>
                 </td>
             </tr>
         }
