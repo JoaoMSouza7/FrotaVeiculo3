@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using Aurochses.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace FrotaPim.Domain.Account
 {

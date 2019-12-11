@@ -7,6 +7,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Authorization;
+using System;
 
 namespace FrotaPim.Web.Controllers
 {
@@ -88,6 +89,10 @@ namespace FrotaPim.Web.Controllers
         [HttpPost]
         public IActionResult Criar(ViagemViewModel viagem)
         {
+            if(viagem == null)
+            {
+                throw new Exception("O Objeto não pode conter campos nulos");
+            }
             _service.Criar(viagem.Id, viagem.Origem, viagem.Destino, viagem.KM, viagem.DataViagem, viagem.Valor, viagem.IdCarro, viagem.IdPessoa );
             return RedirectToAction("Index");
         }

@@ -14,7 +14,9 @@ namespace FrotaPim.Web.Models.ViewsModels
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataViagem { get; set; }
         public string Valor { get; set; }
+        [Required]
         public IEnumerable<CarroViewModel> Carros { get; set; }
+        [Required]
         public IEnumerable<PessoaViewModel> Pessoas { get; set; }
         public int IdCarro { get; set; }
         public int IdPessoa { get; set; }

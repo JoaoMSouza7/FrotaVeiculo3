@@ -8,7 +8,6 @@
 <div class="row header">
     <div class="col-md-12">
         <h2>@ViewData["Title"]</h2>
-        <a href="/Carro" class="btn btn-secondary btn-sm">Voltar</a>
     </div>
 </div>
 <hr />
@@ -18,47 +17,47 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Placa" class="control-label">Placa</label>
-                <input asp-for="Placa" class="form-control" name="Placa"/>
+                <input asp-for="Placa" class="form-control" name="Placa" required/>
                 <span asp-validation-for="Placa" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Tipo" class="control-label">Tipo</label>
-                <input asp-for="Tipo" class="form-control" name="Tipo" />
+                <input asp-for="Tipo" class="form-control" name="Tipo" required/>
                 <span asp-validation-for="Tipo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Marca" class="control-label">Marca</label>
-                <input asp-for="Marca" class="form-control" name="Marca"/>
+                <input asp-for="Marca" class="form-control" name="Marca" required/>
                 <span asp-validation-for="Marca" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Modelo" class="control-label">Modelo</label>
-                <input asp-for="Modelo" class="form-control" name="Modelo"/>
+                <input asp-for="Modelo" class="form-control" name="Modelo" required/>
                 <span asp-validation-for="Modelo" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Combustivel" class="control-label">Combustivel</label>
-                <input asp-for="Combustivel" class="form-control" name="Combustivel"/>
+                <input asp-for="Combustivel" class="form-control" name="Combustivel" required/>
                 <span asp-validation-for="Combustivel" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Cor" class="control-label">Cor</label>
-                <input asp-for="Cor" class="form-control" name="Cor"/>
+                <input asp-for="Cor" class="form-control" name="Cor" required/>
                 <span asp-validation-for="Cor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Ano" class="control-label">Ano</label>
-                <input asp-for="Ano" class="form-control input-year" name="Ano"/>
+                <input asp-for="Ano" class="form-control input-year" name="Ano" required/>
                 <span asp-validation-for="Ano" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Motorista" class="control-label">Motorista</label>
-                <input asp-for="_Motorista" class="form-control" name="_Motorista"/>
+                <input asp-for="_Motorista" class="form-control" name="_Motorista" required/>
                 <span asp-validation-for="Motorista" class="text-danger"></span>
             </div>
             <div class="form-group float-right">
                 <input type="submit" value="Criar" class="btn btn-success btn-sm" />
-                <a href="../Index" class="btn btn-success btn-sm"><i class="fa fa-times mx-2"></i>Voltar</a>
+                <a href="/Carro" class="btn btn-secondary btn-sm">Voltar</a>
             </div>
         </form>
     </div>

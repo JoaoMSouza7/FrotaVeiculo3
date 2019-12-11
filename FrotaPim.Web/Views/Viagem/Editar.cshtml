@@ -12,17 +12,17 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Origem" class="control-label"><b>Origem</b></label>
-                <input asp-for="Origem" class="form-control" name="Origem" value="@Model.Origem"/>
+                <input asp-for="Origem" class="form-control" name="Origem" value="@Model.Origem" required/>
                 <span asp-validation-for="Origem" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Destino" class="control-label"><b>Destino</b></label>
-                <input asp-for="Destino" class="form-control" name="Destino" value="@Model.Destino"/>
+                <input asp-for="Destino" class="form-control" name="Destino" value="@Model.Destino" required/>
                 <span asp-validation-for="Destino" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="KM" class="control-label"><b>Quilometragem</b></label>
-                <input placeholder="Km" asp-for="KM" class="form-control" name="KM" value="@Model.KM"/>
+                <input placeholder="Km" asp-for="KM" class="form-control" name="KM" value="@Model.KM" required/>
                 <span asp-validation-for="KM" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -32,7 +32,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataViagem" class="control-label"><b>Data da Viagem</b></label>
-                <input placeholder="dd/mm/aaaa" type="date" asp-for="DataViagem" class="form-control" name="DataViagem" value="@Model.DataViagem.ToString("yyyy-MM-dd")"""/>
+                <input placeholder="dd/mm/aaaa" type="date" asp-for="DataViagem" class="form-control" name="DataViagem" value="@Model.DataViagem.ToString("yyyy-MM-dd")""" required/>
                 <span asp-validation-for="DataViagem" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />

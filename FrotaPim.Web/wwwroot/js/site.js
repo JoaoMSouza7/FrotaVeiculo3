@@ -155,3 +155,29 @@ function mascara(i){
 
 
  }
+
+ function continuar(){
+    var inputs = document.getElementsByClassName("verification");
+  
+    if (validationInput(inputs) == true){
+      console.log("continuar");
+    }else{
+      console.log("Não continuar");
+    }
+  
+  }
+  
+  function validationInput(inputs){
+    var resutado = true;
+    for(var i = 0; i < inputs.length; i++){
+        if (inputs[i].hasAttribute('required') ){
+          if (inputs[i].value == ""){
+  
+            inputs[i].style.background = "Red";
+            inputs[i].placeholder = "Esse Campo é obrigatório !"
+            resutado = false;
+          }
+        }
+      }
+    return resutado;
+  }

@@ -46,7 +46,7 @@
 <h2>@ViewData["Title"]</h2>
 
 <p>
-    <a href="/ContasAPagar/Criar" class="btn btn-primary btn-sm">Criar nova conta</a>
+    <a href="/ContasAPagar/Criar" class="btn btn-primary btn-sm"><i class="fas fa-plus mx-2"></i>Criar nova conta</a>
 </p>
 <table class="table table-hover">
     <thead>
@@ -89,7 +89,7 @@
             </td>
             <td>
                 <a href="/ContasAPagar/Editar/@item.IdConta" class="btn btn-primary btn-sm"><i class="fa fa-edit mx-2"></i>Editar</a> |
-                <a href="/ContasAPagar/Detalhes/@item.IdConta" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="/ContasAPagar/Detalhes/@item.IdConta" class="btn btn-primary btn-sm"><i class="fas fa-info mx-2"></i>Detalhes</a> |
                 <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.TipoDespesa" code="@item.IdConta"><i class="fas fa-trash mx-2" data-toggle="tooltip" title="Delete"></i>Deletar</a>
             </td>
         </tr>

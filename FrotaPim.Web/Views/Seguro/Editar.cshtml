@@ -12,12 +12,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Apolice" class="control-label"><b>Apólice</b></label>
-                <input asp-for="Apolice" class="form-control" name="Apolice" value="@Model.Apolice"/>
+                <input asp-for="Apolice" class="form-control" name="Apolice" value="@Model.Apolice" required/>
                 <span asp-validation-for="Apolice" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Seguradora" class="control-label"><b>Seguradora</b></label>
-                <input asp-for="Seguradora" class="form-control" name="Seguradora" value="@Model.Seguradora"/>
+                <input asp-for="Seguradora" class="form-control" name="Seguradora" value="@Model.Seguradora" required/>
                 <span asp-validation-for="Seguradora" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -28,17 +28,17 @@
             </div>
             <div class="form-group">
                 <label asp-for="DataContratacao" class="control-label"><b>Data de Cotratação</b></label>
-                <input type="date" placeholder="dd/mm/aaaa" asp-for="DataContratacao" class="form-control" name="DataContratacao" value="@Model.DataContratacao"/>
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="DataContratacao" class="form-control" name="DataContratacao" value="@Model.DataContratacao" required/>
                 <span asp-validation-for="DataContratacao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataValidade" class="control-label"><b>Data de validade</b></label>
-                <input type="date" placeholder="dd/mm/aaaa" asp-for="DataValidade" class="form-control" name="DataValidade" value="@Model.DataValidade.ToString("yyyy-MM-dd")""/>
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="DataValidade" class="form-control" name="DataValidade" value="@Model.DataValidade.ToString("yyyy-MM-dd")"" required/>
                 <span asp-validation-for="DataValidade" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorSeguro" class="control-label"><b>Valor do Seguro</b></label>
-                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="ValorSeguro" class="form-control" name="ValorSeguro" value="@Model.ValorSeguro"/>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="ValorSeguro" class="form-control" name="ValorSeguro" value="@Model.ValorSeguro" required/>
                 <span asp-validation-for="DataValidade" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />

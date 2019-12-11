@@ -13,27 +13,27 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="NomePeca" class="control-label">Nome da Peça</label>
-                <input asp-for="NomePeca" class="form-control" name="NomePeca" value="@Model.NomePeca"/>
+                <input asp-for="NomePeca" class="form-control" name="NomePeca" value="@Model.NomePeca" required/>
                 <span asp-validation-for="NomePeca" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Descricao" class="control-label">Descrição</label>
-                <input asp-for="Descricao" class="form-control" name="Descricao" value="@Model.Descricao"/>
+                <input asp-for="Descricao" class="form-control" name="Descricao" value="@Model.Descricao" required/>
                 <span asp-validation-for="Descricao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Fornecedor" class="control-label">Fornecedor</label>
-                <input asp-for="Fornecedor" class="form-control" name="Fornecedor" value="@Model.Fornecedor"/>
+                <input asp-for="Fornecedor" class="form-control" name="Fornecedor" value="@Model.Fornecedor" required/>
                 <span asp-validation-for="Fornecedor" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorPeca" class="control-label">Valor da Peça</label>
-                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" asp-for="ValorPeca" placeholder="R$" class="form-control" name="ValorPeca" value="@Model.ValorPeca"/>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" asp-for="ValorPeca" placeholder="R$" class="form-control" name="ValorPeca" value="@Model.ValorPeca" required/>
                 <span asp-validation-for="ValorPeca" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quantidade" class="control-label">Quantidade</label>
-                <input asp-for="Quantidade" class="form-control" name="Quantidade" value="@Model.Quantidade"/>
+                <input asp-for="Quantidade" class="form-control" name="Quantidade" value="@Model.Quantidade" required/>
                 <span asp-validation-for="Quantidade" class="text-danger"></span>
             </div>
             <input type="hidden" asp-for="Id" />

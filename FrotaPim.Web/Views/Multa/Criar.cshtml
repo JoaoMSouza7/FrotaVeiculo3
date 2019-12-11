@@ -7,7 +7,7 @@
 <div class="row header">
     <div class="col-md-12">
         <h2>@ViewData["Title"]</h2>
-        <a href="/Multa" class="btn btn-secondary btn-sm">Voltar</a>
+        
     </div>
 </div>
 <hr />
@@ -17,22 +17,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Gravidade" class="control-label">Gravidade</label>
-                <input asp-for="Gravidade" class="form-control" name="Gravidade"/>
+                <input asp-for="Gravidade" class="form-control" name="Gravidade" required/>
                 <span asp-validation-for="Gravidade" class="text-danger"></span>
             </div>
            <div class="form-group">
                 <label asp-for="TipoMulta" class="control-label">Tipo de Multa</label>
-                <input type="TipoMulta" asp-for="TipoMulta" class="form-control" name="TipoMulta"/>
+                <input type="TipoMulta" asp-for="TipoMulta" class="form-control" name="TipoMulta"required/>
                 <span asp-validation-for="ValorMulta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DataMulta" class="control-label">Data da Multa</label>
-                <input type="date" type="date" asp-for="DataMulta" class="form-control" name="DataMulta"/>
+                <input type="date" type="date" asp-for="DataMulta" class="form-control" name="DataMulta" required/>
                 <span asp-validation-for="DataMulta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="ValorMulta" class="control-label">Valor da Multa</label>
-                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="ValorMulta" class="form-control" name="ValorMulta"/>
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="ValorMulta" class="form-control" name="ValorMulta" required/>
                 <span asp-validation-for="ValorMulta" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,6 +49,7 @@
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
+                <a href="/Multa" class="btn btn-secondary btn-sm">Voltar</a>
             </div>
         </form>
     </div>

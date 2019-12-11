@@ -12,22 +12,22 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"><b>Nome Completo</b></label>
-                <input asp-for="Nome" class="form-control" name="Nome" value="@Model.Nome"/>
+                <input asp-for="Nome" class="form-control" name="Nome" value="@Model.Nome" required/>
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CPF" class="control-label"><b>CPF</b></label>
-                <input oninput="mascara(this)" type="text" asp-for="CPF" class="form-control" name="CPF" value="@Model.CPF"/>
+                <input oninput="mascara(this)" type="text" asp-for="CPF" class="form-control" name="CPF" value="@Model.CPF" required/>
                 <span asp-validation-for="CPF" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Admissao" class="control-label"><b>Admissão</b></label>
-                <input type="date" placeholder="dd/mm/aaaa" asp-for="Admissao" class="form-control" name="Admissao" value="@Model.Admissao"/>
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="Admissao" class="form-control" name="Admissao" value="@Model.Admissao" required/>
                 <span asp-validation-for="Admissao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Telefone" class="control-label"><b>Telefone</b></label>
-                <input asp-for="Telefone" class="form-control" name="Telefone" value="@Model.Telefone"/>
+                <input asp-for="Telefone" class="form-control" name="Telefone" value="@Model.Telefone" required/>
                 <span asp-validation-for="Telefone" class="text-danger"></span>
             </div>
             <div class="form-group">

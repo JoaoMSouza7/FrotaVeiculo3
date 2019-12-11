@@ -8,7 +8,7 @@
 <div class="row header">
     <div class="col-md-12">
         <h2>@ViewData["Title"]</h2>
-        <a href="/Manutencao" class="btn btn-secondary btn-sm">Voltar</a>
+        
     </div>
 </div>
 <hr />
@@ -18,12 +18,12 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="DescricaoManutencao" class="control-label">Descrição</label>
-                <input asp-for="DescricaoManutencao" class="form-control" name="DescricaoManutencao" />
+                <input asp-for="DescricaoManutencao" class="form-control" name="DescricaoManutencao" required/>
                 <span asp-validation-for="DescricaoManutencao" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Valor" class="control-label">Valor</label>
-                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="Valor" class="form-control" name="Valor" />
+                <input size="10" maxlength="10" onkeydown="FormataMoeda(this,10,event)" onkeypress="return maskKeyPress(event)" placeholder="R$" asp-for="Valor" class="form-control" name="Valor" required/>
                 <span asp-validation-for="Valor" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -34,11 +34,12 @@
             </div>
             <div class="form-group">
                 <label asp-for="Data" class="control-label">Data da Manutenção</label>
-                <input type="date" placeholder="dd/mm/aaaa" asp-for="Data" class="form-control" name="Data" />
+                <input type="date" placeholder="dd/mm/aaaa" asp-for="Data" class="form-control" name="Data" required/>
                 <span asp-validation-for="Data" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Salvar" class="btn btn-success btn-sm" />
+                <a href="/Manutencao" class="btn btn-secondary btn-sm">Voltar</a>
             </div>
         </form>
     </div>

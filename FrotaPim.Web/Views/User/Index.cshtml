@@ -1,13 +1,13 @@
 @model IEnumerable<FrotaPim.Web.Models.ViewsModels.UserViewModel>
 @{
-    ViewData["Title"] = "User";
+    ViewData["Title"] = "Usuários Cadastrados";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="row header">
     <div class="col-md-12">
         <h3>Usuários</h3>
-        <a href="/User/Criar" class="btn btn-primary">Novo Usuário</a>
+        <a href="/User/Criar" class="btn btn-primary btn-sm"><i class="fas fa-plus mx-2"></i>Novo Usuário</a>
     </div>
 </div>
 <div class="row">
@@ -29,9 +29,6 @@
                         <tr>
                             <td>
                                 <a class="name">@viewModel.Email</a>
-                            </td>
-                            <td>
-                                <a href="/User/ChangePassword/@viewModel.Id" class="btn btn-dark btn-sm">Alterar Senha</a>
                             </td>
                         </tr>
                     }

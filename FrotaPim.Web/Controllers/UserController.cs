@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Threading.Tasks;
+using Aurochses.AspNetCore.Identity.EntityFrameworkCore;
 using FrotaPim.Domain.Account;
 using FrotaPim.Web.Models.ViewsModels;
 using Microsoft.AspNetCore.Authorization;
@@ -7,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FrotaPim.Web.Controllers
 {
-    [Authorize(Roles = "Admin, Manager")]
+    [Authorize(Roles = "Admin")]
     public class UserController : Controller
     {
         private readonly IManager _manager;

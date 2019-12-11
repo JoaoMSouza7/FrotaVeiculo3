@@ -46,7 +46,7 @@
 <h2>@ViewData["Title"]</h2>
 
 <p>
-    <a href="/Multa/Criar" class="btn btn-primary btn-sm">Adicionar Multa</a>
+    <a href="/Multa/Criar" class="btn btn-primary btn-sm"><i class="fas fa-plus mx-2"></i>Adicionar Multa</a>
 </p>
 <table class="table">
     <thead>
@@ -89,7 +89,7 @@
             </td>
             <td>
                 <a href="/Multa/Editar/@item.Id" class="btn btn-primary btn-sm"><i class="fa fa-edit mx-2"></i>Editar</a> |
-                <a href="/Multa/Detalhes/@item.Id" class="btn btn-primary btn-sm">Detalhes</a> |
+                <a href="/Multa/Detalhes/@item.Id" class="btn btn-primary btn-sm"><i class="fas fa-info mx-2"></i>Detalhes</a> |
                 <a href="#deleteModal" class="deleteItem btn btn-danger btn-sm" data-toggle="modal" data-name="@item.TipoMulta" code="@item.Id"><i class="fas fa-trash mx-2" data-toggle="tooltip" title="Delete"></i>Deletar</a>
             </td>
         </tr>
